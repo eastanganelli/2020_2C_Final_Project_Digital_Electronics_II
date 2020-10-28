@@ -19,7 +19,7 @@ forcecoff=0
 [ProjectLog]
 Days=1
 D1=28-10-2020
-D1_L=18
+D1_L=20
 D1_L1=[38435]Project Opened.
 D1_L2=[38441]Started Editing.
 D1_L3=[39109]Stopped Editing.
@@ -42,20 +42,22 @@ TotalDebug=0
 D1_E=180
 D1_D=0
 D1_L18=[56812]Project Closed.
+D1_L19=[63132]Project Opened.
+D1_L20=[63138]Started Editing.
 
 [Opened Files]
 1=main.c
 t1=1
 Count=3
 2=D:\Program Files\PICC\Drivers\graphics.c
-t2=261
+t2=1
 3=D:\Program Files\PICC\Drivers\HDM64GS12.c
-t3=21
+t3=1
 [main.c]
 Type=4
 
 [defines]
-buildcount=125
+buildcount=128
 [Units]
 Count=1
 1=main (main)

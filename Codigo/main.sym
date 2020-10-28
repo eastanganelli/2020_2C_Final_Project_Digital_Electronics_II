@@ -168,10 +168,10 @@ ROM Allocation:
 000A66  @cinit2
 
 Project Directory:
-    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Pruebas\Codigo\
+    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\
 
 Project Files:
-    main.c                                                  [28-oct.-20 15:26  CRC=8C9C0022]
+    main.c                                                  [28-oct.-20 17:38  CRC=81798AB0]
     main.h                                                  [28-oct.-20 10:40  CRC=00000000]
     D:\Program Files\PICC\Devices\16F877.h                  [15-ene.-18 15:53  CRC=EE78BE53]
     D:\Program Files\PICC\Drivers\string.h                  [26-mar.-15 12:34  CRC=C4814297]
@@ -180,7 +180,7 @@ Project Files:
     D:\Program Files\PICC\Drivers\HDM64GS12.c               [08-jul.-10 09:47  CRC=C1C373EF]
     D:\Program Files\PICC\Drivers\graphics.c                [06-jul.-10 09:49  CRC=70BB89DE]
 
-Source signature=996C76C2
+Source signature=8E4A0150
 Program memory checksum=0000
 Program memory CRC=0000
 Hex file CRC=B416

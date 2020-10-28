@@ -1,6 +1,6 @@
-CCS PCM C Compiler, Version 5.076, 56587               28-oct.-20 15:27
+CCS PCM C Compiler, Version 5.076, 56587               28-oct.-20 17:38
 
-               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Pruebas\Codigo\main.lst
+               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\main.lst
 
                ROM used:   2847 words (35%)
                            Largest free fragment is 2048
@@ -3776,6 +3776,8 @@ CCS PCM C Compiler, Version 5.076, 56587               28-oct.-20 15:27
 ....................  
 .................... #byte trisb=0x86 
 ....................  
+.................... #define escala -0.20 //Escala negativa para que crezca hacia arriba. 
+....................  
 .................... int x=0; //Posicion inicial de x para graficar la temperatura 
 .................... signed int16 y=0; //Posicion inicial de y (Vamos a tener que cambiarla a la primer temperatura leida) para graficar la temperatura 
 .................... int offset=52; //es el offset para la altura de la grafica 
@@ -3867,7 +3869,7 @@ CCS PCM C Compiler, Version 5.076, 56587               28-oct.-20 15:27
 098C:  MOVLW  02
 098D:  MOVWF  62
 .................... 	} 
-.................... 	glcd_line(x, y*(-0.20)+offset, x1, temp*(-0.20)+offset, ON); //multiplicamos por -1 para que la grafica crezca hacia arriba. El offset esta explicado arriba 
+.................... 	glcd_line(x, (y*escala)+offset, x1, (temp*escala)+offset, ON); //multiplicamos por la escala para que la grafica entre en el area del grafico. El offset esta explicado arriba 
 098E:  MOVF   25,W
 098F:  MOVWF  64
 0990:  MOVF   24,W
@@ -4321,7 +4323,7 @@ CCS PCM C Compiler, Version 5.076, 56587               28-oct.-20 15:27
 .................... 	} 
 ....................   	 
 .................... 	while(TRUE){ 
-.................... 		trisb=trisb|0b00000100; 
+.................... 		trisb|=0b00000100; 
 0B5D:  BSF    03.5
 0B5E:  BSF    06.2
 .................... 		if(input(pin_b3)){ 

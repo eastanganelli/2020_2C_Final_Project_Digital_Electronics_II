@@ -13,7 +13,7 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   69    33   8  main.c
+   71    33   8  main.c
     5     0   0  main.h
   652     0   0  D:\Program Files\PICC\Devices\16F877.h
   435   129  32  D:\Program Files\PICC\Drivers\string.h
@@ -22,7 +22,7 @@ Lines Stmts  %   Files
   356    76  19  D:\Program Files\PICC\Drivers\HDM64GS12.c
   540   163  41  D:\Program Files\PICC\Drivers\graphics.c
 ----- -----
- 2117   401 Total
+ 2119   401 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -44,9 +44,9 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         2             @SITOF
 0    147   5   21             @MULFF
 0     29   1    2             @ITOF
-1    378  13   27   1006  6.7  @ADDFF
-0     31   1    4   1109  7.2  @SFTOI
-1    291  10   53   1134  7.2  MAIN
+1    378  13   27             @ADDFF
+0     31   1    4             @SFTOI
+1    291  10   53   1118  7.2  MAIN
 0     13   0    1             @SPRINTF
  Inline         5             @FTOSD
 0     91   3   21             @DIV3232
@@ -54,16 +54,16 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               14
+    Functions               12
     Statements              401
     Comments                620
-    Volume (V)              15219
-    Difficulty (D)          78.9
-    Effort to implement (E) 1200485
-    Time to implement (T)   18 hours, 32 minutes
-    Est Delivered Bugs (B)  4
-    Cyclomatic Complexity   35
-    Maintainability (MI)    41
+    Volume (V)              11620
+    Difficulty (D)          64.8
+    Effort to implement (E) 752628
+    Time to implement (T)   11 hours, 37 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   31
+    Maintainability (MI)    28
 
  Segment     Used  Free
 -----------  ----  ----

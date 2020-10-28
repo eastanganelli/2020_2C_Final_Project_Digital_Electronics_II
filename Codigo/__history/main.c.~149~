@@ -6,7 +6,7 @@
 
 #byte trisb=0x86
 
-#define escala -0.20 //Escala negativa para que crezca hacia arriba.
+#define escala -0.20 //Escala para negativa para que crezca hacia arriba.
 
 int x=0; //Posicion inicial de x para graficar la temperatura
 signed int16 y=0; //Posicion inicial de y (Vamos a tener que cambiarla a la primer temperatura leida) para graficar la temperatura

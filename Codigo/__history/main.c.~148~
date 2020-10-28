@@ -6,7 +6,7 @@
 
 #byte trisb=0x86
 
-#define escala -0.20 //Escala negativa para que crezca hacia arriba.
+#define escala -0.20 //Escala para negativa para que crezca hacia arriba.
 
 int x=0; //Posicion inicial de x para graficar la temperatura
 signed int16 y=0; //Posicion inicial de y (Vamos a tener que cambiarla a la primer temperatura leida) para graficar la temperatura
@@ -32,7 +32,7 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
 		x=0;
 		x1=2;
 	}
-	glcd_line(x, (y*escala)+offset, x1, (temp*escala)+offset, ON); //multiplicamos por la escala para que la grafica entre en el area del grafico. El offset esta explicado arriba
+	glcd_line(x, y*escala+offset, x1, temp*escala+offset, ON); //multiplicamos por la escala para que la grafica entre en el area del grafico. El offset esta explicado arriba
 	y=temp;
 	x=x1;
 }
