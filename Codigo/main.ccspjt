@@ -1,0 +1,61 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F877
+CCSVerions=5.076
+Compiler=PCM
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Pruebas\Codigo\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=28-10-2020
+D1_L=18
+D1_L1=[38435]Project Opened.
+D1_L2=[38441]Started Editing.
+D1_L3=[39109]Stopped Editing.
+D1_L4=[41008]Started Editing.
+D1_L5=[44578]Stopped Editing.
+D1_L6=[45105]Started Editing.
+D1_L7=[45429]Stopped Editing.
+D1_L8=[46067]Started Editing.
+D1_L9=[46448]Stopped Editing.
+D1_L10=[46800]Started Editing.
+D1_L11=[48259]Stopped Editing.
+D1_L12=[48262]Started Editing.
+D1_L13=[51765]Stopped Editing.
+D1_L14=[51811]Started Editing.
+D1_L15=[54708]Stopped Editing.
+D1_L16=[55590]Started Editing.
+D1_L17=[55940]Stopped Editing.
+TotalEdit=180
+TotalDebug=0
+D1_E=180
+D1_D=0
+D1_L18=[56812]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=3
+2=D:\Program Files\PICC\Drivers\graphics.c
+t2=261
+3=D:\Program Files\PICC\Drivers\HDM64GS12.c
+t3=21
+[main.c]
+Type=4
+
+[defines]
+buildcount=125
+[Units]
+Count=1
+1=main (main)

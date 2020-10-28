@@ -1,0 +1,68 @@
+#include <main.h>
+#include <string.h>
+#fuses XT
+#include <HDM64GS12.c>
+#include <graphics.c>
+
+#byte trisb=0x86
+
+int1 toggle=0; //Para mostrar si el bt esta encendido
+signed int x=0; //Posicion inicial de x para graficar la temperatura
+signed int y=0; //Posicion inicial de y (Vamos a tener que cambiarla a la primer temperatura leida) para graficar la temperatura
+int offset=50; //es el offset para la altura de la grafica
+
+void mostrarBT(int1 estado){ //Mostramos BT si el bluetooth esta prendido
+	char bt[]="BT";
+	glcd_text57(110,0,bt,1,estado);
+}
+
+void limpiarPorcion(int x1, int y1, int x2, int y2){ //x1, y1 = posición del primer pixel. x2, y2 = cantididad de pixeles hacia la derecha y hacia abajo
+	for(int i=x1;i<x1+x2;i++){
+		for(int j=y1;j<y1+y2;j++){
+			glcd_pixel(i, j, OFF); //Apagamos el pixel.
+		}
+	}
+}
+
+void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temperatura
+	signed int x1=x+1;
+	if(x1>125){ //Revisamos si sobrepasamos el tamaño de la pantalla
+		limpiarPorcion(0, 20, 128, 44); //Limpiamos la porcion del grafico de la pantalla
+		x=0;
+		x1=1;
+	}
+	glcd_line(x, y*(-0.20)+offset, x1, temp*(-0.20)+offset, ON); //multiplicamos por -1 para que la grafica crezca hacia arriba. El offset esta explicado arriba
+	y=temp;
+	x=x1;
+}
+
+void main()
+{
+	char str[10];
+	char temp[]="Temperatura:";
+	float t[]={37, 36.5, 38, -10, 150, 30}; //ESTO HAY QUE FLETARLO CUANDO YA ESTÉ LA CAPTURA REAL
+	glcd_init(on); //Inicializamos el lcd
+
+	//texto
+	glcd_text57(0,10,temp,1,ON); //Escribimos el texto "Tempreatura:" en la posicion 0,0
+	//dibujar una linea
+	glcd_line(0, 8, 128, 8, ON); //Pintamos una linea por debajo del barra de notificaciones
+	glcd_line(0, 19, 128, 19, ON); //Pintamos una linea por debajo de la temperatura
+  	
+	for(int i=0; i<6; i++){ //ESTO HAY QUE FLETARLO CUANDO YA ESTÉ LA CAPTURA REAL
+		sprintf(str, "%4.2f°C", t[i]); //Convertimos la temperatura float en un char*
+		limpiarPorcion(strlen(temp)*6, 10, strlen(str)*6, 7); //Limpiamos la porcion de pantalla que tiene el valor de la temperatura.
+		glcd_text57(strlen(temp)*6, 10, str, 1, ON); //Escribimos la temperatura.
+		nuevaLinea(t[i]); //Dibujamos la nueva linea en el grafico.
+		delay_ms(200);
+	}
+  	
+	while(TRUE){
+		trisb=trisb|0b00000100;
+		if(input(pin_b3)){
+			delay_ms(300);
+			toggle=~toggle;
+			mostrarBT(toggle);
+		}
+	}
+}
