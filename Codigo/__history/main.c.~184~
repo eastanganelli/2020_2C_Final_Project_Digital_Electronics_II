@@ -50,15 +50,15 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
 
 void turn_on_bt() {
    char value;
-   value = getc(); //Obtenemos el dato
-   if(value == 'a') { //Si el valor es a
+   value = getc();   // get the data
+   if(value == 'a') {  // if value is a
       //output_high(LED1);   // LED ON
-      mostrarBT(ON); //Mostramos BT
-      delay_ms(500); //Delay 500 ms
-   } else if(value == 'b') { //Si el valor es b
+      mostrarBT(ON);
+      delay_ms(500);       // delay 500 ms
+   } else if(value == 'b') {  // if value is a
       //output_low(LED1);    // LED OFF
-      mostrarBT(OFF); //No mostramos BT
-      delay_ms(500); //Delay 500 ms
+      mostrarBT(OFF);
+      delay_ms(500);       // delay 500 ms
    } 
 }
 

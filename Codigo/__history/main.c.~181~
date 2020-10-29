@@ -9,7 +9,7 @@
 ///Defines
 
 #define escala -0.20 //Escala negativa para que crezca hacia arriba.
-#define limpiarGrafico limpiarPorcion(0,20,128,44) //Limpia el area del grafico
+#define limpiarGrafico limpiarPorcion(0,20,128,44) //Define que limpia el area del grafico
 
 ///Fin Defines
 
@@ -50,15 +50,15 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
 
 void turn_on_bt() {
    char value;
-   value = getc(); //Obtenemos el dato
-   if(value == 'a') { //Si el valor es a
+   value = getc();   // get the data
+   if(value == 'a') {  // if value is a
       //output_high(LED1);   // LED ON
-      mostrarBT(ON); //Mostramos BT
-      delay_ms(500); //Delay 500 ms
-   } else if(value == 'b') { //Si el valor es b
+      mostrarBT(ON);
+      delay_ms(500);       // delay 500 ms
+   } else if(value == 'b') {  // if value is a
       //output_low(LED1);    // LED OFF
-      mostrarBT(OFF); //No mostramos BT
-      delay_ms(500); //Delay 500 ms
+      mostrarBT(OFF);
+      delay_ms(500);       // delay 500 ms
    } 
 }
 
@@ -83,10 +83,12 @@ void main()
    float t[]={37, 36.5, 38, -55, 150, 30}; //ESTO HAY QUE FLETARLO CUANDO YA ESTÉ LA CAPTURA REAL
    
    glcd_init(on); //Inicializamos el lcd
-	enable_interrupts(INT_RB); //Habilitamos las interrupciones del RB4-7
-	enable_interrupts(GLOBAL); //Habilitamos las interrupciones globales
+	enable_interrupts(INT_RB);
+	enable_interrupts(GLOBAL);
 
+   //texto
    glcd_text57(0,10,temp,1,ON); //Escribimos el texto "Tempreatura:" en la posicion 0,10
+   //dibujar una linea
    glcd_line(0, 8, 128, 8, ON); //Pintamos una linea por debajo del barra de notificaciones
    glcd_line(0, 19, 128, 19, ON); //Pintamos una linea por debajo de la temperatura
      
