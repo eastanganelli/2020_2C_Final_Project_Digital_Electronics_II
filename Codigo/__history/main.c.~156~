@@ -1,6 +1,6 @@
 #include <main.h>
 #include <string.h>
-#fuses XT, NOWDT,NOPROTECT,NOLVP
+#fuses XT
 #include <HDM64GS12.c> //Manejo del display gráfico
 #include <graphics.c> //Funciones para dibujar y escribir en el display
 
@@ -64,13 +64,12 @@ void main()
    glcd_line(0, 8, 128, 8, ON); //Pintamos una linea por debajo del barra de notificaciones
    glcd_line(0, 19, 128, 19, ON); //Pintamos una linea por debajo de la temperatura
      
-   for(int i=0; i<10; i++){ //ESTO HAY QUE FLETARLO CUANDO YA ESTÉ LA CAPTURA REAL || LO QUE ESTA ACA DESPUES VA AL WHILE(TRUE)
+   for(int i=0; i<6; i++){ //ESTO HAY QUE FLETARLO CUANDO YA ESTÉ LA CAPTURA REAL || LO QUE ESTA ACA DESPUES VA AL WHILE(TRUE)
       sprintf(str, "%4.2f°C", t[i]); //Convertimos la temperatura float en un char*
-      //limpiarPorcion(strlen(temp)*6, 10, 9*6, 7); //Limpiamos la porcion de pantalla que tiene el valor de la temperatura.
-      //glcd_text57(strlen(temp)*6, 10, str, 1, ON); //Escribimos la temperatura.
-      //nuevaLinea(t[i]); //Dibujamos la nueva linea en el grafico.
-      printf("%f\r", t[i]);
-      //puts(str);
+      limpiarPorcion(strlen(temp)*6, 10, 9*6, 7); //Limpiamos la porcion de pantalla que tiene el valor de la temperatura.
+      glcd_text57(strlen(temp)*6, 10, str, 1, ON); //Escribimos la temperatura.
+      nuevaLinea(t[i]); //Dibujamos la nueva linea en el grafico.
+      printf("%4.2f", t[i]);
       delay_ms(200);
    }
      

@@ -1,7 +1,7 @@
 ÀÄmain
-   ÀÄMAIN  1/291  Ram=53
+   ÀÄMAIN  1/240  Ram=52
       ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄglcd_init  0/183  Ram=1
+      ÃÄglcd_init  0/143  Ram=1
       ³  ÃÄglcd_writeByte  0/43  Ram=2
       ³  ÃÄglcd_writeByte  0/43  Ram=2
       ³  ÃÄglcd_writeByte  0/43  Ram=2
@@ -23,64 +23,49 @@
       ³     ÀÄglcd_writeByte  0/43  Ram=2
       ÃÄglcd_text57  0/214  Ram=20
       ³  ÃÄ@MUL88  0/37  Ram=2
-      ³  ÃÄ@const749  0/262  Ram=0
+      ³  ÃÄ@const752  0/262  Ram=0
       ³  ÃÄ@MUL88  0/37  Ram=2
-      ³  ÃÄ@const753  0/224  Ram=0
-      ³  ÃÄ@MUL88  0/37  Ram=2
-      ³  ÃÄ@MUL88  0/37  Ram=2
+      ³  ÃÄ@const756  0/224  Ram=0
       ³  ÃÄ@MUL88  0/37  Ram=2
       ³  ÃÄ@MUL88  0/37  Ram=2
-      ³  ÀÄglcd_pixel  0/132  Ram=8
+      ³  ÃÄ@MUL88  0/37  Ram=2
+      ³  ÃÄ@MUL88  0/37  Ram=2
+      ³  ÀÄglcd_pixel  0/118  Ram=7
       ³     ÃÄglcd_writeByte  0/43  Ram=2
       ³     ÃÄglcd_writeByte  0/43  Ram=2
-      ³     ÃÄglcd_readByte  0/47  Ram=2
-      ³     ÃÄglcd_readByte  0/47  Ram=2
+      ³     ÃÄglcd_readByte  0/45  Ram=2
+      ³     ÃÄglcd_readByte  0/45  Ram=2
       ³     ÃÄglcd_writeByte  0/43  Ram=2
       ³     ÀÄglcd_writeByte  0/43  Ram=2
       ÃÄglcd_line  0/182  Ram=17
-      ³  ÃÄglcd_pixel  0/132  Ram=8
+      ³  ÃÄglcd_pixel  0/118  Ram=7
       ³  ³  ÀÄ*
-      ³  ÀÄglcd_pixel  0/132  Ram=8
+      ³  ÀÄglcd_pixel  0/118  Ram=7
       ³     ÀÄ*
       ÃÄglcd_line  0/182  Ram=17
       ³  ÀÄ*
-      ÃÄ@PRINTF_L32D_863FPFPF  0/226  Ram=13
-      ³  ÃÄ@MULFF  0/147  Ram=21
-      ³  ÃÄ@FTOSD  (Inline)  Ram=5
-      ³  ÃÄ@DIV3232  0/91  Ram=21
+      ÃÄ@PRINTF_L32D_867FPFPF  0/197  Ram=13
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@FTOSD  0/31  Ram=5
+      ³  ÃÄ@DIV3232  0/79  Ram=13
       ³  ÃÄ@SPRINTF  0/13  Ram=1
       ³  ÃÄ@SPRINTF  0/13  Ram=1
       ³  ÃÄ@SPRINTF  0/13  Ram=1
       ³  ÃÄ@SPRINTF  0/13  Ram=1
-      ³  ÀÄ@DIV3232  0/91  Ram=21
+      ³  ÀÄ@DIV3232  0/79  Ram=13
       ÃÄ@SPRINTF  0/13  Ram=1
       ÃÄ@SPRINTF  0/13  Ram=1
-      ÃÄstrlen  0/30  Ram=5
-      ÃÄ@MUL88  0/37  Ram=2
-      ÃÄlimpiarPorcion  0/25  Ram=6
-      ³  ÀÄglcd_pixel  0/132  Ram=8
-      ³     ÀÄ*
-      ÃÄstrlen  0/30  Ram=5
-      ÃÄ@MUL88  0/37  Ram=2
-      ÃÄglcd_text57  0/214  Ram=20
-      ³  ÀÄ*
-      ÃÄnuevaLinea  1/219  Ram=10
-      ³  ÃÄlimpiarPorcion  0/25  Ram=6
-      ³  ³  ÀÄ*
-      ³  ÃÄ@SITOF  (Inline)  Ram=2
-      ³  ÃÄ@MULFF  0/147  Ram=21
-      ³  ÃÄ@ITOF  0/29  Ram=2
-      ³  ÃÄ@ADDFF  1/378  Ram=27
-      ³  ÃÄ@SFTOI  0/31  Ram=4
-      ³  ÃÄ@MULFF  0/147  Ram=21
-      ³  ÃÄ@ITOF  0/29  Ram=2
-      ³  ÃÄ@ADDFF  1/378  Ram=27
-      ³  ÃÄ@SFTOI  0/31  Ram=4
-      ³  ÃÄglcd_line  0/182  Ram=17
-      ³  ³  ÀÄ*
-      ³  ÀÄ@SFTOI  0/31  Ram=4
+      ÃÄ@PRINTF_L32D_4800_62_63FPFPF  0/201  Ram=13
+      ³  ÃÄ@MULFF  0/117  Ram=13
+      ³  ÃÄ@FTOSD  0/31  Ram=5
+      ³  ÃÄ@DIV3232  0/79  Ram=13
+      ³  ÀÄ@DIV3232  0/79  Ram=13
       ÃÄ@delay_ms1  0/20  Ram=1
-      ÃÄ@delay_ms1  0/20  Ram=1
-      ÀÄmostrarBT  0/19  Ram=4
-         ÀÄglcd_text57  0/214  Ram=20
-            ÀÄ*
+      ÀÄturn_on_bt  0/35  Ram=2
+         ÃÄmostrarBT  0/17  Ram=4
+         ³  ÀÄglcd_text57  0/214  Ram=20
+         ³     ÀÄ*
+         ÃÄ@delay_ms1  0/20  Ram=1
+         ÃÄmostrarBT  0/17  Ram=4
+         ³  ÀÄ*
+         ÀÄ@delay_ms1  0/20  Ram=1

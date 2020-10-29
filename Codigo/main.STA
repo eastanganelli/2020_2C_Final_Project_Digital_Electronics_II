@@ -1,75 +1,70 @@
 
-ROM used:   2847/8192 (35%)
-            2936/8192 (36%) including unused fragments
+ROM used:   2222/8192 (27%)
+            2288/8192 (28%) including unused fragments
 
-            1.3 Average locations per line
-            7.1 Average locations per statement
+            1.0 Average locations per line
+            5.5 Average locations per statement
 
-RAM used:   67/368 (18%) at main() level
-            104/368 (28%) worst case
+RAM used:   66/368 (18%) at main() level
+            93/368 (25%) worst case
 
-Stack used: 3 worst case (3 in main + 0 for interrupts)
+Stack used: 4 worst case (4 in main + 0 for interrupts)
 Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   71    33   8  main.c
+   84    38   9  main.c
     5     0   0  main.h
-  652     0   0  D:\Program Files\PICC\Devices\16F877.h
-  435   129  32  D:\Program Files\PICC\Drivers\string.h
-   32     0   0  D:\Program Files\PICC\Drivers\stddef.h
-   28     0   0  D:\Program Files\PICC\Drivers\ctype.h
-  356    76  19  D:\Program Files\PICC\Drivers\HDM64GS12.c
-  540   163  41  D:\Program Files\PICC\Drivers\graphics.c
+  652     0   0  C:\Program Files (x86)\PICC\Devices\16F877.h
+  435   129  32  C:\Program Files (x86)\PICC\Drivers\string.h
+   32     0   0  C:\Program Files (x86)\PICC\Drivers\stddef.h
+   28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
+  356    76  19  C:\Program Files (x86)\PICC\Drivers\HDM64GS12.c
+  540   163  40  C:\Program Files (x86)\PICC\Drivers\graphics.c
 ----- -----
- 2119   401 Total
+ 2132   406 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
 0     20   1    1             @delay_ms1
-0     30   1    5    140  5.0  strlen
-0    183   6    1    555  3.4  glcd_init
-0    132   5    8    779  7.2  glcd_pixel
+0    143   6    1    555  3.4  glcd_init
+0    118   5    7    779  7.2  glcd_pixel
  Inline         4    506  4.8  glcd_fillScreen
-0     37   1    2             @MUL88
+0     37   2    2             @MUL88
 0     43   2    2    307  2.8  glcd_writeByte
-0     47   2    2    318  2.8  glcd_readByte
-0    262   9    0             @const749
-0    224   8    0             @const753
-0    182   6   17   1519  9.2  glcd_line
-0    214   8   20   1587 11.7  glcd_text57
-0     19   1    4     95  2.4  mostrarBT
-0     25   1    6    265  5.1  limpiarPorcion
-1    219   8   10    366  4.6  nuevaLinea
- Inline         2             @SITOF
-0    147   5   21             @MULFF
-0     29   1    2             @ITOF
-1    378  13   27             @ADDFF
-0     31   1    4             @SFTOI
-1    291  10   53   1118  7.2  MAIN
-0     13   0    1             @SPRINTF
- Inline         5             @FTOSD
-0     91   3   21             @DIV3232
-0    226   8   13             @PRINTF_L32D_863FPFPF
+0     45   2    2    318  2.8  glcd_readByte
+0    262  12    0             @const752
+0    224  10    0             @const756
+0    182   8   17   1519  9.2  glcd_line
+0    214  10   20   1587 11.7  glcd_text57
+0     17   1    4     95  2.4  mostrarBT
+0    117   5   13             @MULFF
+0     35   2    2    181  3.1  turn_on_bt
+1    240  11   52    759  6.2  MAIN
+0     13   1    1             @SPRINTF
+0     31   1    5             @FTOSD
+0     79   4   13             @DIV3232
+0    197   9   13             @PRINTF_L32D_867FPFPF
+0    201   9   13             @PRINTF_L32D_4800_62_63FPFPF
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               12
-    Statements              401
-    Comments                620
-    Volume (V)              11620
-    Difficulty (D)          64.8
-    Effort to implement (E) 752628
-    Time to implement (T)   11 hours, 37 minutes
-    Est Delivered Bugs (B)  3
-    Cyclomatic Complexity   31
-    Maintainability (MI)    28
+    Functions               10
+    Statements              406
+    Comments                628
+    Volume (V)              9883
+    Difficulty (D)          52.9
+    Effort to implement (E) 523238
+    Time to implement (T)   8 hours, 4 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   29
+    Maintainability (MI)    60
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-007FF  1955  89  
-00800-00FFF   888  1160  
+00004-007FF  1978  66  
+00800-00FFF   240  1808  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  
 
