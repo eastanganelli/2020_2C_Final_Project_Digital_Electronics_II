@@ -1,10 +1,10 @@
-F N "limpiarPorcion" 0 31 ""
-D G "__PCM__" 0 32 ""5.076""
-D G "__DEVICE__" 0 32 "877"
-D G "__DATE__" 0 32 ""29-oct.-20""
-D G "__TIME__" 0 32 ""12:07:34""
-D G "_UNICODE" 0 32 ""?""
-D G "__EVAL" 0 32 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
+F N "nuevaLinea" 0 38 ""
+D G "__PCM__" 0 46 ""5.076""
+D G "__DEVICE__" 0 46 "877"
+D G "__DATE__" 0 46 ""30-oct.-20""
+D G "__TIME__" 0 46 ""18:13:34""
+D G "_UNICODE" 0 46 ""?""
+D G "__EVAL" 0 46 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `54 
@@ -1056,411 +1056,275 @@ d G "INT_PSP" 2 646 "0x008C80"
 d G "INT_BUSCOL" 2 647 "0x008D08"
 d G "INT_EEPROM" 2 648 "0x008D10"
 d G "INT_TIMER0" 2 649 "0x000B20"
-D G "_STRING" 3 12 ""
-D G "_STDDEF" 4 13 ""
-D G "ptrdiff_t" 4 18 "unsigned int16"
-D G "size_t" 4 22 "unsigned int8"
-D G "wchar_t" 4 26 "char"
-D G "NULL" 4 27 "0"
-D G "offsetof" 4 29 "(s,f) (offsetofbit(s,f)/8)"
-D G "_CTYPE" 5 12 ""
-D G "islower" 5 14 "(x)  isamong(x,"abcdefghijklmnopqrstuvwxyz")"
-D G "isupper" 5 15 "(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZ")"
-D G "isalnum" 5 16 "(x)  isamong(x,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")"
-D G "isalpha" 5 17 "(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")"
-D G "isdigit" 5 18 "(x)  isamong(x,"0123456789")"
-D G "isspace" 5 19 "(x)  ((x)==' ')"
-D G "isxdigit" 5 20 "(x) isamong(x,"0123456789ABCDEFabcdef")"
-D G "iscntrl" 5 21 "(x)  ((x)<' ')"
-D G "isprint" 5 22 "(x)  ((x)>=' ')"
-D G "isgraph" 5 23 "(x)  ((x)>' ')"
-D G "ispunct" 5 24 "(x)  (((x)>' ')&&!isalnum(x))"
-C L "jump_to_isr" 3 19 10 "FUNCTION"
-F N "memmove" 3 34 ""
-V L "s1" 3 34 "*void" `634 
-V L "s2" 3 34 "*void" `635 
-V L "n" 3 34 "int8" `636 
-F G "memmove" 3 35 "*int8(*void s1,*void s2,int8 n)" `633 
-V L "sc1" 3 36 "*int8" `637 
-V L "sc2" 3 37 "*int8" `638 
-D G "strcopy" 3 54 "strcpy"
-F N "strncpy" 3 61 ""
-V L "s1" 3 61 "*int8" `640 
-V L "s2" 3 61 "*int8" `641 
-V L "n" 3 61 "int8" `642 
-F G "strncpy" 3 62 "*int8(*int8 s1,*int8 s2,int8 n)" `639 
-V L "s" 3 63 "*int8" `643 
-F N "strcat" 3 78 ""
-V L "s1" 3 78 "*int8" `645 
-V L "s2" 3 78 "*int8" `646 
-F G "strcat" 3 79 "*int8(*int8 s1,*int8 s2)" `644 
-V L "s" 3 80 "*int8" `647 
-F N "strncat" 3 96 ""
-V L "s1" 3 96 "*int8" `649 
-V L "s2" 3 96 "*int8" `650 
-V L "n" 3 96 "int8" `651 
-F G "strncat" 3 97 "*int8(*int8 s1,*int8 s2,int8 n)" `648 
-V L "s" 3 98 "*int8" `652 
-C L "memcmp" 3 19 3 "FUNCTION"
-F N "memcmp" 3 120 ""
-V L "s1" 3 120 "*void" `654 
-V L "s2" 3 120 "*void" `655 
-V L "n" 3 120 "int8" `656 
-F G "memcmp" 3 121 "sint8(*void s1,*void s2,int8 n)" `653 
-V L "su1" 3 122 "*int8" `657 
-V L "su2" 3 122 "*int8" `658 
-C L "strcmp" 3 19 2 "FUNCTION"
-F N "strcmp" 3 134 ""
-V L "s1" 3 134 "*int8" `660 
-V L "s2" 3 134 "*int8" `661 
-F G "strcmp" 3 135 "sint8(*int8 s1,*int8 s2)" `659 
-C L "strcoll" 3 19 2 "FUNCTION"
-F N "strcoll" 3 144 ""
-V L "s1" 3 144 "*int8" `663 
-V L "s2" 3 144 "*int8" `664 
-F G "strcoll" 3 145 "sint8(*int8 s1,*int8 s2)" `662 
-C L "strncmp" 3 19 4 "FUNCTION"
-F N "strncmp" 3 157 ""
-V L "s1" 3 157 "*int8" `666 
-V L "s2" 3 157 "*int8" `667 
-V L "n" 3 157 "int8" `668 
-F G "strncmp" 3 158 "sint8(*int8 s1,*int8 s2,int8 n)" `665 
-C L "strxfrm" 3 19 4 "FUNCTION"
-F N "strxfrm" 3 170 ""
-V L "s1" 3 170 "*int8" `670 
-V L "s2" 3 170 "*int8" `671 
-V L "n" 3 170 "int8" `672 
-F G "strxfrm" 3 171 "int8(*int8 s1,*int8 s2,int8 n)" `669 
-V L "c" 3 172 "int8" `673 
-V L "n1" 3 173 "int8" `674 
-C L "strxfrm" 3 19 1 "FUNCTION"
-F N "memchr" 3 201 ""
-V L "s" 3 201 "*void" `676 
-V L "c" 3 201 "int8" `677 
-V L "n" 3 201 "int8" `678 
-F G "memchr" 3 202 "*int8(*void s,int8 c,int8 n)" `675 
-V L "uc" 3 203 "int8" `679 
-V L "su" 3 204 "*int8" `680 
-F N "strchr" 3 215 ""
-V L "s" 3 215 "*int8" `682 
-V L "c" 3 215 "int8" `683 
-F G "strchr" 3 216 "*int8(*int8 s,int8 c)" `681 
-C L "strcspn" 3 19 4 "FUNCTION"
-F N "strcspn" 3 227 ""
-V L "s1" 3 227 "*int8" `685 
-V L "s2" 3 227 "*int8" `686 
-F G "strcspn" 3 228 "int8(*int8 s1,*int8 s2)" `684 
-V L "sc1" 3 229 "*int8" `687 
-V L "sc2" 3 229 "*int8" `688 
-F N "strpbrk" 3 242 ""
-V L "s1" 3 242 "*int8" `690 
-V L "s2" 3 242 "*int8" `691 
-F G "strpbrk" 3 243 "*int8(*int8 s1,*int8 s2)" `689 
-V L "sc1" 3 244 "*int8" `692 
-V L "sc2" 3 244 "*int8" `693 
-F N "strrchr" 3 257 ""
-V L "s" 3 257 "*int8" `695 
-V L "c" 3 257 "int8" `696 
-F G "strrchr" 3 258 "*int8(*int8 s,int8 c)" `694 
-V L "p" 3 259 "*int8" `697 
-C L "strspn" 3 19 2 "FUNCTION"
-F N "strspn" 3 272 ""
-V L "s1" 3 272 "*int8" `699 
-V L "s2" 3 272 "*int8" `700 
-F G "strspn" 3 273 "int8(*int8 s1,*int8 s2)" `698 
-V L "sc1" 3 274 "*int8" `701 
-V L "sc2" 3 274 "*int8" `702 
-F N "strstr" 3 291 ""
-V L "s1" 3 291 "*int8" `704 
-V L "s2" 3 291 "*int8" `705 
-F G "strstr" 3 292 "*int8(*int8 s1,*int8 s2)" `703 
-V L "s" 3 293 "*int8" `706 
-V L "t" 3 293 "*int8" `707 
-C L "strlen" 3 19 2 "FUNCTION"
-F N "strlen" 3 318 ""
-V L "s" 3 318 "*int8" `709 
-F G "strlen" 3 319 "int8(*int8 s)" `708 
-V L "sc" 3 320 "*int8" `710 
-F N "strtok" 3 341 ""
-V L "s1" 3 341 "*int8" `712 
-V L "s2" 3 341 "*int8" `713 
-F G "strtok" 3 342 "*int8(*int8 s1,*int8 s2)" `711 
-V L "beg" 3 343 "*int8" `714 
-V L "end" 3 343 "*int8" `715 
-V L "save" 3 344 "*int8" `716 
-C L "stricmp" 3 19 6 "FUNCTION"
-F N "stricmp" 3 392 ""
-V L "s1" 3 392 "*int8" `718 
-V L "s2" 3 392 "*int8" `719 
-F G "stricmp" 3 393 "sint8(*int8 s1,*int8 s2)" `717 
-F N "strlwr" 3 406 ""
-V L "s" 3 406 "*int8" `723 
-F G "strlwr" 3 407 "*int8(*int8 s)" `722 
-V L "p" 3 408 "*int8" `724 
-F N "strupr" 3 420 ""
-V L "s" 3 420 "*int8" `726 
-F G "strupr" 3 421 "*int8(*int8 s)" `725 
-V L "p" 3 422 "*int8" `727 
-D G "HDM64GS12" 6 63 ""
-D G "GLCD_WIDTH" 6 66 "128"
-D G "GLCD_CS1" 6 70 "PIN_B0" "Chip Selection 1"
-D G "GLCD_CS2" 6 74 "PIN_B1" "Chip Selection 2"
-D G "GLCD_DI" 6 78 "PIN_B2" "Data or Instruction input"
-D G "GLCD_RW" 6 82 "PIN_B4" "Read/Write"
-D G "GLCD_E" 6 86 "PIN_B5" "Enable"
-D G "GLCD_RST" 6 90 "PIN_C0" "Reset"
-D G "GLCD_LEFT" 6 93 "0"
-D G "GLCD_RIGHT" 6 94 "1"
-D G "ON" 6 97 "1"
-D G "OFF" 6 101 "0"
-C L "glcd_init" 6 2 1 "FUNCTION"
-F N "glcd_init" 6 107 ""
-V L "mode" 6 107 "int8" `729 
-f G "glcd_init" 6 107 "void(int8 mode)" `728 
-F N "glcd_pixel" 6 108 ""
-V L "x" 6 108 "int8" `731 
-V L "y" 6 108 "int8" `732 
-V L "color" 6 108 "int8" `733 
-f G "glcd_pixel" 6 108 "void(int8 x,int8 y,int8 color)" `730 
-F N "glcd_fillScreen" 6 109 ""
-V L "color" 6 109 "int8" `735 
-f G "glcd_fillScreen" 6 109 "void(int8 color)" `734 
-F N "glcd_writeByte" 6 110 ""
-V L "side" 6 110 "int8" `737 
-V L "data" 6 110 "int8" `738 
-f G "glcd_writeByte" 6 110 "void(int8 side,int8 data)" `736 
-F N "glcd_readByte" 6 111 ""
-V L "side" 6 111 "int8" `740 
-f G "glcd_readByte" 6 111 "int8(int8 side)" `739 
-F N "glcd_update" 6 112 ""
-f G "glcd_update" 6 112 "void()" `741  "Purpose:       Initialize the LCD."
-C L "glcd_update" 6 2 3 "FUNCTION"
-F N "glcd_init" 6 128 ""
-V L "mode" 6 128 "int8" `743 
-F G "glcd_init" 6 129 "void(int8 mode)" `728  "Initialze some pins"
-C L "glcd_init" 6 2 1 "FUNCTION"
-C L "glcd_init" 6 2 1 "FUNCTION"
-C L "glcd_init" 6 2 1 "FUNCTION"
-C L "glcd_init" 6 2 1 "FUNCTION"
-C L "glcd_init" 6 2 1 "FUNCTION"
-C L "glcd_init" 6 2 1 "FUNCTION"
-C L "glcd_init" 6 2 1 "FUNCTION"
-C L "glcd_init" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 5 "FUNCTION"
-F N "glcd_pixel" 6 198 ""
-V L "x" 6 198 "int8" `731 
-V L "y" 6 198 "int8" `732 
-V L "color" 6 198 "int8" `746 
-F G "glcd_pixel" 6 226 "void(int8 x,int8 y,int8 color)" `730 
-V L "data" 6 227 "int8" `743 
-V L "side" 6 228 "int1" `744 
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_pixel" 6 2 1 "FUNCTION"
-C L "glcd_fillScreen" 6 2 3 "FUNCTION"
-F N "glcd_fillScreen" 6 261 ""
-V L "color" 6 261 "int8" `746 
-F G "glcd_fillScreen" 6 279 "void(int8 color)" `734 
-V L "i" 6 280 "int8" `745 
-V L "j" 6 280 "int8" `746  "Loop through the vertical pages"
-C L "glcd_fillScreen" 6 2 1 "FUNCTION"
-C L "glcd_fillScreen" 6 2 1 "FUNCTION"
-C L "glcd_fillScreen" 6 2 1 "FUNCTION"
-C L "glcd_fillScreen" 6 2 2 "FUNCTION"
-C L "glcd_fillScreen" 6 2 1 "FUNCTION"
-C L "glcd_fillScreen" 6 2 1 "FUNCTION"
-C L "glcd_writeByte" 6 2 3 "FUNCTION"
-F N "glcd_writeByte" 6 306 ""
-V L "side" 6 306 "int8" `737 
-V L "data" 6 306 "int8" `752 
-F G "glcd_writeByte" 6 307 "void(int8 side,int8 data)" `736 
-C L "glcd_writeByte" 6 2 1 "FUNCTION"
-C L "glcd_writeByte" 6 2 1 "FUNCTION"
-C L "glcd_writeByte" 6 2 1 "FUNCTION"
-C L "glcd_writeByte" 6 2 1 "FUNCTION"
-C L "glcd_writeByte" 6 2 1 "FUNCTION"
-C L "glcd_readByte" 6 2 2 "FUNCTION"
-F N "glcd_readByte" 6 332 ""
-V L "side" 6 332 "int8" `751 
-F G "glcd_readByte" 6 333 "int8(int8 side)" `739 
-V L "data" 6 334 "int8" `750  "Stores the data read from the LCD"
-C L "glcd_readByte" 6 2 1 "FUNCTION"
-C L "glcd_readByte" 6 2 1 "FUNCTION"
-C L "glcd_readByte" 6 2 1 "FUNCTION"
-C L "glcd_readByte" 6 2 1 "FUNCTION"
-C L "glcd_readByte" 6 2 1 "FUNCTION"
-C L "glcd_readByte" 6 2 1 "FUNCTION"
-C L "glcd_readByte" 6 2 1 "FUNCTION"
-D G "GRAPHICS_DRAWING_FUNCTIONS" 7 59 ""
-D G "YES" 7 73 "1"
-D G "NO" 7 77 "0"
-V G "FONT" 7 85 "[51][5]" `752 
-V G "FONT2" 7 137 "[44][5]" `756 
-C L "glcd_line" 7 2 6 "FUNCTION"
-F N "glcd_line" 7 195 ""
-V L "x1" 7 195 "int8" `760 
-V L "y1" 7 195 "int8" `761 
-V L "x2" 7 195 "int8" `762 
-V L "y2" 7 195 "int8" `763 
-V L "color" 7 195 "int8" `764 
-F G "glcd_line" 7 197 "void(int8 x1,int8 y1,int8 x2,int8 y2,int8 color)" `759 
-V L "dy" 7 198 "int16" `765 
-V L "dx" 7 198 "int16" `766 
-V L "addx" 7 199 "sint8" `767 
-V L "addy" 7 199 "sint8" `768 
-V L "p" 7 200 "sint16" `769 
-V L "diff" 7 200 "sint16" `770 
-V L "i" 7 207 "int8" `771 
-C L "glcd_rect" 7 2 6 "FUNCTION"
-F N "glcd_rect" 7 277 ""
-V L "x1" 7 277 "int8" `773 
-V L "y1" 7 277 "int8" `774 
-V L "x2" 7 277 "int8" `775 
-V L "y2" 7 277 "int8" `776 
-V L "fill" 7 277 "int8" `777 
-V L "color" 7 277 "int8" `778 
-F G "glcd_rect" 7 279 "void(int8 x1,int8 y1,int8 x2,int8 y2,int8 fill,int8 color)" `772 
-V L "i" 7 285 "int8" `779 
-V L "xmin" 7 285 "int8" `780 
-V L "xmax" 7 285 "int8" `781 
-V L "ymin" 7 285 "int8" `782 
-V L "ymax" 7 285 "int8" `783 
-C L "glcd_rect" 7 2 1 "FUNCTION"
-C L "glcd_rect" 7 2 1 "FUNCTION"
-C L "glcd_rect" 7 2 1 "FUNCTION"
-C L "glcd_bar" 7 2 5 "FUNCTION"
-F N "glcd_bar" 7 337 ""
-V L "x1" 7 337 "int8" `785 
-V L "y1" 7 337 "int8" `786 
-V L "x2" 7 337 "int8" `787 
-V L "y2" 7 337 "int8" `788 
-V L "width" 7 337 "int8" `789 
-V L "color" 7 337 "int8" `790 
-F G "glcd_bar" 7 339 "void(int8 x1,int8 y1,int8 x2,int8 y2,int8 width,int8 color)" `784 
-V L "half_width" 7 340 "int8" `791 
-V L "dy" 7 341 "sint16" `792 
-V L "dx" 7 341 "sint16" `793 
-V L "addx" 7 342 "sint8" `794 
-V L "addy" 7 342 "sint8" `795 
-V L "j" 7 342 "sint8" `796 
-V L "p" 7 343 "sint16" `797 
-V L "diff" 7 343 "sint16" `798 
-V L "c1" 7 343 "sint16" `799 
-V L "c2" 7 343 "sint16" `800 
-V L "i" 7 350 "int8" `801 
-V L "temp" 7 361 "sint16" `805 
-V L "temp" 7 369 "sint16" `806 
-C L "glcd_circle" 7 2 5 "FUNCTION"
-F N "glcd_circle" 7 437 ""
-V L "x" 7 437 "int8" `808 
-V L "y" 7 437 "int8" `809 
-V L "radius" 7 437 "int8" `810 
-V L "fill" 7 437 "int8" `811 
-V L "color" 7 437 "int8" `812 
-F G "glcd_circle" 7 439 "void(int8 x,int8 y,int8 radius,int8 fill,int8 color)" `807 
-V L "a" 7 443 "sint8" `813 
-V L "b" 7 443 "sint8" `814 
-V L "p" 7 443 "sint8" `815 
-C L "glcd_text57" 7 2 5 "FUNCTION"
-F N "glcd_text57" 7 489 ""
-V L "x" 7 489 "int8" `817 
-V L "y" 7 489 "int8" `818 
-V L "textptr" 7 489 "*int8" `819 
-V L "size" 7 489 "int8" `820 
-V L "color" 7 489 "int8" `821 
-F G "glcd_text57" 7 491 "void(int8 x,int8 y,*int8 textptr,int8 size,int8 color)" `816 
-V L "j" 7 492 "int8" `822 
-V L "k" 7 492 "int8" `823 
-V L "l" 7 492 "int8" `824 
-V L "m" 7 492 "int8" `825  "Loop counters"
-V L "pixelData" 7 493 "int8[5]" `826  "Stores character data"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 2 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-C L "glcd_text57" 7 2 1 "FUNCTION"
-D G "escala" 0 11 "-0.20" "Escala negativa para que crezca hacia arriba."
-D G "limpiarGrafico" 0 12 "limpiarPorcion(0,20,128,44)" "Limpia el area del grafico"
-V G "x" 0 18 "int8" `828 
-V G "y" 0 19 "sint16" `829 
-V G "offset" 0 20 "int8" `830 
-C L "mostrarBT" 0 9 3 "FUNCTION"
+D G "HDM64GS12" 3 63 ""
+D G "GLCD_WIDTH" 3 66 "128"
+D G "GLCD_CS1" 3 70 "PIN_B0" "Chip Selection 1"
+D G "GLCD_CS2" 3 74 "PIN_B1" "Chip Selection 2"
+D G "GLCD_DI" 3 78 "PIN_B2" "Data or Instruction input"
+D G "GLCD_RW" 3 82 "PIN_B4" "Read/Write"
+D G "GLCD_E" 3 86 "PIN_B5" "Enable"
+D G "GLCD_RST" 3 90 "PIN_C0" "Reset"
+D G "GLCD_LEFT" 3 93 "0"
+D G "GLCD_RIGHT" 3 94 "1"
+D G "ON" 3 97 "1"
+D G "OFF" 3 101 "0"
+C L "jump_to_isr" 3 2 1 "FUNCTION"
+F N "glcd_init" 3 107 ""
+V L "mode" 3 107 "int8" `634 
+f G "glcd_init" 3 107 "void(int8 mode)" `633 
+F N "glcd_pixel" 3 108 ""
+V L "x" 3 108 "int8" `636 
+V L "y" 3 108 "int8" `637 
+V L "color" 3 108 "int8" `638 
+f G "glcd_pixel" 3 108 "void(int8 x,int8 y,int8 color)" `635 
+F N "glcd_fillScreen" 3 109 ""
+V L "color" 3 109 "int8" `640 
+f G "glcd_fillScreen" 3 109 "void(int8 color)" `639 
+F N "glcd_writeByte" 3 110 ""
+V L "side" 3 110 "int8" `642 
+V L "data" 3 110 "int8" `643 
+f G "glcd_writeByte" 3 110 "void(int8 side,int8 data)" `641 
+F N "glcd_readByte" 3 111 ""
+V L "side" 3 111 "int8" `645 
+f G "glcd_readByte" 3 111 "int8(int8 side)" `644 
+F N "glcd_update" 3 112 ""
+f G "glcd_update" 3 112 "void()" `646  "Purpose:       Initialize the LCD."
+C L "glcd_update" 3 2 3 "FUNCTION"
+F N "glcd_init" 3 128 ""
+V L "mode" 3 128 "int8" `648 
+F G "glcd_init" 3 129 "void(int8 mode)" `633  "Initialze some pins"
+C L "glcd_init" 3 2 1 "FUNCTION"
+C L "glcd_init" 3 2 1 "FUNCTION"
+C L "glcd_init" 3 2 1 "FUNCTION"
+C L "glcd_init" 3 2 1 "FUNCTION"
+C L "glcd_init" 3 2 1 "FUNCTION"
+C L "glcd_init" 3 2 1 "FUNCTION"
+C L "glcd_init" 3 2 1 "FUNCTION"
+C L "glcd_init" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 5 "FUNCTION"
+F N "glcd_pixel" 3 198 ""
+V L "x" 3 198 "int8" `636 
+V L "y" 3 198 "int8" `637 
+V L "color" 3 198 "int8" `651 
+F G "glcd_pixel" 3 226 "void(int8 x,int8 y,int8 color)" `635 
+V L "data" 3 227 "int8" `648 
+V L "side" 3 228 "int1" `649 
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_pixel" 3 2 1 "FUNCTION"
+C L "glcd_fillScreen" 3 2 3 "FUNCTION"
+F N "glcd_fillScreen" 3 261 ""
+V L "color" 3 261 "int8" `651 
+F G "glcd_fillScreen" 3 279 "void(int8 color)" `639 
+V L "i" 3 280 "int8" `650 
+V L "j" 3 280 "int8" `651  "Loop through the vertical pages"
+C L "glcd_fillScreen" 3 2 1 "FUNCTION"
+C L "glcd_fillScreen" 3 2 1 "FUNCTION"
+C L "glcd_fillScreen" 3 2 1 "FUNCTION"
+C L "glcd_fillScreen" 3 2 2 "FUNCTION"
+C L "glcd_fillScreen" 3 2 1 "FUNCTION"
+C L "glcd_fillScreen" 3 2 1 "FUNCTION"
+C L "glcd_writeByte" 3 2 3 "FUNCTION"
+F N "glcd_writeByte" 3 306 ""
+V L "side" 3 306 "int8" `642 
+V L "data" 3 306 "int8" `657 
+F G "glcd_writeByte" 3 307 "void(int8 side,int8 data)" `641 
+C L "glcd_writeByte" 3 2 1 "FUNCTION"
+C L "glcd_writeByte" 3 2 1 "FUNCTION"
+C L "glcd_writeByte" 3 2 1 "FUNCTION"
+C L "glcd_writeByte" 3 2 1 "FUNCTION"
+C L "glcd_writeByte" 3 2 1 "FUNCTION"
+C L "glcd_readByte" 3 2 2 "FUNCTION"
+F N "glcd_readByte" 3 332 ""
+V L "side" 3 332 "int8" `656 
+F G "glcd_readByte" 3 333 "int8(int8 side)" `644 
+V L "data" 3 334 "int8" `655  "Stores the data read from the LCD"
+C L "glcd_readByte" 3 2 1 "FUNCTION"
+C L "glcd_readByte" 3 2 1 "FUNCTION"
+C L "glcd_readByte" 3 2 1 "FUNCTION"
+C L "glcd_readByte" 3 2 1 "FUNCTION"
+C L "glcd_readByte" 3 2 1 "FUNCTION"
+C L "glcd_readByte" 3 2 1 "FUNCTION"
+C L "glcd_readByte" 3 2 1 "FUNCTION"
+D G "GRAPHICS_DRAWING_FUNCTIONS" 4 59 ""
+D G "YES" 4 73 "1"
+D G "NO" 4 77 "0"
+V G "FONT" 4 85 "[51][5]" `657 
+V G "FONT2" 4 137 "[44][5]" `661 
+C L "glcd_line" 4 2 6 "FUNCTION"
+F N "glcd_line" 4 195 ""
+V L "x1" 4 195 "int8" `665 
+V L "y1" 4 195 "int8" `666 
+V L "x2" 4 195 "int8" `667 
+V L "y2" 4 195 "int8" `668 
+V L "color" 4 195 "int8" `669 
+F G "glcd_line" 4 197 "void(int8 x1,int8 y1,int8 x2,int8 y2,int8 color)" `664 
+V L "dy" 4 198 "int16" `670 
+V L "dx" 4 198 "int16" `671 
+V L "addx" 4 199 "sint8" `672 
+V L "addy" 4 199 "sint8" `673 
+V L "P" 4 200 "sint16" `674 
+V L "diff" 4 200 "sint16" `675 
+V L "i" 4 207 "int8" `676 
+C L "glcd_rect" 4 2 6 "FUNCTION"
+F N "glcd_rect" 4 277 ""
+V L "x1" 4 277 "int8" `678 
+V L "y1" 4 277 "int8" `679 
+V L "x2" 4 277 "int8" `680 
+V L "y2" 4 277 "int8" `681 
+V L "fill" 4 277 "int8" `682 
+V L "color" 4 277 "int8" `683 
+F G "glcd_rect" 4 279 "void(int8 x1,int8 y1,int8 x2,int8 y2,int8 fill,int8 color)" `677 
+V L "i" 4 285 "int8" `684 
+V L "xmin" 4 285 "int8" `685 
+V L "xmax" 4 285 "int8" `686 
+V L "ymin" 4 285 "int8" `687 
+V L "ymax" 4 285 "int8" `688 
+C L "glcd_rect" 4 2 1 "FUNCTION"
+C L "glcd_rect" 4 2 1 "FUNCTION"
+C L "glcd_rect" 4 2 1 "FUNCTION"
+C L "glcd_bar" 4 2 5 "FUNCTION"
+F N "glcd_bar" 4 337 ""
+V L "x1" 4 337 "int8" `690 
+V L "y1" 4 337 "int8" `691 
+V L "x2" 4 337 "int8" `692 
+V L "y2" 4 337 "int8" `693 
+V L "width" 4 337 "int8" `694 
+V L "color" 4 337 "int8" `695 
+F G "glcd_bar" 4 339 "void(int8 x1,int8 y1,int8 x2,int8 y2,int8 width,int8 color)" `689 
+V L "half_width" 4 340 "int8" `696 
+V L "dy" 4 341 "sint16" `697 
+V L "dx" 4 341 "sint16" `698 
+V L "addx" 4 342 "sint8" `699 
+V L "addy" 4 342 "sint8" `700 
+V L "j" 4 342 "sint8" `701 
+V L "P" 4 343 "sint16" `702 
+V L "diff" 4 343 "sint16" `703 
+V L "c1" 4 343 "sint16" `704 
+V L "c2" 4 343 "sint16" `705 
+V L "i" 4 350 "int8" `706 
+V L "temp" 4 361 "sint16" `710 
+V L "temp" 4 369 "sint16" `711 
+C L "glcd_circle" 4 2 5 "FUNCTION"
+F N "glcd_circle" 4 437 ""
+V L "x" 4 437 "int8" `713 
+V L "y" 4 437 "int8" `714 
+V L "radius" 4 437 "int8" `715 
+V L "fill" 4 437 "int8" `716 
+V L "color" 4 437 "int8" `717 
+F G "glcd_circle" 4 439 "void(int8 x,int8 y,int8 radius,int8 fill,int8 color)" `712 
+V L "a" 4 443 "sint8" `718 
+V L "b" 4 443 "sint8" `719 
+V L "P" 4 443 "sint8" `720 
+C L "glcd_text57" 4 2 5 "FUNCTION"
+F N "glcd_text57" 4 489 ""
+V L "x" 4 489 "int8" `722 
+V L "y" 4 489 "int8" `723 
+V L "textptr" 4 489 "*int8" `724 
+V L "size" 4 489 "int8" `725 
+V L "color" 4 489 "int8" `726 
+F G "glcd_text57" 4 491 "void(int8 x,int8 y,*int8 textptr,int8 size,int8 color)" `721 
+V L "j" 4 492 "int8" `727 
+V L "k" 4 492 "int8" `728 
+V L "l" 4 492 "int8" `729 
+V L "m" 4 492 "int8" `730  "Loop counters"
+V L "pixelData" 4 493 "int8[5]" `731  "Stores character data"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 2 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+C L "glcd_text57" 4 2 1 "FUNCTION"
+D G "escala" 0 10 "-0.6" "Escala negativa para que crezca hacia arriba."
+D G "limpiarGrafico" 0 11 "limpiarPorcion(0,20,128,44)" "Limpia el area del grafico"
+V G "x" 0 17 "int8" `733 
+V G "y" 0 18 "float" `734 
+V G "offset" 0 19 "int8" `735 
+V G "habilitarLectura" 0 20 "int1" `736 
+C L "mostrarBT" 0 8 3 "FUNCTION"
 F N "mostrarBT" 0 26 ""
-V L "estado" 0 26 "int8" `832 
-F G "mostrarBT" 0 26 "void(int8 estado)" `831  "Mostramos BT si el bluetooth esta prendido"
-V L "bt" 0 27 "int8[1]" `833 
-F N "limpiarPorcion" 0 31 ""
-V L "x1" 0 31 "int8" `835 
-V L "y1" 0 31 "int8" `836 
-V L "x2" 0 31 "int8" `837 
-V L "y2" 0 31 "int8" `838 
-F G "limpiarPorcion" 0 31 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `834  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
-V L "i" 0 32 "int8" `839 
-V L "j" 0 33 "int8" `840 
-C L "limpiarPorcion" 0 9 1 "FUNCTION"
-F N "nuevaLinea" 0 39 ""
-V L "temp" 0 39 "float" `842 
-F G "nuevaLinea" 0 39 "void(float temp)" `841  "Funcion para graficar las nuevas lineas de temperatura"
-V L "x1" 0 40 "int8" `843 
-C L "nuevaLinea" 0 9 1 "FUNCTION"
-C L "nuevaLinea" 0 9 1 "FUNCTION"
-C L "nuevaLinea" 0 9 1 "FUNCTION"
-F N "turn_on_bt" 0 51 ""
-F G "turn_on_bt" 0 51 "void()" `856 
-V L "value" 0 52 "int8" `857 
-C L "turn_on_bt" 0 9 1 "FUNCTION"
-C L "turn_on_bt" 0 9 2 "FUNCTION"
-C L "turn_on_bt" 0 9 1 "FUNCTION"
-C L "turn_on_bt" 0 9 1 "FUNCTION"
-C L "turn_on_bt" 0 9 2 "FUNCTION"
-C L "turn_on_bt" 0 9 1 "FUNCTION"
-C L "turn_on_bt" 0 9 1 "FUNCTION"
-C L "RB_isr" 0 9 2 "FUNCTION"
-F N "RB_isr" 0 70 ""
-F G "RB_isr" 0 70 "void()" `858  "Prueba de interrupciones"
-C L "MAIN" 0 9 1 "FUNCTION"
-F N "MAIN" 0 79 ""
-F G "MAIN" 0 80 "void()" `859 
-V L "str" 0 81 "int8[10]" `860 
-V L "temp" 0 82 "int8[1]" `861 
-V L "t" 0 83 "float[1]" `862 
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-V L "i" 0 93 "int8" `865 
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
+V L "estado" 0 26 "int8" `738 
+F G "mostrarBT" 0 26 "void(int8 estado)" `737  "Mostramos BT si el bluetooth esta prendido"
+F N "limpiarPorcion" 0 30 ""
+V L "x1" 0 30 "int8" `742 
+V L "y1" 0 30 "int8" `743 
+V L "x2" 0 30 "int8" `744 
+V L "y2" 0 30 "int8" `745 
+F G "limpiarPorcion" 0 30 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `741  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
+V L "i" 0 31 "int8" `746 
+V L "j" 0 32 "int8" `747 
+C L "limpiarPorcion" 0 8 1 "FUNCTION"
+F N "nuevaLinea" 0 38 ""
+V L "temp" 0 38 "float" `749 
+F G "nuevaLinea" 0 38 "void(float temp)" `748  "Funcion para graficar las nuevas lineas de temperatura"
+V L "x1" 0 39 "int8" `750 
+C L "nuevaLinea" 0 8 1 "FUNCTION"
+C L "nuevaLinea" 0 8 1 "FUNCTION"
+C L "nuevaLinea" 0 8 1 "FUNCTION"
+F N "turn_on_bt" 0 50 ""
+F G "turn_on_bt" 0 50 "void()" `761 
+V L "value" 0 51 "int8" `762 
+C L "turn_on_bt" 0 8 1 "FUNCTION"
+C L "turn_on_bt" 0 8 2 "FUNCTION"
+C L "turn_on_bt" 0 8 1 "FUNCTION"
+C L "turn_on_bt" 0 8 1 "FUNCTION"
+C L "turn_on_bt" 0 8 2 "FUNCTION"
+C L "turn_on_bt" 0 8 1 "FUNCTION"
+C L "turn_on_bt" 0 8 1 "FUNCTION"
+C L "RB_isr" 0 8 2 "FUNCTION"
+F N "RB_isr" 0 69 ""
+F G "RB_isr" 0 69 "void()" `763  "Prueba de interrupciones"
+C L "RB_isr" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+F N "MAIN" 0 84 ""
+F G "MAIN" 0 85 "void()" `767 
+V L "iAn" 0 86 "int16" `768 
+V L "t" 0 87 "float" `769 
+V L "str" 0 88 "int8[10]" `770 
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
+C L "MAIN" 0 8 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0
