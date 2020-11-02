@@ -131,7 +131,7 @@ void main()
          }
          sprintf(str, "%4.2f", t); //Convertimos la temperatura float en un char*
          puts(str); //Enviamos la temperatura por bluetooth
-         delay_ms(250);
+         delay_ms(500);
       }
    }
 }

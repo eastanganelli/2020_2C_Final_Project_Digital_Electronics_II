@@ -1,10 +1,9 @@
-F N "nuevaLinea" 0 38 ""
-D G "__PCM__" 0 46 ""5.076""
-D G "__DEVICE__" 0 46 "877"
-D G "__DATE__" 0 46 ""30-oct.-20""
-D G "__TIME__" 0 46 ""18:13:34""
-D G "_UNICODE" 0 46 ""?""
-D G "__EVAL" 0 46 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
+D G "__PCM__" 0 139 ""5.076""
+D G "__DEVICE__" 0 139 "877"
+D G "__DATE__" 0 139 ""01-Nov-20""
+D G "__TIME__" 0 139 ""21:12:06""
+D G "_UNICODE" 0 139 ""?""
+D G "__EVAL" 0 139 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `54 
@@ -1262,46 +1261,50 @@ V G "x" 0 17 "int8" `733
 V G "y" 0 18 "float" `734 
 V G "offset" 0 19 "int8" `735 
 V G "habilitarLectura" 0 20 "int1" `736 
-C L "mostrarBT" 0 8 3 "FUNCTION"
-F N "mostrarBT" 0 26 ""
-V L "estado" 0 26 "int8" `738 
-F G "mostrarBT" 0 26 "void(int8 estado)" `737  "Mostramos BT si el bluetooth esta prendido"
-F N "limpiarPorcion" 0 30 ""
-V L "x1" 0 30 "int8" `742 
-V L "y1" 0 30 "int8" `743 
-V L "x2" 0 30 "int8" `744 
-V L "y2" 0 30 "int8" `745 
-F G "limpiarPorcion" 0 30 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `741  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
-V L "i" 0 31 "int8" `746 
-V L "j" 0 32 "int8" `747 
+V G "received" 0 21 "int8" `737  "/Fin Variables Globales"
 C L "limpiarPorcion" 0 8 1 "FUNCTION"
-F N "nuevaLinea" 0 38 ""
-V L "temp" 0 38 "float" `749 
-F G "nuevaLinea" 0 38 "void(float temp)" `748  "Funcion para graficar las nuevas lineas de temperatura"
-V L "x1" 0 39 "int8" `750 
+F N "limpiarPorcion" 0 26 ""
+V L "x1" 0 26 "int8" `739 
+V L "y1" 0 26 "int8" `740 
+V L "x2" 0 26 "int8" `741 
+V L "y2" 0 26 "int8" `742 
+F G "limpiarPorcion" 0 26 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `738  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
+V L "i" 0 27 "int8" `743 
+V L "j" 0 28 "int8" `744 
+C L "limpiarPorcion" 0 8 1 "FUNCTION"
+F N "nuevaLinea" 0 34 ""
+V L "temp" 0 34 "float" `746 
+F G "nuevaLinea" 0 34 "void(float temp)" `745  "Funcion para graficar las nuevas lineas de temperatura"
+V L "x1" 0 35 "int8" `747 
 C L "nuevaLinea" 0 8 1 "FUNCTION"
 C L "nuevaLinea" 0 8 1 "FUNCTION"
 C L "nuevaLinea" 0 8 1 "FUNCTION"
-F N "turn_on_bt" 0 50 ""
-F G "turn_on_bt" 0 50 "void()" `761 
-V L "value" 0 51 "int8" `762 
-C L "turn_on_bt" 0 8 1 "FUNCTION"
-C L "turn_on_bt" 0 8 2 "FUNCTION"
-C L "turn_on_bt" 0 8 1 "FUNCTION"
+F N "turn_on_bt" 0 46 ""
+F G "turn_on_bt" 0 46 "void()" `758 
+V L "value" 0 47 "int8" `759 
 C L "turn_on_bt" 0 8 1 "FUNCTION"
 C L "turn_on_bt" 0 8 2 "FUNCTION"
 C L "turn_on_bt" 0 8 1 "FUNCTION"
 C L "turn_on_bt" 0 8 1 "FUNCTION"
 C L "RB_isr" 0 8 2 "FUNCTION"
-F N "RB_isr" 0 69 ""
-F G "RB_isr" 0 69 "void()" `763  "Prueba de interrupciones"
+F N "RB_isr" 0 61 ""
+F G "RB_isr" 0 61 "void()" `763  "Prueba de interrupciones"
 C L "RB_isr" 0 8 1 "FUNCTION"
+F N "serial_interrupt" 0 75 ""
+F G "serial_interrupt" 0 75 "void()" `767 
+C L "serial_interrupt" 0 8 1 "FUNCTION"
+C L "serial_interrupt" 0 8 1 "FUNCTION"
+C L "serial_interrupt" 0 8 1 "FUNCTION"
+C L "serial_interrupt" 0 8 1 "FUNCTION"
+C L "serial_interrupt" 0 8 1 "FUNCTION"
+C L "serial_interrupt" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
-F N "MAIN" 0 84 ""
-F G "MAIN" 0 85 "void()" `767 
-V L "iAn" 0 86 "int16" `768 
-V L "t" 0 87 "float" `769 
-V L "str" 0 88 "int8[10]" `770 
+F N "MAIN" 0 91 ""
+F G "MAIN" 0 92 "void()" `772 
+V L "iAn" 0 93 "int16" `773 
+V L "t" 0 94 "float" `774 
+V L "str" 0 95 "int8[10]" `775 
+C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"

@@ -1,25 +1,25 @@
 
-ROM used:   3675/8192 (45%)
-            3708/8192 (45%) including unused fragments
+ROM used:   3518/8192 (43%)
+            3534/8192 (43%) including unused fragments
 
-            2.2 Average locations per line
-            12.0 Average locations per statement
+            2.1 Average locations per line
+            11.3 Average locations per statement
 
-RAM used:   56/368 (15%) at main() level
+RAM used:   57/368 (15%) at main() level
             135/368 (37%) worst case
 
-Stack used: 8 worst case (4 in main + 4 for interrupts)
+Stack used: 7 worst case (3 in main + 4 for interrupts)
 Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  129    66  22  main.c
+  138    72  23  main.c
     5     0   0  main.h
-  652     0   0  D:\Program Files\PICC\Devices\16F877.h
-  356    76  25  D:\Program Files\PICC\Drivers\HDM64GS12.c
-  540   163  53  D:\Program Files\PICC\Drivers\graphics.c
+  652     0   0  C:\Program Files (x86)\PICC\Devices\16F877.h
+  356    76  24  C:\Program Files (x86)\PICC\Drivers\HDM64GS12.c
+  540   163  52  C:\Program Files (x86)\PICC\Drivers\graphics.c
 ----- -----
- 1682   305 Total
+ 1691   311 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -27,52 +27,52 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0    299   8    1    555  3.4  glcd_init
 0    130   4    7    779  7.2  glcd_pixel
  Inline         4    506  4.8  glcd_fillScreen
-0     39   1    2   1397  6.9  @MUL88
+0     39   1    2             @MUL88
 0     43   1    2    307  2.8  glcd_writeByte
 0     47   1    2    318  2.8  glcd_readByte
-0    262   7    0   1397  6.9  @const657
-0    227   6    0   1397  6.9  @const661
+0    262   7    0             @const657
+0    227   6    0             @const661
 0    206   6   17   1519  9.2  glcd_line
 0    248   7   20   1587 11.7  glcd_text57
-0     27   1    8     78  1.9  mostrarBT
 0     29   1    6    265  5.1  limpiarPorcion
 1    180   5   10    366  4.6  nuevaLinea
-0    117   3   13   1397  6.9  @MULFF
+0    117   3   13             @MULFF
 0     29   1    2             @ITOF
 1    321   9   16             @ADDFF
-0     31   1    4   1397  6.9  @SFTOI
- Inline         2    181  3.1  turn_on_bt
+0     31   1    4             @SFTOI
+0      2   0    0             @const760
 0     75   2   26    380  5.2  RB_isr
-0     15   0    0   1427  6.9  @const764
-1    461  13   33   1460  6.9  MAIN
-0     17   0    0   1397  6.9  @const773
-1    205   6   14   1397  6.9  @DIVFF
+0     15   0    0             @const764
+0     64   2   11    292  4.2  serial_interrupt
+1    442  13   33   1568  6.9  MAIN
+0     17   0    0             @const778
+1    205   6   14             @DIVFF
 0     63   2   10             @FLT
-0     13   0    1   1397  6.9  @SPRINTF
-0     31   1    5   1397  6.9  @FTOSD
-1     79   2   13   1397  6.9  @DIV3232
-1    209   6   13             @PRINTF_L32D_783FPFPF
-1    205   6   13   1397  6.9  @PRINTF_L32D_9600_62_63FPFPF
- Inline         0   1397  6.9  @cinit1
+0     13   0    1             @SPRINTF
+ Inline         5             @FTOSD
+1     79   2   13             @DIV3232
+1    234   7   13             @PRINTF_L32D_788FPFPF
+1     25   1    2             @PSTRINGR_1
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               26
-    Statements              305
-    Comments                506
-    Volume (V)              44702
-    Difficulty (D)          158.6
-    Effort to implement (E) 7087619
-    Time to implement (T)   109 hours, 23 minutes
-    Est Delivered Bugs (B)  12
-    Cyclomatic Complexity   76
-    Maintainability (MI)    118
+    Functions               12
+    Statements              311
+    Comments                508
+    Volume (V)              13035
+    Difficulty (D)          65.9
+    Effort to implement (E) 859499
+    Time to implement (T)   13 hours, 16 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   35
+    Maintainability (MI)    51
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-0002E    43  0  
-0002F-007FF  1968  33  
-00800-00FFF  1660  388  
+00004-00037    52  0  
+00038-007FF  1976  16  
+00800-00FFF  1486  562  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  
 

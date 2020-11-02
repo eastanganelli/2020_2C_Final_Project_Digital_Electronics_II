@@ -72,7 +72,8 @@ void RB_isr(){ //Prueba de interrupciones
 }
 
 #int_rda
-void serial_interrupt() {
+void serial_interrupt()
+{
    disable_interrupts(int_rda);
    received = getc();
    if(received == 'x') {
@@ -106,9 +107,7 @@ void main()
      
    while(TRUE){
       trisb|=0b01000000;
-      if(kbhit()) { // if data received 
-         enable_interrupts(int_rda);
-      }
+      enable_interrupts(int_rda);
       if(habilitarLectura){
          set_adc_channel(0); //Seteamos el canal que vamos a leer
          delay_us(10); //Esperamos 10 us
@@ -120,6 +119,8 @@ void main()
             sprintf(str, "%4.2f°C", t); //Convertimos la temperatura float en un char*
             limpiarPorcion(12*6, 10, 9*6, 7); //Limpiamos la porcion de pantalla que tiene el valor de la temperatura. 12 es la cantiad de caracteres de "temperatura:"
             glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
+            sprintf(str, "%ld", iAn); //Convertimos la temperatura float en un char*
+            puts(str); //Enviamos la temperatura por bluetooth
          }
          if(t<=50){ //Si t es menor o igual a 50 la agregamos al grafico
             nuevaLinea(t); //Dibujamos la nueva linea en el grafico.
@@ -129,9 +130,7 @@ void main()
             glcd_text57(3, 0, (char*)"T>50", 1, ON); //Esto significa que no graficamos temperaturas superiores a 50
             y=t; //igualamos el dato anterior al valor de temperatura para no refrescar otra vez el valor de la temperatura
          }
-         sprintf(str, "%4.2f", t); //Convertimos la temperatura float en un char*
-         puts(str); //Enviamos la temperatura por bluetooth
-         delay_ms(250);
+         delay_ms(200);
       }
    }
 }
