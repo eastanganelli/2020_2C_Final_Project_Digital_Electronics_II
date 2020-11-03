@@ -9,6 +9,7 @@
 
 #define escala -0.6 //Escala negativa para que crezca hacia arriba.
 #define limpiarGrafico limpiarPorcion(0,20,128,44) //Limpia el area del grafico
+#define offset 52 //es el offset para la altura de la grafica
 
 ///Fin Defines
 
@@ -16,13 +17,13 @@
 
 int x=0; //Posicion inicial de x para graficar la temperatura
 float y=0; //Posicion inicial de y (Vamos a tener que cambiarla a la primer temperatura leida) para graficar la temperatura
-int offset=52; //es el offset para la altura de la grafica
 int1 habilitarLectura=0; //Variable para habilitar o deshabilitar la captura de datos del sensor
-char received;
+char received = '\0';
 
 ///Fin Variables Globales
 
 ///Funciones
+
 void limpiarPorcion(int x1, int y1, int x2, int y2){ //(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo
    for(int i=x1;i<x1+x2;i++){
       for(int j=y1;j<y1+y2;j++){
@@ -43,18 +44,6 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
    x=x1;
 }
 
-void turn_on_bt() {
-   if(kbhit()) { // if data received 
-      char value;
-      value = getc(); //Obtenemos el dato
-      if(value == "x") { //Si el valor es a
-         //output_high(LED1);   // LED ON
-         glcd_text57(110,0,(char*)"BT",1,ON); //Mostramos BT
-         delay_ms(500); //Delay 500 ms
-      }
-   }
-}
-
 ///Fin Funciones
 
 ///Interrupciones
@@ -65,7 +54,7 @@ void RB_isr(){ //Prueba de interrupciones
       habilitarLectura=~habilitarLectura;
       if(habilitarLectura)
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, ON);
-      else{
+      else {
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
          limpiarGrafico;
          x=0;
@@ -75,16 +64,11 @@ void RB_isr(){ //Prueba de interrupciones
 
 #int_rda
 void serial_interrupt() {
-   disable_interrupts(int_rda);
    received = getc();
-   if(received == 'x') {
-      //output_high(LED1);   // LED ON
+   if(received == 'a') {
       glcd_text57(110,0,(char*)"BT",1,ON); //Mostramos BT
-      delay_ms(500); //Delay 500 ms
-   } else {
-      //output_high(LED1);   // LED ON
+   } else if(received == 'b') {
       glcd_text57(110,0,(char*)"BT",1,OFF); //Mostramos BT
-      delay_ms(500); //Delay 500 ms
    }
 }
 
@@ -94,31 +78,22 @@ void main()
 {
    int16 iAn;
    float t;
-   char str[10];
+   char str[8];
    
    setup_adc_ports(AN0); //seteamos el pin A0 como analogico
    setup_adc(ADC_CLOCK_INTERNAL); //Establecemos el reloj interno
    glcd_init(on); //Inicializamos el lcd
    enable_interrupts(INT_RB); //Habilitamos las interrupciones del RB4-7
+   enable_interrupts(int_rda);
    enable_interrupts(GLOBAL); //Habilitamos las interrupciones globales
 
    glcd_text57(0,10,(char*)"Temperatura:",1,ON); //Escribimos el texto "Tempreatura:" en la posicion 0,10
    glcd_line(0, 8, 128, 8, ON); //Pintamos una linea por debajo del barra de notificaciones
    glcd_line(0, 19, 128, 19, ON); //Pintamos una linea por debajo de la temperatura
-     
+   
    while(TRUE){
       trisb|=0b01000000;
-      enable_interrupts(int_rda);
       if(habilitarLectura){
-         if(kbhit()) { // if data received 
-            char value;
-            value = getc(); //Obtenemos el dato
-            if(value == "x") { //Si el valor es a
-               //output_high(LED1);   // LED ON
-               glcd_text57(110,0,(char*)"BT",1,ON); //Mostramos BT
-               delay_ms(500); //Delay 500 ms
-            } else { glcd_text57(110,0,(char*)"BT",1,ON); } //Mostramos BT
-         }
          set_adc_channel(0); //Seteamos el canal que vamos a leer
          delay_us(10); //Esperamos 10 us
          iAn=read_adc(); //Levantamos el dato
@@ -144,3 +119,4 @@ void main()
       }
    }
 }
+

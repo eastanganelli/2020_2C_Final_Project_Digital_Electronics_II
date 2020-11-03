@@ -1,77 +1,78 @@
 
-ROM used:   3472/8192 (42%)
-            3475/8192 (42%) including unused fragments
+ROM used:   3570/8192 (44%)
+            3591/8192 (44%) including unused fragments
 
             2.1 Average locations per line
-            11.5 Average locations per statement
+            11.2 Average locations per statement
 
-RAM used:   52/368 (14%) at main() level
-            120/368 (33%) worst case
+RAM used:   55/368 (15%) at main() level
+            135/368 (37%) worst case
 
 Stack used: 7 worst case (3 in main + 4 for interrupts)
 Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  125    64  21  main.c
+  146    80  25  main.c
     5     0   0  main.h
   652     0   0  D:\Program Files\PICC\Devices\16F877.h
-  356    76  25  D:\Program Files\PICC\Drivers\HDM64GS12.c
-  540   163  54  D:\Program Files\PICC\Drivers\graphics.c
+  356    76  24  D:\Program Files\PICC\Drivers\HDM64GS12.c
+  540   163  51  D:\Program Files\PICC\Drivers\graphics.c
 ----- -----
- 1678   303 Total
+ 1699   319 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
-1     22   1    1             @delay_ms1
-0    299   9    1    555  3.4  glcd_init
+0     20   1    1             @delay_ms1
+0    299   8    1    555  3.4  glcd_init
 0    130   4    7    779  7.2  glcd_pixel
  Inline         4    506  4.8  glcd_fillScreen
 0     39   1    2             @MUL88
 0     43   1    2    307  2.8  glcd_writeByte
 0     47   1    2    318  2.8  glcd_readByte
-0    262   8    0             @const657
-0    227   7    0             @const661
+0    262   7    0             @const657
+0    227   6    0             @const661
 0    206   6   17   1519  9.2  glcd_line
-0    246   7   20   1587 11.7  glcd_text57
+0    248   7   20   1587 11.7  glcd_text57
 0     29   1    6    265  5.1  limpiarPorcion
-1    158   5   10    366  4.6  nuevaLinea
+1    160   4   10    366  4.6  nuevaLinea
 0    117   3   13             @MULFF
 1    321   9   16             @ADDFF
 1     31   1    4             @SFTOI
-0     73   2   16    380  5.2  RB_isr
-0     15   0    0             @const756
-0     53   2   10    272  4.1  serial_interrupt
-1    427  12   29   1531  6.9  MAIN
-0     17   0    0             @const770
+0     21   1    0    138  3.0  TIMER0_isr
+0     87   2   28    502  5.2  RB_isr
+0     15   0    0             @const758
+0     50   1   13    248  4.1  serial_interrupt
+1    488  14   31   1764  7.4  MAIN
+0     17   0    0             @const772
 0     31   1    2             @ITOF
 1    205   6   14             @DIVFF
 0     63   2   10             @FLT
 0     13   0    1             @SPRINTF
  Inline         5             @FTOSD
-0     79   2   13             @DIV3232
-1    238   7   13             @PRINTF_L32D_782FPFPF
+1     79   2   13             @DIV3232
+1    234   7   13             @PRINTF_L32D_784FPFPF
 1     25   1    2             @PSTRINGR_1
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               12
-    Statements              303
-    Comments                498
-    Volume (V)              12948
-    Difficulty (D)          66.0
-    Effort to implement (E) 855003
-    Time to implement (T)   13 hours, 12 minutes
+    Functions               13
+    Statements              319
+    Comments                500
+    Volume (V)              13760
+    Difficulty (D)          69.8
+    Effort to implement (E) 960624
+    Time to implement (T)   14 hours, 49 minutes
     Est Delivered Bugs (B)  3
-    Cyclomatic Complexity   35
-    Maintainability (MI)    55
+    Cyclomatic Complexity   38
+    Maintainability (MI)    73
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00003     4  0  
-00004-00037    52  0  
-00038-007FF  1989  3  
-00800-00FFF  1427  621  
+00004-0003E    59  0  
+0003F-007FF  1964  21  
+00800-00FFF  1543  505  
 01000-017FF     0  2048  
 01800-01FFF     0  2048  
 

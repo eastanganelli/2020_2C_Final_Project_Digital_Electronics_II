@@ -1,9 +1,9 @@
-D G "__PCM__" 0 126 ""5.076""
-D G "__DEVICE__" 0 126 "877"
-D G "__DATE__" 0 126 ""03-nov.-20""
-D G "__TIME__" 0 126 ""11:45:17""
-D G "_UNICODE" 0 126 ""?""
-D G "__EVAL" 0 126 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
+D G "__PCM__" 0 147 ""5.076""
+D G "__DEVICE__" 0 147 "877"
+D G "__DATE__" 0 147 ""03-nov.-20""
+D G "__TIME__" 0 147 ""14:56:56""
+D G "_UNICODE" 0 147 ""?""
+D G "__EVAL" 0 147 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `54 
@@ -1262,37 +1262,42 @@ V G "x" 0 18 "int8" `733
 V G "y" 0 19 "float" `734 
 V G "habilitarLectura" 0 20 "int1" `735 
 V G "received" 0 21 "int8" `736 
+V G "ciclos" 0 22 "int8" `737 
 C L "limpiarPorcion" 0 8 2 "FUNCTION"
-F N "limpiarPorcion" 0 27 ""
-V L "x1" 0 27 "int8" `738 
-V L "y1" 0 27 "int8" `739 
-V L "x2" 0 27 "int8" `740 
-V L "y2" 0 27 "int8" `741 
-F G "limpiarPorcion" 0 27 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `737  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
-V L "i" 0 28 "int8" `742 
-V L "j" 0 29 "int8" `743 
+F N "limpiarPorcion" 0 28 ""
+V L "x1" 0 28 "int8" `739 
+V L "y1" 0 28 "int8" `740 
+V L "x2" 0 28 "int8" `741 
+V L "y2" 0 28 "int8" `742 
+F G "limpiarPorcion" 0 28 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `738  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
+V L "i" 0 29 "int8" `743 
+V L "j" 0 30 "int8" `744 
 C L "limpiarPorcion" 0 8 1 "FUNCTION"
-F N "nuevaLinea" 0 35 ""
-V L "temp" 0 35 "float" `745 
-F G "nuevaLinea" 0 35 "void(float temp)" `744  "Funcion para graficar las nuevas lineas de temperatura"
-V L "x1" 0 36 "int8" `746 
+F N "nuevaLinea" 0 36 ""
+V L "temp" 0 36 "float" `746 
+F G "nuevaLinea" 0 36 "void(float temp)" `745  "Funcion para graficar las nuevas lineas de temperatura"
+V L "x1" 0 37 "int8" `747 
 C L "nuevaLinea" 0 8 1 "FUNCTION"
 C L "nuevaLinea" 0 8 1 "FUNCTION"
 C L "nuevaLinea" 0 8 1 "FUNCTION"
-C L "RB_isr" 0 8 2 "FUNCTION"
-F N "RB_isr" 0 52 ""
-F G "RB_isr" 0 52 "void()" `755  "Prueba de interrupciones"
+C L "TIMER0_isr" 0 8 2 "FUNCTION"
+F N "TIMER0_isr" 0 53 ""
+F G "TIMER0_isr" 0 53 "void()" `756 
+F N "RB_isr" 0 65 ""
+F G "RB_isr" 0 65 "void()" `757  "Prueba de interrupciones"
 C L "RB_isr" 0 8 1 "FUNCTION"
-F N "serial_interrupt" 0 66 ""
-F G "serial_interrupt" 0 66 "void()" `759 
+C L "RB_isr" 0 8 1 "FUNCTION"
+F N "serial_interrupt" 0 81 ""
+F G "serial_interrupt" 0 81 "void()" `761 
 C L "serial_interrupt" 0 8 1 "FUNCTION"
 C L "serial_interrupt" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
-F N "MAIN" 0 78 ""
-F G "MAIN" 0 79 "void()" `764 
-V L "iAn" 0 80 "int16" `765 
-V L "t" 0 81 "float" `766 
-V L "str" 0 82 "int8[6]" `767 
+F N "MAIN" 0 92 ""
+F G "MAIN" 0 93 "void()" `766 
+V L "iAn" 0 95 "int16" `769 
+V L "t" 0 96 "float" `770 
+V L "str" 0 97 "int8[8]" `771 
+C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"

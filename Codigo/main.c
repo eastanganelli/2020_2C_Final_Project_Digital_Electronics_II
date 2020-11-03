@@ -19,6 +19,7 @@ int x=0; //Posicion inicial de x para graficar la temperatura
 float y=0; //Posicion inicial de y (Vamos a tener que cambiarla a la primer temperatura leida) para graficar la temperatura
 int1 habilitarLectura=0; //Variable para habilitar o deshabilitar la captura de datos del sensor
 char received = '\0';
+int ciclos=10;
 
 ///Fin Variables Globales
 
@@ -48,15 +49,29 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
 
 ///Interrupciones
 
+#INT_TIMER0
+void TIMER0_isr(){
+	ciclos--;
+	if(ciclos==0){
+		ciclos=10;
+		output_low(pin_b3);
+		delay_ms(50);
+		output_high(pin_b3);
+	}
+	set_timer0(0x40);
+}
+
 #INT_RB
 void RB_isr(){ //Prueba de interrupciones
    if(input(pin_b6)){ //Habilita o deshabilita la captura de datos
       habilitarLectura=~habilitarLectura;
+      disable_interrupts(INT_TIMER0);
       if(habilitarLectura)
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, ON);
       else {
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
          limpiarGrafico;
+         limpiarPorcion(12*6, 10, 9*6, 7); //Limpiamos la porcion de pantalla que tiene el valor de la temperatura. 12 es la cantiad de caracteres de "temperatura:"
          x=0;
       }
    }
@@ -64,7 +79,6 @@ void RB_isr(){ //Prueba de interrupciones
 
 #int_rda
 void serial_interrupt() {
-   disable_interrupts(int_rda);
    received = getc();
    if(received == 'a') {
       glcd_text57(110,0,(char*)"BT",1,ON); //Mostramos BT
@@ -77,14 +91,20 @@ void serial_interrupt() {
 
 void main()
 {
+   trisb=0b01000000;
    int16 iAn;
    float t;
-   char str[6];
+   char str[8];
    
    setup_adc_ports(AN0); //seteamos el pin A0 como analogico
    setup_adc(ADC_CLOCK_INTERNAL); //Establecemos el reloj interno
+   setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256); //setup del timer0
+   set_timer0(0x40); //seteamos el timer0
+   
    glcd_init(on); //Inicializamos el lcd
+   
    enable_interrupts(INT_RB); //Habilitamos las interrupciones del RB4-7
+   enable_interrupts(int_rda);
    enable_interrupts(GLOBAL); //Habilitamos las interrupciones globales
 
    glcd_text57(0,10,(char*)"Temperatura:",1,ON); //Escribimos el texto "Tempreatura:" en la posicion 0,10
@@ -92,21 +112,22 @@ void main()
    glcd_line(0, 19, 128, 19, ON); //Pintamos una linea por debajo de la temperatura
    
    while(TRUE){
-      trisb|=0b01000000;
-      //turn_on_bt();
-      enable_interrupts(int_rda);
       if(habilitarLectura){
          set_adc_channel(0); //Seteamos el canal que vamos a leer
          delay_us(10); //Esperamos 10 us
          iAn=read_adc(); //Levantamos el dato
          t=(5.0*iAn*100.0)/1024.0; //Lo convertemos a temperatura
-           
+         
          if(t!=y){ //Si t es != al dato anterior refrescamos la temperatura y la enviamos al bluetooth
             str[0] = '\0';
             sprintf(str, "%4.2f°C", t); //Convertimos la temperatura float en un char*
             limpiarPorcion(12*6, 10, 9*6, 7); //Limpiamos la porcion de pantalla que tiene el valor de la temperatura. 12 es la cantiad de caracteres de "temperatura:"
             glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
          }
+         if(t<=40)
+         	disable_interrupts(INT_TIMER0);
+         if(t>40)
+         	enable_interrupts(INT_TIMER0);
          if(t<=50){ //Si t es menor o igual a 50 la agregamos al grafico
             nuevaLinea(t); //Dibujamos la nueva linea en el grafico.
             glcd_text57(3, 0, (char*)"T>50", 1, OFF); //ocultamos la notificacion de t>50
