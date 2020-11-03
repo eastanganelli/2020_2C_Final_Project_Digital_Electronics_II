@@ -42,6 +42,16 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
    y=temp;
    x=x1;
 }
+
+void turn_on_bt() {
+   if(kbhit()) { // if data received 
+      received = getc(); //Obtenemos el dato
+      if(received == 'a') { //Si el valor es a
+         glcd_text57(110,0,(char*)"BT",1,ON); //Mostramos BT
+      }
+   }
+}
+
 ///Fin Funciones
 
 ///Interrupciones
@@ -52,7 +62,7 @@ void RB_isr(){ //Prueba de interrupciones
       habilitarLectura=~habilitarLectura;
       if(habilitarLectura)
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, ON);
-      else {
+      else{
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
          limpiarGrafico;
          x=0;
@@ -70,19 +80,21 @@ void serial_interrupt() {
       glcd_text57(110,0,(char*)"BT",1,OFF); //Mostramos BT
    }
 }
+
 ///Fin Interrupciones
 
 void main()
 {
    int16 iAn;
    float t;
-   char str[6];
+   char str[10];
    
    setup_adc_ports(AN0); //seteamos el pin A0 como analogico
    setup_adc(ADC_CLOCK_INTERNAL); //Establecemos el reloj interno
    glcd_init(on); //Inicializamos el lcd
    enable_interrupts(INT_RB); //Habilitamos las interrupciones del RB4-7
    enable_interrupts(GLOBAL); //Habilitamos las interrupciones globales
+   enable_interrupts(int_rda);
 
    glcd_text57(0,10,(char*)"Temperatura:",1,ON); //Escribimos el texto "Tempreatura:" en la posicion 0,10
    glcd_line(0, 8, 128, 8, ON); //Pintamos una linea por debajo del barra de notificaciones
@@ -91,7 +103,6 @@ void main()
    while(TRUE){
       trisb|=0b01000000;
       //turn_on_bt();
-      enable_interrupts(int_rda);
       if(habilitarLectura){
          set_adc_channel(0); //Seteamos el canal que vamos a leer
          delay_us(10); //Esperamos 10 us
