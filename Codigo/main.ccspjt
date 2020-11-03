@@ -158,7 +158,7 @@ D6_E=10
 D6_D=0
 D6_L2=[430]Project Closed.
 D7=03-11-2020
-D7_L=8
+D7_L=13
 D7_L1=[2770]Project Opened.
 D7_L2=[2792]Started Editing.
 D7_L3=[3092]Stopped Editing.
@@ -169,10 +169,15 @@ D7_D=0
 D7_L6=[4122]Project Closed.
 D7_L7=[38716]Project Opened.
 D7_L8=[40505]Project Closed.
+D7_L9=[41566]Project Opened.
+D7_L10=[41760]Started Editing.
+D7_L11=[42081]Stopped Editing.
+D7_L12=[42259]Started Editing.
+D7_L13=[42602]Stopped Editing.
 
 [Opened Files]
 1=main.c
-t1=73
+t1=7
 Count=2
 2=main.h
 t2=1
@@ -182,7 +187,7 @@ t3=297
 Type=4
 
 [defines]
-buildcount=271
+buildcount=273
 [Units]
 Count=1
 1=main (main)

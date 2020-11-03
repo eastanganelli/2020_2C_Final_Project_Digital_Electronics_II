@@ -9,6 +9,7 @@
 
 #define escala -0.6 //Escala negativa para que crezca hacia arriba.
 #define limpiarGrafico limpiarPorcion(0,20,128,44) //Limpia el area del grafico
+#define offset 52 //es el offset para la altura de la grafica
 
 ///Fin Defines
 
@@ -16,13 +17,13 @@
 
 int x=0; //Posicion inicial de x para graficar la temperatura
 float y=0; //Posicion inicial de y (Vamos a tener que cambiarla a la primer temperatura leida) para graficar la temperatura
-int offset=52; //es el offset para la altura de la grafica
 int1 habilitarLectura=0; //Variable para habilitar o deshabilitar la captura de datos del sensor
 char received = '\0';
 
 ///Fin Variables Globales
 
 ///Funciones
+
 void limpiarPorcion(int x1, int y1, int x2, int y2){ //(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo
    for(int i=x1;i<x1+x2;i++){
       for(int j=y1;j<y1+y2;j++){
@@ -42,6 +43,7 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
    y=temp;
    x=x1;
 }
+
 ///Fin Funciones
 
 ///Interrupciones
@@ -70,6 +72,7 @@ void serial_interrupt() {
       glcd_text57(110,0,(char*)"BT",1,OFF); //Mostramos BT
    }
 }
+
 ///Fin Interrupciones
 
 void main()

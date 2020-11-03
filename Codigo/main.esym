@@ -1,9 +1,9 @@
-D G "__PCM__" 0 0 ""5.076""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""03-Nov-20""
-D G "__TIME__" 0 0 ""10:46:15""
-D G "_UNICODE" 0 0 ""?""
-D G "__EVAL" 0 0 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
+D G "__PCM__" 0 126 ""5.076""
+D G "__DEVICE__" 0 126 "877"
+D G "__DATE__" 0 126 ""03-nov.-20""
+D G "__TIME__" 0 126 ""11:45:17""
+D G "_UNICODE" 0 126 ""?""
+D G "__EVAL" 0 126 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `54 
@@ -358,9 +358,9 @@ f N "read_adc" 2 341 ""
 f G "read_adc" 2 341 "int16()" `193 
 f N "read_adc" 2 342 ""
 v L "mode" 2 342 "int8" `194 
-f G "read_adc" 2 342 "int16(int8 mode)" `193 
+f G "read_adc" 2 342 "int16(int8 mode,int8 setting)" `193 
 f N "adc_done" 2 343 ""
-f B "adc_done" 2 343 "int8(int8 mode)" `193  "Constants used for SETUP_ADC() are:"
+f B "adc_done" 2 343 "int8(int8 mode,int8 setting)" `193  "Constants used for SETUP_ADC() are:"
 d G "ADC_OFF" 2 345 "0" "ADC Off"
 d G "ADC_CLOCK_DIV_2" 2 346 "0x100"
 d G "ADC_CLOCK_DIV_8" 2 347 "0x40"
@@ -760,9 +760,9 @@ f B "i2c_transfer_in" 2 499 "void(int8 stream,int8 address,*int8 rData,int8 rCou
 f N "spi_xfer" 2 502 ""
 f B "spi_xfer" 2 502 "int8()" `458 
 f N "spi_xfer" 2 503 ""
-f G "spi_xfer" 2 503 "int16()" `459 
+f G "spi_xfer" 2 503 "int16(int8 data)" `459 
 f N "spi_xfer" 2 504 ""
-f G "spi_xfer" 2 504 "int32()" `459 
+f G "spi_xfer" 2 504 "int32(int8 data)" `459 
 f N "spi_xfer" 2 505 ""
 v L "data" 2 505 "int8" `460 
 f B "spi_xfer" 2 505 "int8(int8 data)" `459 
@@ -842,18 +842,18 @@ f B "spi_prewrite" 2 524 "void(int8 ,int32 data)" `512
 f N "spi_xfer_in" 2 525 ""
 f B "spi_xfer_in" 2 525 "int8()" `515 
 f N "spi_xfer_in" 2 526 ""
-f G "spi_xfer_in" 2 526 "int16()" `516 
+f G "spi_xfer_in" 2 526 "int16(int8 bits)" `516 
 f N "spi_xfer_in" 2 527 ""
-f G "spi_xfer_in" 2 527 "int32()" `516 
+f G "spi_xfer_in" 2 527 "int32(int8 bits)" `516 
 f N "spi_xfer_in" 2 528 ""
 v L "bits" 2 528 "int8" `517 
 f B "spi_xfer_in" 2 528 "int8(int8 bits)" `516 
 f N "spi_xfer_in" 2 529 ""
 v L "bits" 2 529 "int8" `519 
-f G "spi_xfer_in" 2 529 "int16(int8 bits)" `518 
+f G "spi_xfer_in" 2 529 "int16(int8 bits,int8 bits)" `518 
 f N "spi_xfer_in" 2 530 ""
 v L "bits" 2 530 "int8" `519 
-f G "spi_xfer_in" 2 530 "int32(int8 bits)" `518 
+f G "spi_xfer_in" 2 530 "int32(int8 bits,int8 bits)" `518 
 f N "spi_xfer_in" 2 531 ""
 v L "stream" 2 531 "int8" `519 
 v L "bits" 2 531 "int8" `520 
@@ -861,15 +861,15 @@ f B "spi_xfer_in" 2 531 "int8(int8 stream,int8 bits)" `518
 f N "spi_xfer_in" 2 532 ""
 v L "stream" 2 532 "int8" `519 
 v L "bits" 2 532 "int8" `523 
-f G "spi_xfer_in" 2 532 "int16(int8 stream,int8 bits)" `521 
+f G "spi_xfer_in" 2 532 "int16(int8 stream,int8 bits,int8 task)" `521 
 f N "spi_xfer_in" 2 533 ""
 v L "stream" 2 533 "int8" `519 
 v L "bits" 2 533 "int8" `523 
-f G "spi_xfer_in" 2 533 "int32(int8 stream,int8 bits)" `521  "#use rtos() Prototypes:"
+f G "spi_xfer_in" 2 533 "int32(int8 stream,int8 bits,int8 task)" `521  "#use rtos() Prototypes:"
 f N "rtos_run" 2 536 ""
-f B "rtos_run" 2 536 "void(int8 stream,int8 bits)" `521 
+f B "rtos_run" 2 536 "void(int8 stream,int8 bits,int8 task)" `521 
 f N "rtos_yield" 2 537 ""
-f B "rtos_yield" 2 537 "void(int8 bits)" `522 
+f B "rtos_yield" 2 537 "void(int8 bits,int8 task)" `522 
 f N "rtos_enable" 2 538 ""
 v L "task" 2 538 "int8" `524 
 f B "rtos_enable" 2 538 "void(int8 task)" `523 
@@ -905,9 +905,9 @@ f B "rtos_stats" 2 548 "void(int8 task,*int8 stat)" `541  "#use timer() Prototyp
 f N "get_ticks" 2 551 ""
 f B "get_ticks" 2 551 "int8()" `544 
 f N "get_ticks" 2 552 ""
-f G "get_ticks" 2 552 "int16()" `545 
+f G "get_ticks" 2 552 "int16(int8 stream)" `545 
 f N "get_ticks" 2 553 ""
-f G "get_ticks" 2 553 "int32()" `545 
+f G "get_ticks" 2 553 "int32(int8 stream)" `545 
 f N "get_ticks" 2 554 ""
 v L "stream" 2 554 "int8" `546 
 f B "get_ticks" 2 554 "int8(int8 stream)" `545 
@@ -1257,42 +1257,42 @@ C L "glcd_text57" 4 2 1 "FUNCTION"
 C L "glcd_text57" 4 2 1 "FUNCTION"
 D G "escala" 0 10 "-0.6" "Escala negativa para que crezca hacia arriba."
 D G "limpiarGrafico" 0 11 "limpiarPorcion(0,20,128,44)" "Limpia el area del grafico"
-V G "x" 0 17 "int8" `733 
-V G "y" 0 18 "float" `734 
-V G "offset" 0 19 "int8" `735 
-V G "habilitarLectura" 0 20 "int1" `736 
-V G "received" 0 21 "int8" `737 
+D G "offset" 0 12 "52" "es el offset para la altura de la grafica"
+V G "x" 0 18 "int8" `733 
+V G "y" 0 19 "float" `734 
+V G "habilitarLectura" 0 20 "int1" `735 
+V G "received" 0 21 "int8" `736 
 C L "limpiarPorcion" 0 8 2 "FUNCTION"
-F N "limpiarPorcion" 0 26 ""
-V L "x1" 0 26 "int8" `739 
-V L "y1" 0 26 "int8" `740 
-V L "x2" 0 26 "int8" `741 
-V L "y2" 0 26 "int8" `742 
-F G "limpiarPorcion" 0 26 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `738  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
-V L "i" 0 27 "int8" `743 
-V L "j" 0 28 "int8" `744 
+F N "limpiarPorcion" 0 27 ""
+V L "x1" 0 27 "int8" `738 
+V L "y1" 0 27 "int8" `739 
+V L "x2" 0 27 "int8" `740 
+V L "y2" 0 27 "int8" `741 
+F G "limpiarPorcion" 0 27 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `737  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
+V L "i" 0 28 "int8" `742 
+V L "j" 0 29 "int8" `743 
 C L "limpiarPorcion" 0 8 1 "FUNCTION"
-F N "nuevaLinea" 0 34 ""
-V L "temp" 0 34 "float" `746 
-F G "nuevaLinea" 0 34 "void(float temp)" `745  "Funcion para graficar las nuevas lineas de temperatura"
-V L "x1" 0 35 "int8" `747 
+F N "nuevaLinea" 0 35 ""
+V L "temp" 0 35 "float" `745 
+F G "nuevaLinea" 0 35 "void(float temp)" `744  "Funcion para graficar las nuevas lineas de temperatura"
+V L "x1" 0 36 "int8" `746 
 C L "nuevaLinea" 0 8 1 "FUNCTION"
 C L "nuevaLinea" 0 8 1 "FUNCTION"
 C L "nuevaLinea" 0 8 1 "FUNCTION"
 C L "RB_isr" 0 8 2 "FUNCTION"
-F N "RB_isr" 0 50 ""
-F G "RB_isr" 0 50 "void()" `758  "Prueba de interrupciones"
+F N "RB_isr" 0 52 ""
+F G "RB_isr" 0 52 "void()" `755  "Prueba de interrupciones"
 C L "RB_isr" 0 8 1 "FUNCTION"
-F N "serial_interrupt" 0 64 ""
-F G "serial_interrupt" 0 64 "void()" `762 
+F N "serial_interrupt" 0 66 ""
+F G "serial_interrupt" 0 66 "void()" `759 
 C L "serial_interrupt" 0 8 1 "FUNCTION"
 C L "serial_interrupt" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
-F N "MAIN" 0 75 ""
-F G "MAIN" 0 76 "void()" `767 
-V L "iAn" 0 77 "int16" `768 
-V L "t" 0 78 "float" `769 
-V L "str" 0 79 "int8[6]" `770 
+F N "MAIN" 0 78 ""
+F G "MAIN" 0 79 "void()" `764 
+V L "iAn" 0 80 "int16" `765 
+V L "t" 0 81 "float" `766 
+V L "str" 0 82 "int8[6]" `767 
 C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"

@@ -1,9 +1,9 @@
-Compiling D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\Codigo\main on 03-Nov-20 at 10:46
->>> Warning 216 "main.c" Line 120(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_writeByte)
->>> Warning 216 "main.c" Line 120(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MUL88)
->>> Warning 216 "main.c" Line 120(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_pixel)
->>> Warning 216 "main.c" Line 120(1,2): Interrupts disabled during call to prevent re-entrancy:  (limpiarPorcion)
->>> Warning 216 "main.c" Line 120(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_text57)
-      Memory usage:   ROM=43%      RAM=14% - 33%
+Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\main on 03-nov.-20 at 11:45
+>>> Warning 216 "main.c" Line 123(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_writeByte)
+>>> Warning 216 "main.c" Line 123(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MUL88)
+>>> Warning 216 "main.c" Line 123(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_pixel)
+>>> Warning 216 "main.c" Line 123(1,2): Interrupts disabled during call to prevent re-entrancy:  (limpiarPorcion)
+>>> Warning 216 "main.c" Line 123(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_text57)
+      Memory usage:   ROM=42%      RAM=14% - 33%
       0 Errors,  5 Warnings.
 Build Successful.
