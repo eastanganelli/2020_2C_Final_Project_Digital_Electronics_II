@@ -28,8 +28,8 @@
 041-04D MAIN.@STRPARAM
 04E-051 @FLT.P1
 04E     glcd_init.mode
-04E-051 @PRINTF_L32D_784FPFPF.P1
-04E-04F @ITOF.P2
+04E-04F @ITOF.P1
+04E-051 @PRINTF_L32D_783FPFPF.P2
 04E-051 nuevaLinea.temp
 04E     MAIN.@SCRATCH1
 04E     @PSTRINGR_1.@SCRATCH1
@@ -40,50 +40,50 @@
 050     MAIN.@SCRATCH3
 051     glcd_fillScreen.j
 051     MAIN.@SCRATCH4
+052-055 @FLT.P1
 052     nuevaLinea.x1
 052-055 @DIVFF.P1
-052     @PRINTF_L32D_784FPFPF.P2
-052-055 @FLT.P3
+052     @PRINTF_L32D_783FPFPF.P2
 052     glcd_fillScreen.@SCRATCH1
 053     nuevaLinea.@SCRATCH1
-053     @PRINTF_L32D_784FPFPF.@SCRATCH1
+053     @PRINTF_L32D_783FPFPF.@SCRATCH1
 054-057 @SFTOI.P1
 054     nuevaLinea.@SCRATCH2
-054     @PRINTF_L32D_784FPFPF.@SCRATCH2
+054     @PRINTF_L32D_783FPFPF.@SCRATCH2
 055     glcd_line.x1
 055     nuevaLinea.@SCRATCH3
-055     @PRINTF_L32D_784FPFPF.@SCRATCH3
-056     glcd_line.y1
+055     @PRINTF_L32D_783FPFPF.@SCRATCH3
 056-059 @DIVFF.P1
+056     glcd_line.y1
 056     nuevaLinea.@SCRATCH4
 056     @FLT.@SCRATCH1
-056     @PRINTF_L32D_784FPFPF.@SCRATCH4
+056     @PRINTF_L32D_783FPFPF.@SCRATCH4
 057     glcd_line.x2
 057     nuevaLinea.@SCRATCH5
 057     @FLT.@SCRATCH2
-057     @PRINTF_L32D_784FPFPF.@SCRATCH5
-058     glcd_line.y2
+057     @PRINTF_L32D_783FPFPF.@SCRATCH5
 058-05B @ADDFF.P1
-058     @PRINTF_L32D_784FPFPF.@SCRATCH6
+058     glcd_line.y2
+058     @PRINTF_L32D_783FPFPF.@SCRATCH6
 059     glcd_line.color
-059     @PRINTF_L32D_784FPFPF.@SCRATCH7
+059     @PRINTF_L32D_783FPFPF.@SCRATCH7
 05A-05B glcd_line.dy
 05A     @DIVFF.@SCRATCH1
-05A     @PRINTF_L32D_784FPFPF.@SCRATCH8
-05B-05E @DIV3232.P1
-05B     @SPRINTF.P2
+05A     @PRINTF_L32D_783FPFPF.@SCRATCH8
+05B     @SPRINTF.P1
+05B-05E @DIV3232.P2
 05B-05E @MULFF.P3
 05B-05E @FTOSD.P4
 05B     @DIVFF.@SCRATCH2
-05C-05D glcd_line.dx
 05C-05F @ADDFF.P1
+05C-05D glcd_line.dx
 05C     @DIVFF.@SCRATCH3
 05D     @DIVFF.@SCRATCH4
 05E     glcd_line.addx
 05E     @DIVFF.@SCRATCH5
-05F-062 @DIV3232.P1
 05F     glcd_line.addy
 05F-062 @MULFF.P1
+05F-062 @DIV3232.P2
 05F     @DIVFF.@SCRATCH6
 05F     @FTOSD.@SCRATCH1
 060-061 glcd_line.P
@@ -108,29 +108,28 @@
 067     @MULFF.@SCRATCH5
 067     @ADDFF.@SCRATCH8
 067     @DIV3232.@SCRATCH5
-06E-070 serial_interrupt.@STRPARAM
 06E     @delay_ms1.P1
+06E-070 serial_interrupt.@STRPARAM
 06E     RB_isr.@SCRATCH1
 06F     RB_isr.@SCRATCH2
 070     RB_isr.@SCRATCH3
-071-073 serial_interrupt.@STRPARAM
 071     RB_isr.@SCRATCH4
+071     serial_interrupt.@SCRATCH1
+072     serial_interrupt.@SCRATCH2
+073     serial_interrupt.@SCRATCH3
+074     serial_interrupt.@SCRATCH4
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
 079     @SCRATCH
 07A     @SCRATCH
-07B     serial_interrupt.@SCRATCH1
-07C     serial_interrupt.@SCRATCH2
-07D     serial_interrupt.@SCRATCH3
-07E     serial_interrupt.@SCRATCH4
 07F     @INTERRUPT_AREA
 086     trisb
 0A0-0AA RB_isr.@STRPARAM
 0AB     limpiarPorcion.x1
 0AC     limpiarPorcion.y1
-0AD     glcd_text57.x
 0AD     limpiarPorcion.x2
+0AD     glcd_text57.x
 0AE     limpiarPorcion.y2
 0AE     glcd_text57.y
 0AF     limpiarPorcion.i
@@ -233,7 +232,7 @@ ROM Allocation:
 000145  FONT2.call
 00014C  FONT2.data
 000228  @const758.call
-000237  @const772.call
+000237  @const771.call
 000248  @delay_ms1
 00025C  TIMER0_isr
 000271  @MUL88
@@ -244,19 +243,19 @@ ROM Allocation:
 00046C  limpiarPorcion
 000489  RB_isr
 0004E0  serial_interrupt
-000512  glcd_init
-0005A9  glcd_fillScreen
-00063D  glcd_line
-00070B  @ITOF
-00072A  @MULFF
-00079F  @FLT
-0007DE  @SPRINTF
-0007E0  @SFTOI
+000511  glcd_init
+0005A8  glcd_fillScreen
+00063C  glcd_line
+00070A  @ITOF
+000729  @MULFF
+00079E  @FLT
+0007DD  @SPRINTF
 000800  @DIVFF
 0008CD  @DIV3232
-00091C  @PRINTF_L32D_784FPFPF
+00091C  @PRINTF_L32D_783FPFPF
 000945  @FTOSD
 000A06  @ADDFF
+000B47  @SFTOI
 000B66  nuevaLinea
 000C06  @PSTRINGR_1
 000C1F  @cinit1
@@ -264,19 +263,19 @@ ROM Allocation:
 000C3C  @cinit2
 
 Project Directory:
-    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\
+    D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\Codigo\
 
 Project Files:
-    main.c                                                  [03-nov.-20 14:56  CRC=7EAB293B]
-    main.h                                                  [29-oct.-20 12:05  CRC=D872A938]
-    D:\Program Files\PICC\Devices\16F877.h                  [15-ene.-18 15:53  CRC=EE78BE53]
-    D:\Program Files\PICC\Drivers\HDM64GS12.c               [08-jul.-10 09:47  CRC=C1C373EF]
-    D:\Program Files\PICC\Drivers\graphics.c                [06-jul.-10 09:49  CRC=70BB89DE]
+    main.c                                                  [04-Nov-20 14:30  CRC=8E60A3B9]
+    main.h                                                  [30-Oct-20 18:23  CRC=D872A938]
+    C:\Program Files (x86)\PICC\Devices\16F877.h            [15-Jan-18 15:53  CRC=EE78BE53]
+    C:\Program Files (x86)\PICC\Drivers\HDM64GS12.c         [08-Jul-10 09:47  CRC=C1C373EF]
+    C:\Program Files (x86)\PICC\Drivers\graphics.c          [06-Jul-10 09:49  CRC=70BB89DE]
 
-Source signature=E8D11871
+Source signature=F88692EF
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=1B8E
+Hex file CRC=4421
 
 Units:
     main (main)

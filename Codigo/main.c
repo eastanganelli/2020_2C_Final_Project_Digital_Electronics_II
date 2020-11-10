@@ -51,14 +51,14 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
 
 #INT_TIMER0
 void TIMER0_isr(){
-	ciclos--;
-	if(ciclos==0){
-		ciclos=10;
-		output_low(pin_b3);
-		delay_ms(50);
-		output_high(pin_b3);
-	}
-	set_timer0(0x40);
+   ciclos--;
+   if(ciclos==0){
+      ciclos=10;
+      output_low(pin_b3);
+      delay_ms(50);
+      output_high(pin_b3);
+   }
+   set_timer0(0x40);
 }
 
 #INT_RB
@@ -80,11 +80,10 @@ void RB_isr(){ //Prueba de interrupciones
 #int_rda
 void serial_interrupt() {
    received = getc();
-   if(received == 'a') {
+   if(received == 'a')
       glcd_text57(110,0,(char*)"BT",1,ON); //Mostramos BT
-   } else if(received == 'b') {
+   else if(received == 'b')
       glcd_text57(110,0,(char*)"BT",1,OFF); //Mostramos BT
-   }
 }
 
 ///Fin Interrupciones
@@ -111,7 +110,7 @@ void main()
    glcd_line(0, 8, 128, 8, ON); //Pintamos una linea por debajo del barra de notificaciones
    glcd_line(0, 19, 128, 19, ON); //Pintamos una linea por debajo de la temperatura
    
-   while(TRUE){
+   while(TRUE) {
       if(habilitarLectura){
          set_adc_channel(0); //Seteamos el canal que vamos a leer
          delay_us(10); //Esperamos 10 us
@@ -125,9 +124,9 @@ void main()
             glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
          }
          if(t<=40)
-         	disable_interrupts(INT_TIMER0);
+            disable_interrupts(INT_TIMER0);
          if(t>40)
-         	enable_interrupts(INT_TIMER0);
+            enable_interrupts(INT_TIMER0);
          if(t<=50){ //Si t es menor o igual a 50 la agregamos al grafico
             nuevaLinea(t); //Dibujamos la nueva linea en el grafico.
             glcd_text57(3, 0, (char*)"T>50", 1, OFF); //ocultamos la notificacion de t>50

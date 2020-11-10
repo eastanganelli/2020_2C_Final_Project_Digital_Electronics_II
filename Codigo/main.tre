@@ -21,7 +21,7 @@
    ³  ³     ÃÄglcd_writeByte  0/43  Ram=2
    ³  ³     ÃÄ@MUL88  0/39  Ram=2
    ³  ³     ÀÄglcd_writeByte  0/43  Ram=2
-   ³  ÃÄ@const772  0/17  Ram=0
+   ³  ÃÄ@const771  0/17  Ram=0
    ³  ÃÄglcd_text57  0/248  Ram=20
    ³  ³  ÃÄ@MUL88  0/39  Ram=2
    ³  ³  ÃÄ@const657  0/262  Ram=0
@@ -50,7 +50,7 @@
    ³  ÃÄ@MULFF  0/117  Ram=13
    ³  ÃÄ@DIVFF  1/205  Ram=14
    ³  ÃÄ@FLT  0/63  Ram=10
-   ³  ÃÄ@PRINTF_L32D_784FPFPF  1/234  Ram=13
+   ³  ÃÄ@PRINTF_L32D_783FPFPF  1/234  Ram=13
    ³  ³  ÃÄ@MULFF  0/117  Ram=13
    ³  ³  ÃÄ@FTOSD  (Inline)  Ram=5
    ³  ³  ÃÄ@DIV3232  1/79  Ram=13
@@ -84,7 +84,7 @@
    ³  ³  ÀÄ*
    ³  ÃÄglcd_text57  0/248  Ram=20
    ³  ³  ÀÄ*
-   ³  ÃÄ@PRINTF_L32D_784FPFPF  1/234  Ram=13
+   ³  ÃÄ@PRINTF_L32D_783FPFPF  1/234  Ram=13
    ³  ³  ÀÄ*
    ³  ÃÄ@PSTRINGR_1  1/25  Ram=2
    ³  ÀÄ@delay_ms1  0/20  Ram=1
@@ -101,7 +101,7 @@
    ³  ³  ÀÄ*
    ³  ÀÄlimpiarPorcion  0/29  Ram=6
    ³     ÀÄ*
-   ÀÄserial_interrupt  0/50  Ram=13
+   ÀÄserial_interrupt  0/49  Ram=7
       ÃÄglcd_text57  0/248  Ram=20
       ³  ÀÄ*
       ÀÄglcd_text57  0/248  Ram=20

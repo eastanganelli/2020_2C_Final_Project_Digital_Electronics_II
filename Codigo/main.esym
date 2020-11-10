@@ -1,9 +1,10 @@
-D G "__PCM__" 0 147 ""5.076""
-D G "__DEVICE__" 0 147 "877"
-D G "__DATE__" 0 147 ""03-nov.-20""
-D G "__TIME__" 0 147 ""14:56:56""
-D G "_UNICODE" 0 147 ""?""
-D G "__EVAL" 0 147 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
+F N "nuevaLinea" 0 36 ""
+D G "__PCM__" 0 44 ""5.076""
+D G "__DEVICE__" 0 44 "877"
+D G "__DATE__" 0 44 ""04-Nov-20""
+D G "__TIME__" 0 44 ""14:30:44""
+D G "_UNICODE" 0 44 ""?""
+D G "__EVAL" 0 44 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `54 
@@ -1292,11 +1293,11 @@ F G "serial_interrupt" 0 81 "void()" `761
 C L "serial_interrupt" 0 8 1 "FUNCTION"
 C L "serial_interrupt" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
-F N "MAIN" 0 92 ""
-F G "MAIN" 0 93 "void()" `766 
-V L "iAn" 0 95 "int16" `769 
-V L "t" 0 96 "float" `770 
-V L "str" 0 97 "int8[8]" `771 
+F N "MAIN" 0 91 ""
+F G "MAIN" 0 92 "void()" `765 
+V L "iAn" 0 94 "int16" `768 
+V L "t" 0 95 "float" `769 
+V L "str" 0 96 "int8[8]" `770 
 C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"
 C L "MAIN" 0 8 1 "FUNCTION"

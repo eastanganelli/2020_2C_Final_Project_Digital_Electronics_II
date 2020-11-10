@@ -1,0 +1,20 @@
+D:\Ezequiel\Projects\VS\form2led\bin\Debug\form2led.exe.config
+D:\Ezequiel\Projects\VS\form2led\bin\Debug\form2led.exe
+D:\Ezequiel\Projects\VS\form2led\bin\Debug\form2led.pdb
+D:\Ezequiel\Projects\VS\form2led\obj\Debug\form2led.Form1.resources
+D:\Ezequiel\Projects\VS\form2led\obj\Debug\form2led.Properties.Resources.resources
+D:\Ezequiel\Projects\VS\form2led\obj\Debug\form2led.csproj.GenerateResource.cache
+D:\Ezequiel\Projects\VS\form2led\obj\Debug\form2led.csproj.CoreCompileInputs.cache
+D:\Ezequiel\Projects\VS\form2led\obj\Debug\form2led.exe
+D:\Ezequiel\Projects\VS\form2led\obj\Debug\form2led.pdb
+D:\Ezequiel\Projects\VS\form2led\obj\Debug\form2led.csprojAssemblyReference.cache
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\bin\Debug\TP_FINAL_EDI2.exe.config
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\bin\Debug\TP_FINAL_EDI2.exe
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\bin\Debug\TP_FINAL_EDI2.pdb
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\form2led.csprojAssemblyReference.cache
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\mainForm.mainForm.resources
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\mainForm.Properties.Resources.resources
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\form2led.csproj.GenerateResource.cache
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\form2led.csproj.CoreCompileInputs.cache
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\TP_FINAL_EDI2.exe
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\TP_FINAL_EDI2.pdb
