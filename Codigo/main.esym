@@ -1,10 +1,9 @@
-F N "nuevaLinea" 0 36 ""
-D G "__PCM__" 0 44 ""5.076""
-D G "__DEVICE__" 0 44 "877"
-D G "__DATE__" 0 44 ""04-Nov-20""
-D G "__TIME__" 0 44 ""14:30:44""
-D G "_UNICODE" 0 44 ""?""
-D G "__EVAL" 0 44 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
+D G "__PCM__" 0 191 ""5.076""
+D G "__DEVICE__" 0 191 "877"
+D G "__DATE__" 0 191 ""12-nov.-20""
+D G "__TIME__" 0 191 ""14:25:13""
+D G "_UNICODE" 0 191 ""?""
+D G "__EVAL" 0 191 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `54 
@@ -1256,73 +1255,94 @@ C L "glcd_text57" 4 2 1 "FUNCTION"
 C L "glcd_text57" 4 2 1 "FUNCTION"
 C L "glcd_text57" 4 2 1 "FUNCTION"
 C L "glcd_text57" 4 2 1 "FUNCTION"
-D G "escala" 0 10 "-0.6" "Escala negativa para que crezca hacia arriba."
-D G "limpiarGrafico" 0 11 "limpiarPorcion(0,20,128,44)" "Limpia el area del grafico"
-D G "offset" 0 12 "52" "es el offset para la altura de la grafica"
-V G "x" 0 18 "int8" `733 
-V G "y" 0 19 "float" `734 
-V G "habilitarLectura" 0 20 "int1" `735 
-V G "received" 0 21 "int8" `736 
-V G "ciclos" 0 22 "int8" `737 
-C L "limpiarPorcion" 0 8 2 "FUNCTION"
-F N "limpiarPorcion" 0 28 ""
-V L "x1" 0 28 "int8" `739 
-V L "y1" 0 28 "int8" `740 
-V L "x2" 0 28 "int8" `741 
-V L "y2" 0 28 "int8" `742 
-F G "limpiarPorcion" 0 28 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `738  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
-V L "i" 0 29 "int8" `743 
-V L "j" 0 30 "int8" `744 
-C L "limpiarPorcion" 0 8 1 "FUNCTION"
-F N "nuevaLinea" 0 36 ""
-V L "temp" 0 36 "float" `746 
-F G "nuevaLinea" 0 36 "void(float temp)" `745  "Funcion para graficar las nuevas lineas de temperatura"
-V L "x1" 0 37 "int8" `747 
-C L "nuevaLinea" 0 8 1 "FUNCTION"
-C L "nuevaLinea" 0 8 1 "FUNCTION"
-C L "nuevaLinea" 0 8 1 "FUNCTION"
-C L "TIMER0_isr" 0 8 2 "FUNCTION"
-F N "TIMER0_isr" 0 53 ""
-F G "TIMER0_isr" 0 53 "void()" `756 
-F N "RB_isr" 0 65 ""
-F G "RB_isr" 0 65 "void()" `757  "Prueba de interrupciones"
-C L "RB_isr" 0 8 1 "FUNCTION"
-C L "RB_isr" 0 8 1 "FUNCTION"
-F N "serial_interrupt" 0 81 ""
-F G "serial_interrupt" 0 81 "void()" `761 
-C L "serial_interrupt" 0 8 1 "FUNCTION"
-C L "serial_interrupt" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-F N "MAIN" 0 91 ""
-F G "MAIN" 0 92 "void()" `765 
-V L "iAn" 0 94 "int16" `768 
-V L "t" 0 95 "float" `769 
-V L "str" 0 96 "int8[8]" `770 
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
+D G "escala" 0 11 "-2" "Escala negativa para que crezca hacia arriba."
+D G "limpiarGrafico" 0 12 "limpiarPorcion(0,20,128,44)" "Limpia el area del grafico"
+D G "offset" 0 13 "120" "es el offset para la altura de la grafica"
+D G "TMR1" 0 14 "0x0BDC" "Este es el valor para 500ms en el timer1 (0,5s=(4/4000000)8(65536-TMR1))=>TMR1=3036"
+D G "TMR0" 0 15 "0x40" "Este es el valor para 50ms en el timer0"
+D G "nMediciones" 0 16 "20" "Numero de mediciones"
+V G "x" 0 22 "int8" `733 
+V G "y" 0 23 "float" `734  "Temperatura anterior"
+V G "t" 0 24 "float" `735  "Temperatura actual"
+V G "registro" 0 25 "float[20]" `736  "registro de las ultimas nMediciones mediciones"
+V G "habilitarLectura" 0 26 "int1" `737 
+V G "received" 0 27 "int8" `738 
+V G "ciclos" 0 28 "int8" `739 
+V G "ciclosT1" 0 29 "int8" `740 
+C L "limpiarPorcion" 0 5 3 "FUNCTION"
+F N "limpiarPorcion" 0 35 ""
+V L "x1" 0 35 "int8" `742 
+V L "y1" 0 35 "int8" `743 
+V L "x2" 0 35 "int8" `744 
+V L "y2" 0 35 "int8" `745 
+F G "limpiarPorcion" 0 35 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `741  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
+V L "i" 0 36 "int8" `746 
+V L "j" 0 37 "int8" `747 
+C L "limpiarPorcion" 0 5 1 "FUNCTION"
+F N "nuevaLinea" 0 41 ""
+V L "temp" 0 41 "float" `749 
+F G "nuevaLinea" 0 41 "void(float temp)" `748  "Funcion para graficar las nuevas lineas de temperatura"
+V L "x1" 0 42 "int8" `750 
+C L "nuevaLinea" 0 5 1 "FUNCTION"
+C L "nuevaLinea" 0 5 1 "FUNCTION"
+C L "nuevaLinea" 0 5 1 "FUNCTION"
+C L "TIMER0_isr" 0 5 2 "FUNCTION"
+F N "TIMER0_isr" 0 58 ""
+F G "TIMER0_isr" 0 58 "void()" `759  "Timer para hacer sonar el buzzer cada 500ms"
+F N "TIMER1_isr" 0 70 ""
+F G "TIMER1_isr" 0 70 "void()" `760  "Timer para almacenar, en un array, la temepratura actual cada 3 segundos"
+C L "TIMER1_isr" 0 5 3 "FUNCTION"
+V L "i" 0 77 "int8" `761 
+V L "i" 0 80 "int8" `762 
+F N "RB_isr" 0 87 ""
+F G "RB_isr" 0 87 "void()" `772  "Prueba de interrupciones"
+C L "RB_isr" 0 5 1 "FUNCTION"
+V L "str" 0 89 "int8[8]" `773 
+C L "RB_isr" 0 5 1 "FUNCTION"
+F N "serial_interrupt" 0 113 ""
+F G "serial_interrupt" 0 113 "void()" `788 
+C L "serial_interrupt" 0 5 1 "FUNCTION"
+C L "serial_interrupt" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+F N "MAIN" 0 123 ""
+F G "MAIN" 0 124 "void()" `792 
+V L "iAn" 0 126 "int16" `795 
+V L "str" 0 127 "int8[8]" `796 
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 2 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
+C L "MAIN" 0 5 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

@@ -33,9 +33,14 @@ int ciclosT1=6; //Variable que cuenta los ciclos que debe hacer el timer1 antes 
 ///Funciones
 
 void limpiarPorcion(int x1, int y1, int x2, int y2){ //(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo
-   for(int i=x1;i<x1+x2;i++)
+   /*for(int i=x1;i<x1+x2;i++)
       for(int j=y1;j<y1+y2;j++)
-         glcd_pixel(i, j, OFF); //Apagamos el pixel.
+         glcd_pixel(i, j, OFF); //Apagamos el pixel.*/
+         glcd_fillscreen(OFF);
+   glcd_text57(0,10,(char*)"Temperatura:",1,ON); //Escribimos el texto "Tempreatura:" en la posicion 0,10
+   glcd_line(0, 8, 128, 8, ON); //Pintamos una linea por debajo del barra de notificaciones
+   glcd_line(0, 19, 128, 19, ON); //Pintamos una linea por debajo de la temperatura
+         
 }
 
 void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temperatura

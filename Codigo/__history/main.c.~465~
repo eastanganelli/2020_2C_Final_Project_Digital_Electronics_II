@@ -50,6 +50,28 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
    x=x1;
 }
 
+void plg(){
+	unsigned int8 i, j;
+
+   // Loop through the vertical pages
+   for(i = 2; i < 8; ++i)
+   {
+      output_low(GLCD_DI);                      // Set for instruction
+      glcd_writeByte(GLCD_LEFT, 0b01000000);    // Set horizontal address to 0
+      glcd_writeByte(GLCD_RIGHT, 0b01000000);
+      glcd_writeByte(GLCD_LEFT, i | 0b10111000);// Set page address
+      glcd_writeByte(GLCD_RIGHT, i | 0b10111000);
+      output_high(GLCD_DI);                     // Set for data
+
+      // Loop through the horizontal sections
+      for(j = 0; j < 64; ++j)
+      {
+         glcd_writeByte(GLCD_LEFT, 0xFF*OFF);  // Turn pixels on or off
+         glcd_writeByte(GLCD_RIGHT, 0xFF*OFF); // Turn pixels on or off
+      }
+   }
+}
+
 ///Fin Funciones
 
 ///Interrupciones
@@ -99,7 +121,8 @@ void RB_isr(){ //Prueba de interrupciones
       else {
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
          glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, ON);
-         limpiarGrafico;
+         //limpiarGrafico;
+         plg();
          glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, OFF);
       	sprintf(str, "%4.2f°C", t);
          glcd_text57(12*6, 10, str, 1, OFF);

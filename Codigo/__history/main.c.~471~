@@ -141,7 +141,7 @@ void main()
 
    glcd_text57(0,10,(char*)"Temperatura:",1,ON); //Escribimos el texto "Tempreatura:" en la posicion 0,10
    glcd_line(0, 8, 128, 8, ON); //Pintamos una linea por debajo del barra de notificaciones
-   glcd_line(0, 19, 128, 19, ON); //Pintamos una linea por debajo de la temperatura
+   glcd_line(0, 20, 128, 20, ON); //Pintamos una linea por debajo de la temperatura
    
    set_adc_channel(0); //Seteamos el canal que vamos a leer
    delay_us(20); //Esperamos 10 us

@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=9
+Days=11
 D1=28-10-2020
 D1_L=38
 D1_L1=[38435]Project Opened.
@@ -37,7 +37,7 @@ D1_L14=[51811]Started Editing.
 D1_L15=[54708]Stopped Editing.
 D1_L16=[55590]Started Editing.
 D1_L17=[55940]Stopped Editing.
-TotalEdit=331
+TotalEdit=519
 TotalDebug=0
 D1_E=221
 D1_D=0
@@ -208,20 +208,56 @@ D9_L1=[59609]Project Opened.
 D9_L2=[59610]Project Closed.
 D9_L3=[59611]Project Opened.
 D9_L4=[59681]Project Closed.
+D10=10-11-2020
+D10_L=14
+D10_L1=[50254]Project Opened.
+D10_L2=[50283]Started Editing.
+D10_L3=[51399]Stopped Editing.
+D10_L4=[51643]Started Editing.
+D10_L5=[55413]Stopped Editing.
+D10_L6=[55646]Started Editing.
+D10_L7=[56267]Stopped Editing.
+D10_L8=[56439]Started Editing.
+D10_L9=[56739]Stopped Editing.
+D10_L10=[56926]Started Editing.
+D10_L11=[59228]Stopped Editing.
+D10_L12=[60707]Started Editing.
+D10_L13=[61645]Stopped Editing.
+D10_E=126
+D10_D=0
+D10_L14=[61646]Project Closed.
+D11=12-11-2020
+D11_L=12
+D11_L1=[45972]Project Opened.
+D11_L2=[46037]Started Editing.
+D11_L3=[46853]Stopped Editing.
+D11_L4=[46928]Started Editing.
+D11_L5=[47522]Stopped Editing.
+D11_L6=[47739]Started Editing.
+D11_L7=[50337]Stopped Editing.
+D11_L8=[50957]Started Editing.
+D11_L9=[51833]Stopped Editing.
+D11_L10=[51846]Started Editing.
+D11_L11=[52177]Stopped Editing.
+D11_E=62
+D11_D=0
+D11_L12=[52561]Project Closed.
 
 [Opened Files]
-1=main.h
-t1=1
-Count=2
-2=main.c
+1=main.c
+t1=117
+Count=1
+2=main.h
 t2=1
-3=D:\Program Files\PICC\Drivers\graphics.c
-t3=297
+3=D:\Program Files\PICC\Drivers\HDM64GS12.c
+t3=305
+4=D:\Program Files\PICC\Drivers\graphics.c
+t4=197
 [main.c]
 Type=4
 
 [defines]
-buildcount=284
+buildcount=331
 [Units]
 Count=1
 1=main (main)

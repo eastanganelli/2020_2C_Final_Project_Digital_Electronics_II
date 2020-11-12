@@ -1,3 +1,4 @@
+#define FAST_GLCD ON
 #include <main.h>
 #fuses XT, NOWDT,NOPROTECT,NOLVP
 #include <HDM64GS12.c> //Manejo del display gráfico

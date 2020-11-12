@@ -12,35 +12,35 @@
 #define limpiarGrafico limpiarPorcion(0,20,128,44) //Limpia el area del grafico
 #define offset 120 //es el offset para la altura de la grafica
 #define TMR1 0x0BDC //Este es el valor para 500ms en el timer1 (0,5s=(4/4000000)8(65536-TMR1))=>TMR1=3036
-#define TMR0 0x40 //Este es el valor para 50ms en el timer0
-#define nMediciones 20 //Numero de mediciones
 
 ///Fin Defines
 
 ///Variables Globales
 
 int x=0; //Posicion inicial de x para graficar la temperatura
-float y; //Temperatura anterior
+float y=37; //Posicion inicial de y (Vamos a tener que cambiarla a la primer temperatura leida) para graficar la temperatura
 float t; //Temperatura actual
-float registro[nMediciones]; //registro de las ultimas nMediciones mediciones
+float registro[40]; //registro de las ultimas 128 mediciones
 int1 habilitarLectura=0; //Variable para habilitar o deshabilitar la captura de datos del sensor
 char received = '\0';
-int ciclos=10; //Variable que cuenta los ciclos que debe hacer el timer0 antes de ejecutar su codigo
-int ciclosT1=6; //Variable que cuenta los ciclos que debe hacer el timer1 antes de ejecutar su codigo
+int ciclos=10;
+int ciclosT1=6;
 
 ///Fin Variables Globales
 
 ///Funciones
 
 void limpiarPorcion(int x1, int y1, int x2, int y2){ //(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo
-   for(int i=x1;i<x1+x2;i++)
-      for(int j=y1;j<y1+y2;j++)
+   for(int i=x1;i<x1+x2;i++){
+      for(int j=y1;j<y1+y2;j++){
          glcd_pixel(i, j, OFF); //Apagamos el pixel.
+      }
+   }
 }
 
 void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temperatura
    int x1=x+1;
-   if(x1>=128){ //Revisamos si sobrepasamos el tamaño de la pantalla
+   if(x1>128){ //Revisamos si sobrepasamos el tamaño de la pantalla
       limpiarGrafico; //Limpiamos el area del grafico
       x=0;
       x1=1;
@@ -55,7 +55,7 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
 ///Interrupciones
 
 #INT_TIMER0
-void TIMER0_isr(){ //Timer para hacer sonar el buzzer cada 500ms
+void TIMER0_isr(){
    ciclos--;
    if(ciclos==0){
       ciclos=10;
@@ -63,21 +63,20 @@ void TIMER0_isr(){ //Timer para hacer sonar el buzzer cada 500ms
       delay_ms(50);
       output_high(PIN_B3);
    }
-   set_timer0(TMR0);
+   set_timer0(0x40);
 }
 
 #INT_TIMER1
-void TIMER1_isr(){ //Timer para almacenar, en un array, la temepratura actual cada 3 segundos
+void TIMER1_isr(){
 	ciclosT1--;
 	if(ciclosT1==0){
       ciclosT1=6;
       //Aca hay que hacer el guardado en sd
-      //Con este bloque de codigo guardamos en un array las ultimas N mediciones
-      //Las cuales podemos guardar despues donde querramos
-	   for(int i=0; i<nMediciones-1;i++)
+	   for(int i=0; i<127;i++){
 	   	registro[i]=registro[i+1];
-	   registro[nMediciones-1]=t;
-	   for(int i=0; i<nMediciones; i++)
+		}
+	   registro[127]=t;
+	   for(int i=0; i<127; i++)
 	   	printf("%4.2f ",registro[i]);
    }
    set_timer1(TMR1);
@@ -86,23 +85,20 @@ void TIMER1_isr(){ //Timer para almacenar, en un array, la temepratura actual ca
 #INT_RB
 void RB_isr(){ //Prueba de interrupciones
    if(input(PIN_B6)){ //Habilita o deshabilita la captura de datos
-      char str[8];
       habilitarLectura=~habilitarLectura;
       disable_interrupts(INT_TIMER0);
       if(habilitarLectura){
-         glcd_text57(128/2-30, 0, (char*)"Capturando", 1, ON);
+      	char str[8];
       	sprintf(str, "%4.2f°C", y);
+         glcd_text57(128/2-30, 0, (char*)"Capturando", 1, ON);
          glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
          enable_interrupts(INT_TIMER1);
          set_timer1(TMR1);
       }
       else {
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
-         glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, ON);
          limpiarGrafico;
-         glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, OFF);
-      	sprintf(str, "%4.2f°C", t);
-         glcd_text57(12*6, 10, str, 1, OFF);
+         limpiarPorcion(12*6, 10, 9*6, 7); //Limpiamos la porcion de pantalla que tiene el valor de la temperatura. 12 es la cantiad de caracteres de "temperatura:"
          x=0;
          disable_interrupts(INT_TIMER1);
       }
@@ -130,7 +126,7 @@ void main()
    setup_adc(ADC_CLOCK_INTERNAL); //Establecemos el reloj interno
    setup_timer_0(RTCC_INTERNAL|RTCC_DIV_256); //setup del timer0
    setup_timer_1(T1_INTERNAL|T1_DIV_BY_8); //setup del timer1
-   set_timer0(TMR0); //seteamos el timer0
+   set_timer0(0x40); //seteamos el timer0
    set_timer1(TMR1); //setemaos el timer1
    
    glcd_init(ON); //Inicializamos el lcd
@@ -146,7 +142,7 @@ void main()
    set_adc_channel(0); //Seteamos el canal que vamos a leer
    delay_us(20); //Esperamos 10 us
    iAn=read_adc(); //Levantamos el dato
-   y=(5.0*iAn*100.0)/1024.0; //Lo convertemos a temperatura. Esta es la primera captura
+   y=(5.0*iAn*100.0)/1024.0; //Lo convertemos a temperatura
    delay_ms(250);
    
    while(TRUE) {
@@ -157,10 +153,9 @@ void main()
          t=(5.0*iAn*100.0)/1024.0; //Lo convertemos a temperatura
          
          if(t!=y){ //Si t es != al dato anterior refrescamos la temperatura y la enviamos al bluetooth
-            //str[0] = '\0';
-            sprintf(str, "%4.2f°C", y); //Convertimos la temperatura float en un char*
-            glcd_text57(12*6, 10, str, 1, OFF); //borramos del lcd la temperatura anterior
+            str[0] = '\0';
             sprintf(str, "%4.2f°C", t); //Convertimos la temperatura float en un char*
+            limpiarPorcion(12*6, 10, 9*6, 7); //Limpiamos la porcion de pantalla que tiene el valor de la temperatura. 12 es la cantiad de caracteres de "temperatura:"
             glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
          }
          if(t<=40 && t>=35)

@@ -8,6 +8,7 @@
 
 ///Defines
 
+#define FAST_GLCD
 #define escala -2 //Escala negativa para que crezca hacia arriba.
 #define limpiarGrafico limpiarPorcion(0,20,128,44) //Limpia el area del grafico
 #define offset 120 //es el offset para la altura de la grafica

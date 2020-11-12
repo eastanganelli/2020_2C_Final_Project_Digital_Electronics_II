@@ -40,7 +40,7 @@ void limpiarPorcion(int x1, int y1, int x2, int y2){ //(x1, y1) = posición del p
 
 void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temperatura
    int x1=x+1;
-   if(x1>=128){ //Revisamos si sobrepasamos el tamaño de la pantalla
+   if(x1>128){ //Revisamos si sobrepasamos el tamaño de la pantalla
       limpiarGrafico; //Limpiamos el area del grafico
       x=0;
       x1=1;
