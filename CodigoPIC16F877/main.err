@@ -1,0 +1,13 @@
+Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\main on 13-nov.-20 at 12:38
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_writeByte)
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MUL88)
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_pixel)
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (limpiarPorcion)
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_text57)
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PRINTF_L32D_778FPFPF)
+>>> Warning 216 "main.c" Line 188(1,2): Interrupts disabled during call to prevent re-entrancy:  (@SPRINTF)
+      Memory usage:   ROM=64%      RAM=37% - 61%
+      0 Errors,  9 Warnings.
+Build Successful.

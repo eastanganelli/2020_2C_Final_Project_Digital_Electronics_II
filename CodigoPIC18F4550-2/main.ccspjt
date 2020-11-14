@@ -1,0 +1,52 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC18F4550
+CCSVerions=5.076
+Compiler=PCH
+CCSVersion=5.076
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\pruebas\tp_final_edi2\CodigoPIC18F4550-2\main]
+Type=4
+[mru-list]
+1=main.c
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=2
+D1=13-11-2020
+D1_L=4
+D1_L1=[68615]Project Opened.
+D1_L2=[68650]Started Editing.
+D1_L3=[69236]Stopped Editing.
+TotalEdit=10
+TotalDebug=0
+D1_E=10
+D1_D=0
+D1_L4=[69236]Project Closed.
+D2=14-11-2020
+D2_L=3
+D2_L1=[37155]Project Opened.
+D2_L2=[37413]Started Editing.
+D2_L3=[37732]Stopped Editing.
+
+[Opened Files]
+1=main.c
+t1=89
+2=main.h
+t2=1
+Count=3
+3=D:\Program Files\PICC\Drivers\HDM64GS12.c
+t3=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=7
+[Units]
+Count=1
+1=main (main)

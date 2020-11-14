@@ -1,0 +1,80 @@
+
+ROM used:   8066/32768 (25%)
+            8066/32768 (25%) including unused fragments
+
+            4.1 Average locations per line
+            22.4 Average locations per statement
+
+RAM used:   1173/2048 (57%) at main() level
+            1259/2048 (61%) worst case
+
+Stack used: 7 worst case (3 in main + 4 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  200   117  32  main.c
+    9     0   0  main.h
+  852     0   0  D:\Program Files\PICC\Devices\18F4550.h
+  356    80  22  D:\Program Files\PICC\Drivers\HDM64GS12.c
+  540   163  45  D:\Program Files\PICC\Drivers\graphics.c
+----- -----
+ 1957   360 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     40   0    1             @delay_ms1
+0    302   2    1    580  3.2  glcd_init
+0    176   1    7    624  5.5  glcd_update
+0    188   1    9    491  8.4  glcd_pixel
+0     92   1   10    335  5.0  glcd_fillScreen
+0     56   0    2    307  2.8  glcd_writeByte
+0    272   2    0             @const703
+0    236   1    0             @const707
+0    338   2   17   1519  9.2  glcd_line
+0    418   3   20   1587 11.7  glcd_text57
+0     56   0    6    272  5.1  limpiarPorcion
+0    358   2   10    382  4.7  nuevaLinea
+0    246   2   11             @MULFF
+0    632   4   16             @ADDFF
+0     60   0    4             @SFTOI
+0     40   0    0    138  3.0  TIMER0_isr
+0    224   1    8    410  6.6  TIMER1_isr
+0     66   0    5             @FTOSD
+0    148   1   13             @DIV3232
+0    416   3   13             @PRINTF_L32D_9600_31766_31767FPFPF
+0    462   3   34   1157  6.1  RB_isr
+0     28   0    0             @const823
+0     32   0    1             @SPRINTF
+0    422   3   13             @PRINTF_L32D_827FPFPF
+0     26   0    0             @const834
+0    102   1    7    255  4.1  serial_interrupt
+0   1828  11   27   2706  9.1  MAIN
+0     30   0    0             @const846
+0     54   0    2             @ITOF
+0    350   2   14             @DIVFF
+0    122   1   10             @FLT
+0     40   0    2             @PSTRINGR_1
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               14
+    Statements              360
+    Comments                544
+    Volume (V)              16650
+    Difficulty (D)          82.9
+    Effort to implement (E) 1379670
+    Time to implement (T)   21 hours, 17 minutes
+    Est Delivered Bugs (B)  4
+    Cyclomatic Complexity   43
+    Maintainability (MI)    69
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000D0   202  0  
+000D2-07FFE  7860  24698  
+
+
+

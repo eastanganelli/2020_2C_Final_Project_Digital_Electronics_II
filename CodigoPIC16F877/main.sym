@@ -286,13 +286,12 @@ ROM Allocation:
 001000  @cinit1
 001000  MAIN
 00101B  @cinit2
-00143B  @const813.call
 
 Project Directory:
     C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\
 
 Project Files:
-    main.c                                                  [12-nov.-20 14:25  CRC=CFC04CFD]
+    main.c                                                  [13-nov.-20 12:38  CRC=CFC04CFD]
     main.h                                                  [10-nov.-20 14:55  CRC=D872A938]
     D:\Program Files\PICC\Devices\16F877.h                  [15-ene.-18 15:53  CRC=EE78BE53]
     D:\Program Files\PICC\Drivers\HDM64GS12.c               [08-jul.-10 09:47  CRC=C1C373EF]

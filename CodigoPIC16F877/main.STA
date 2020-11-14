@@ -27,16 +27,16 @@ Page ROM  %  RAM    Vol Diff  Functions:
 1    389   7    1    555  3.4  glcd_init
 0    146   3    7    779  7.2  glcd_pixel
  Inline         4    506  4.8  glcd_fillScreen
-0     41   1    2    335  5.0  @MUL88
+0     41   1    2             @MUL88
 0     49   1    2    307  2.8  glcd_writeByte
 0     55   1    2    318  2.8  glcd_readByte
-0    262   5    0    318  2.8  @const657
+0    262   5    0             @const657
 0    227   4    0             @const661
 1    220   4   17   1519  9.2  glcd_line
 0    290   6   20   1587 11.7  glcd_text57
 0     33   1    6    255  5.1  limpiarPorcion
 1    224   4   10    364  4.7  nuevaLinea
-0    121   2   13    364  4.7  @MULFF
+0    121   2   13             @MULFF
 1    326   6   16             @ADDFF
 0     33   1    4             @SFTOI
 0     23   0    0    138  3.0  TIMER0_isr
@@ -45,13 +45,13 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0     83   2   13             @DIV3232
 0    263   5   13             @PRINTF_L32D_9600_62_63FPFPF
 1    277   5   34   1135  6.1  RB_isr
-0     15   0    0   1135  6.1  @const774
+0     15   0    0             @const774
 0     17   0    1             @SPRINTF
 1    300   6   19             @PRINTF_L32D_778FPFPF
-0     14   0    0    238  4.1  @const785
+0     14   0    0             @const785
 0     53   1    7    238  4.1  serial_interrupt
 2   1121  22   27   2561  9.1  MAIN
-0     17   0    0   2561  9.1  @const797
+0     17   0    0             @const797
 0     31   1    2             @ITOF
 1    204   4   14             @DIVFF
 1     65   1   10             @FLT
@@ -59,16 +59,16 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               20
+    Functions               14
     Statements              347
     Comments                521
-    Volume (V)              25260
-    Difficulty (D)          111.8
-    Effort to implement (E) 2824588
-    Time to implement (T)   43 hours, 35 minutes
-    Est Delivered Bugs (B)  7
-    Cyclomatic Complexity   57
-    Maintainability (MI)    137
+    Volume (V)              16525
+    Difficulty (D)          79.1
+    Effort to implement (E) 1306801
+    Time to implement (T)   20 hours, 10 minutes
+    Est Delivered Bugs (B)  4
+    Cyclomatic Complexity   43
+    Maintainability (MI)    80
 
  Segment     Used  Free
 -----------  ----  ----
