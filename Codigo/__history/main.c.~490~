@@ -12,7 +12,7 @@
 #define offset 120 //es el offset para la altura de la grafica
 #define TMR1 0x0BDC //Este es el valor para 500ms en el timer1 (0,5s=(4/4000000)8(65536-TMR1))=>TMR1=3036
 #define TMR0 0x40 //Este es el valor para 50ms en el timer0
-#define nMediciones 80 //Numero de mediciones
+#define nMediciones 20 //Numero de mediciones
 
 ///Fin Defines
 
@@ -21,8 +21,7 @@
 int x=0; //Posicion inicial de x para graficar la temperatura
 float y; //Temperatura anterior
 float t; //Temperatura actual
-int16 iAn; //Lectura del sensor de temperatura
-int registro[nMediciones]; //registro de las ultimas nMediciones mediciones
+float registro[nMediciones]; //registro de las ultimas nMediciones mediciones
 int1 habilitarLectura=0; //Variable para habilitar o deshabilitar la captura de datos del sensor
 char received = '\0';
 int ciclos=10; //Variable que cuenta los ciclos que debe hacer el timer0 antes de ejecutar su codigo
@@ -45,9 +44,25 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
       x=0;
       x1=1;
    }
-	glcd_line(x, (y*escala)+offset, x1, (temp*escala)+offset, ON);	//multiplicamos por la escala para que la grafica entre en el area del grafico. El offset esta explicado arriba
-	y=temp;
+   glcd_line(x, (y*escala)+offset, x1, (temp*escala)+offset, ON); //multiplicamos por la escala para que la grafica entre en el area del grafico. El offset esta explicado arriba
+   y=temp;
    x=x1;
+}
+
+void write_float_eeprom(long int n, float data) {
+   int i;
+
+   for (i=0; i<4; i++)
+     write_eeprom(i+n,*(&data+i));
+}
+
+float read_float_eeprom(long int n) {
+   int i;
+   float data;
+   
+   for (i=0; i<4; i++)
+     *(&data+i)=read_eeprom(i+n);
+   return(data);
 }
 
 ///Fin Funciones
@@ -76,7 +91,7 @@ void TIMER1_isr(){ //Timer para almacenar, en un array, la temepratura actual ca
       //Las cuales podemos guardar despues donde querramos
 	   for(int i=0; i<nMediciones-1;i++)
 	   	registro[i]=registro[i+1];
-	   registro[nMediciones-1]=iAn;
+	   registro[nMediciones-1]=t;
    }
    set_timer1(TMR1);
 }
@@ -88,6 +103,13 @@ void RB_isr(){ //Prueba de interrupciones
       habilitarLectura=~habilitarLectura;
       disable_interrupts(INT_TIMER0);
       if(habilitarLectura){
+      	int epos=0;
+      	for(int pos=0; pos<nMediciones; pos++){
+      		registro[pos]=read_float_eeprom(epos);
+	   		printf("%4.2f ",registro[pos]);
+	   		registro[pos]=0;
+	   		epos+=4;
+      	}
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, ON);
       	sprintf(str, "%4.2f°C", y);
          glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
@@ -103,35 +125,12 @@ void RB_isr(){ //Prueba de interrupciones
          glcd_text57(12*6, 10, str, 1, OFF);
          x=0;
          disable_interrupts(INT_TIMER1);
-         glcd_text57(128/2-30, 0, (char*)"Guardando", 1, ON);
+         int epos=0;
          for(int pos=0; pos<nMediciones; pos++){
-         	write_eeprom(pos, registro[pos]);
+         	write_float_eeprom(epos, registro[pos]);
+         	epos+=4;
          }
-         glcd_text57(128/2-30, 0, (char*)"Guardando", 1, OFF);
       }
-   }
-   if(input(PIN_B7)){
-   	habilitarLectura=0;
-      glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
-      disable_interrupts(INT_TIMER1);
-      disable_interrupts(INT_TIMER0);
-   	for(int pos=0; pos<nMediciones; pos++){
-   		registro[pos]=read_eeprom(pos);
-   		float dato=(5.0*registro[pos]*100.0)/1024.0;
-   		printf("%4.2f ",dato);
-   		if(dato>=28 && dato<=50)
-   			nuevaLinea(dato);
-   		if(dato<28)
-   			nuevaLinea(29);
-   		if(dato>50)
-   			nuevaLinea(50);
-   		registro[pos]=0;
-   	}
-      glcd_text57(128/2-30, 0, (char*)"Guardando", 1, ON);
-      for(int pos=0; pos<nMediciones; pos++){
-      	write_eeprom(pos, registro[pos]);
-      }
-      glcd_text57(128/2-30, 0, (char*)"Guardando", 1, OFF);
    }
 }
 
@@ -149,6 +148,7 @@ void serial_interrupt() {
 void main()
 {
    trisb=0b01000000;
+   int16 iAn;
    char str[8];
    
    setup_adc_ports(AN0); //seteamos el pin A0 como analogico
@@ -193,7 +193,7 @@ void main()
          if(t>40 || t<35)
             enable_interrupts(INT_TIMER0);
          if(t<=50 && t>=28){ //Si t es menor o igual a 50 la agregamos al grafico
-         	nuevaLinea(t); //Dibujamos la nueva linea en el grafico.
+            nuevaLinea(t); //Dibujamos la nueva linea en el grafico.
             glcd_text57(3, 0, (char*)"T>50", 1, OFF); //ocultamos la notificacion de t>50
             glcd_text57(3, 0, (char*)"T<28", 1, OFF); //ocultamos la notificacion de t>50
          }

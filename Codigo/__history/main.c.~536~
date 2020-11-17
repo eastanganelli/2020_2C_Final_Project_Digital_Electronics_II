@@ -112,7 +112,6 @@ void RB_isr(){ //Prueba de interrupciones
    }
    if(input(PIN_B7)){
    	habilitarLectura=0;
-      glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
       disable_interrupts(INT_TIMER1);
       disable_interrupts(INT_TIMER0);
    	for(int pos=0; pos<nMediciones; pos++){

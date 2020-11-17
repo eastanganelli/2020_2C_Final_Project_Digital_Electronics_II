@@ -199,11 +199,13 @@ void main()
          }
          if(t>50){
             glcd_text57(3, 0, (char*)"T>50", 1, ON); //Esto significa que no graficamos temperaturas superiores a 50
-            y=t; //igualamos el dato anterior al valor de temperatura para no refrescar otra vez el valor de la temperatura
+            nuevaLinea(50);
+            //y=t; //igualamos el dato anterior al valor de temperatura para no refrescar otra vez el valor de la temperatura
          }
          if(t<28){
             glcd_text57(3, 0, (char*)"T<28", 1, ON); //Esto significa que no graficamos temperaturas superiores a 50
-            y=t; //igualamos el dato anterior al valor de temperatura para no refrescar otra vez el valor de la temperatura
+            nuevaLinea(28);
+            //y=t; //igualamos el dato anterior al valor de temperatura para no refrescar otra vez el valor de la temperatura
          }
          sprintf(str, "%4.2f", t); //Convertimos la temperatura float en un char*
          puts(str); //Enviamos la temperatura por bluetooth
