@@ -1,5 +1,5 @@
 ÀÄmain
-   ÃÄMAIN  0/1828  Ram=27
+   ÃÄMAIN  0/1844  Ram=27
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄglcd_init  0/302  Ram=1
    ³  ³  ÃÄglcd_writeByte  0/56  Ram=2
@@ -32,6 +32,7 @@
    ³  ³  ÀÄ*
    ³  ÃÄglcd_update  0/176  Ram=7
    ³  ³  ÀÄ*
+   ³  ÃÄ@delay_ms1  0/40  Ram=1
    ³  ÃÄ@ITOF  0/54  Ram=2
    ³  ÃÄ@MULFF  0/246  Ram=11
    ³  ÃÄ@MULFF  0/246  Ram=11

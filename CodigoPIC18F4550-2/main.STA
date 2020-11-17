@@ -1,9 +1,9 @@
 
-ROM used:   8066/32768 (25%)
-            8066/32768 (25%) including unused fragments
+ROM used:   8082/32768 (25%)
+            8082/32768 (25%) including unused fragments
 
             4.1 Average locations per line
-            22.4 Average locations per statement
+            22.5 Average locations per statement
 
 RAM used:   1173/2048 (57%) at main() level
             1259/2048 (61%) worst case
@@ -30,26 +30,26 @@ Page ROM  %  RAM    Vol Diff  Functions:
 0     92   1   10    335  5.0  glcd_fillScreen
 0     56   0    2    307  2.8  glcd_writeByte
 0    272   2    0             @const703
-0    236   1    0             @const707
+0    236   1    0   2579  9.1  @const707
 0    338   2   17   1519  9.2  glcd_line
 0    418   3   20   1587 11.7  glcd_text57
 0     56   0    6    272  5.1  limpiarPorcion
 0    358   2   10    382  4.7  nuevaLinea
 0    246   2   11             @MULFF
 0    632   4   16             @ADDFF
-0     60   0    4             @SFTOI
+0     60   0    4    138  3.0  @SFTOI
 0     40   0    0    138  3.0  TIMER0_isr
 0    224   1    8    410  6.6  TIMER1_isr
 0     66   0    5             @FTOSD
 0    148   1   13             @DIV3232
-0    416   3   13             @PRINTF_L32D_9600_31766_31767FPFPF
+0    416   3   13   1135  6.1  @PRINTF_L32D_9600_31766_31767FPFPF
 0    462   3   34   1157  6.1  RB_isr
 0     28   0    0             @const823
 0     32   0    1             @SPRINTF
 0    422   3   13             @PRINTF_L32D_827FPFPF
 0     26   0    0             @const834
 0    102   1    7    255  4.1  serial_interrupt
-0   1828  11   27   2706  9.1  MAIN
+0   1844  11   27   2706  9.1  MAIN
 0     30   0    0             @const846
 0     54   0    2             @ITOF
 0    350   2   14             @DIVFF
@@ -58,23 +58,23 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               14
+    Functions               17
     Statements              360
     Comments                544
-    Volume (V)              16650
-    Difficulty (D)          82.9
-    Effort to implement (E) 1379670
-    Time to implement (T)   21 hours, 17 minutes
-    Est Delivered Bugs (B)  4
-    Cyclomatic Complexity   43
-    Maintainability (MI)    69
+    Volume (V)              22947
+    Difficulty (D)          101.7
+    Effort to implement (E) 2333774
+    Time to implement (T)   36 hours, 1 minutes
+    Est Delivered Bugs (B)  6
+    Cyclomatic Complexity   53
+    Maintainability (MI)    114
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-00006     0  4  
 00008-000D0   202  0  
-000D2-07FFE  7860  24698  
+000D2-07FFE  7876  24682  
 
 
 

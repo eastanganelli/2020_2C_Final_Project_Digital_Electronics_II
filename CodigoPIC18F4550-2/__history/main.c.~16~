@@ -20,7 +20,7 @@
 ///Variables Globales
 
 int x=0; //Posicion inicial de x para graficar la temperatura
-float y; //Temperatura anterior
+float y=0; //Temperatura anterior
 float t; //Temperatura actual
 float registro[nMediciones]; //registro de las ultimas nMediciones mediciones
 int1 habilitarLectura=0; //Variable para habilitar o deshabilitar la captura de datos del sensor
@@ -81,6 +81,7 @@ void TIMER1_isr(){ //Timer para almacenar, en un array, la temepratura actual ca
 	   registro[nMediciones-1]=t;
 	   for(int i=0; i<nMediciones; i++)
 	   	printf("%4.2f ",registro[i]);
+	   printf("\r");
    }
    set_timer1(TMR1);
 }
@@ -88,12 +89,13 @@ void TIMER1_isr(){ //Timer para almacenar, en un array, la temepratura actual ca
 #INT_RB
 void RB_isr(){ //Prueba de interrupciones
    if(input(PIN_B6)){ //Habilita o deshabilita la captura de datos
+   	delay_ms(250);
       char str[8];
       habilitarLectura=~habilitarLectura;
       disable_interrupts(INT_TIMER0);
       if(habilitarLectura){
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, ON);
-      	sprintf(str, "%4.2f?C", y);
+      	sprintf(str, "%4.2f°C", y);
          glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
          enable_interrupts(INT_TIMER1);
          set_timer1(TMR1);
@@ -103,7 +105,7 @@ void RB_isr(){ //Prueba de interrupciones
          glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, ON);
          limpiarGrafico;
          glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, OFF);
-      	sprintf(str, "%4.2f?C", t);
+      	sprintf(str, "%4.2f°C", t);
          glcd_text57(12*6, 10, str, 1, OFF);
          disable_interrupts(INT_TIMER1);
       }
@@ -149,7 +151,7 @@ void main()
    glcd_update();
    
    set_adc_channel(0); //Seteamos el canal que vamos a leer
-   delay_ms(250); //Esperamos 10 us
+   delay_us(20); //Esperamos 10 us
    iAn=read_adc(); //Levantamos el dato
    y=(5.0*iAn*100.0)/1024.0; //Lo convertemos a temperatura. Esta es la primera captura
    delay_ms(250);
@@ -163,9 +165,9 @@ void main()
          
          if(t!=y){ //Si t es != al dato anterior refrescamos la temperatura y la enviamos al bluetooth
             //str[0] = '\0';
-            sprintf(str, "%4.2f?C", y); //Convertimos la temperatura float en un char*
+            sprintf(str, "%4.2f°C", y); //Convertimos la temperatura float en un char*
             glcd_text57(12*6, 10, str, 1, OFF); //borramos del lcd la temperatura anterior
-            sprintf(str, "%4.2f?C", t); //Convertimos la temperatura float en un char*
+            sprintf(str, "%4.2f°C", t); //Convertimos la temperatura float en un char*
             glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
             glcd_update();
          }

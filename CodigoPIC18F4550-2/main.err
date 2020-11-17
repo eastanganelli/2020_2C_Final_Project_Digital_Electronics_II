@@ -1,4 +1,4 @@
-Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\pruebas\tp_final_edi2\CodigoPIC18F4550-2\main on 14-nov.-20 at 10:23
+Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\CodigoPIC18F4550-2\main on 17-nov.-20 at 13:47
 >>> Warning 216 "main.c" Line 197(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_writeByte)
 >>> Warning 216 "main.c" Line 197(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_update)
 >>> Warning 216 "main.c" Line 197(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_pixel)

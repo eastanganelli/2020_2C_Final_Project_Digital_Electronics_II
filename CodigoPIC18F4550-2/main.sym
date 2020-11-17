@@ -136,8 +136,8 @@
 4DF     limpiarPorcion.y2
 4DF     RB_isr.@SCRATCH4
 4E0     @PRINTF_L32D_827FPFPF.P1
-4E0-4E1 glcd_text57.textptr
 4E0     limpiarPorcion.i
+4E0-4E1 glcd_text57.textptr
 4E1     limpiarPorcion.j
 4E1     @PRINTF_L32D_827FPFPF.@SCRATCH1
 4E2     glcd_update.i
@@ -245,19 +245,19 @@ ROM Allocation:
 001894  @cinit2
 
 Project Directory:
-    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\pruebas\tp_final_edi2\CodigoPIC18F4550-2\
+    C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\CodigoPIC18F4550-2\
 
 Project Files:
-    main.c                                                  [14-nov.-20 10:23  CRC=A7095F43]
-    main.h                                                  [13-nov.-20 19:04  CRC=D872A938]
+    main.c                                                  [17-nov.-20 13:47  CRC=35B0BFA5]
+    main.h                                                  [14-nov.-20 10:56  CRC=D872A938]
     D:\Program Files\PICC\Devices\18F4550.h                 [15-ene.-18 15:57  CRC=06200171]
     D:\Program Files\PICC\Drivers\HDM64GS12.c               [08-jul.-10 09:47  CRC=C1C373EF]
     D:\Program Files\PICC\Drivers\graphics.c                [06-jul.-10 09:49  CRC=70BB89DE]
 
-Source signature=28D69197
+Source signature=B77DF1F9
 Program memory checksum=0000
 Program memory CRC=0000
-Hex file CRC=DEE4
+Hex file CRC=85AD
 
 Units:
     main (main)

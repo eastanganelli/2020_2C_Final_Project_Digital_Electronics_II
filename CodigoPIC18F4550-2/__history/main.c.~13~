@@ -88,6 +88,7 @@ void TIMER1_isr(){ //Timer para almacenar, en un array, la temepratura actual ca
 #INT_RB
 void RB_isr(){ //Prueba de interrupciones
    if(input(PIN_B6)){ //Habilita o deshabilita la captura de datos
+   	delay_ms(250);
       char str[8];
       habilitarLectura=~habilitarLectura;
       disable_interrupts(INT_TIMER0);
@@ -149,7 +150,7 @@ void main()
    glcd_update();
    
    set_adc_channel(0); //Seteamos el canal que vamos a leer
-   delay_ms(250); //Esperamos 10 us
+   delay_us(20); //Esperamos 10 us
    iAn=read_adc(); //Levantamos el dato
    y=(5.0*iAn*100.0)/1024.0; //Lo convertemos a temperatura. Esta es la primera captura
    delay_ms(250);
