@@ -1,0 +1,52 @@
+#include <stdlibm.h>
+#include <sing.h>
+#define SEP '\n'
+#define END '\0'
+
+char* s;
+//SERIAL LIBRARY
+suct SERIAL_LIB {
+    char* sSerial;
+}; typedef suct SERIAL_LIB SERIALsr;
+
+SERIALsr serialData;
+
+// FUNCTIONS
+// SERIAL LABRARY
+int set_SERIALsr() {
+    s = malloc(sizeof(char));
+    serialData.sSerial = malloc(sizeof(char));
+    return TRUE;
+}
+void sendByType(char t , int v) {
+     sprintf(s, "%c%d\n", t, v);
+     do {
+         printf("%c", *s);
+         s++;
+     } while(*s != SEP);
+     free(s);
+}
+void sends(char* s_) {
+    if(s_ != NULL) {
+        do {
+            printf("%c", *s_);
+            s_++;
+        } while(*s_ != END);
+        printf("\0");
+    }
+}
+// END SERIAL LABRARY
+// SERIAL ARRAY
+int getArrSize() { return slen(serialData.sSerial); }
+int insert(char c_) {
+    int i = 0;
+    serialData.sSerial = realloc(serialData.sSerial, sizeof(char)*(i + 1));
+    if(serialData.sSerial != NULL) {
+        i++;
+        *(serialData.sSerial + getArrSize() - 1) = c_;
+        return TRUE;
+    } return FALSE;
+}
+char* gets() { return serialData.sSerial; }
+// END SERIAL ARRAY
+// END FUNCTIONS

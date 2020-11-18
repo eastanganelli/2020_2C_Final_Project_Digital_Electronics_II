@@ -1,9 +1,9 @@
-D G "__PCM__" 0 218 ""5.076""
-D G "__DEVICE__" 0 218 "877"
-D G "__DATE__" 0 218 ""17-nov.-20""
-D G "__TIME__" 0 218 ""16:42:03""
-D G "_UNICODE" 0 218 ""?""
-D G "__EVAL" 0 218 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
+D G "__PCM__" 0 224 ""5.076""
+D G "__DEVICE__" 0 224 "877"
+D G "__DATE__" 0 224 ""18-Nov-20""
+D G "__TIME__" 0 224 ""02:36:09""
+D G "_UNICODE" 0 224 ""?""
+D G "__EVAL" 0 224 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `54 
@@ -1255,97 +1255,405 @@ C L "glcd_text57" 4 2 1 "FUNCTION"
 C L "glcd_text57" 4 2 1 "FUNCTION"
 C L "glcd_text57" 4 2 1 "FUNCTION"
 C L "glcd_text57" 4 2 1 "FUNCTION"
-D G "escala" 0 10 "-2" "Escala negativa para que crezca hacia arriba."
-D G "limpiarGrafico" 0 11 "limpiarPorcion(0,20,128,44)" "Limpia el area del grafico"
-D G "offset" 0 12 "120" "es el offset para la altura de la grafica"
-D G "TMR1" 0 13 "0x0BDC" "Este es el valor para 500ms en el timer1 (0,5s=(4/4000000)8(65536-TMR1))=>TMR1=3036"
-D G "TMR0" 0 14 "0x40" "Este es el valor para 50ms en el timer0"
-D G "nMediciones" 0 15 "80" "Numero de mediciones"
-V G "x" 0 21 "int8" `733 
-V G "y" 0 22 "float" `734  "Temperatura anterior"
-V G "t" 0 23 "float" `735  "Temperatura actual"
-V G "iAn" 0 24 "int16" `736  "Lectura del sensor de temperatura"
-V G "registro" 0 25 "int8[80]" `737  "registro de las ultimas nMediciones mediciones"
-V G "habilitarLectura" 0 26 "int1" `738 
-V G "received" 0 27 "int8" `739 
-V G "ciclos" 0 28 "int8" `740 
-V G "ciclosT1" 0 29 "int8" `741 
-C L "limpiarPorcion" 0 8 3 "FUNCTION"
-F N "limpiarPorcion" 0 35 ""
-V L "x1" 0 35 "int8" `743 
-V L "y1" 0 35 "int8" `744 
-V L "x2" 0 35 "int8" `745 
-V L "y2" 0 35 "int8" `746 
-F G "limpiarPorcion" 0 35 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `742  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
-V L "i" 0 36 "int8" `747 
-V L "j" 0 37 "int8" `748 
-C L "limpiarPorcion" 0 8 1 "FUNCTION"
-F N "nuevaLinea" 0 41 ""
-V L "temp" 0 41 "float" `750 
-F G "nuevaLinea" 0 41 "void(float temp)" `749  "Funcion para graficar las nuevas lineas de temperatura"
-V L "x1" 0 42 "int8" `751 
-C L "nuevaLinea" 0 8 1 "FUNCTION"
-C L "nuevaLinea" 0 8 1 "FUNCTION"
-C L "nuevaLinea" 0 8 1 "FUNCTION"
-C L "TIMER0_isr" 0 8 2 "FUNCTION"
-F N "TIMER0_isr" 0 58 ""
-F G "TIMER0_isr" 0 58 "void()" `760  "Timer para hacer sonar el buzzer cada 500ms"
-F N "TIMER1_isr" 0 70 ""
-F G "TIMER1_isr" 0 70 "void()" `761  "Timer para almacenar, en un array, la temepratura actual cada 3 segundos"
-C L "TIMER1_isr" 0 8 3 "FUNCTION"
-V L "i" 0 77 "int8" `762 
-F N "RB_isr" 0 85 ""
-F G "RB_isr" 0 85 "void()" `763  "Prueba de interrupciones"
-C L "RB_isr" 0 8 1 "FUNCTION"
-V L "str" 0 87 "int8[8]" `764 
-C L "RB_isr" 0 8 1 "FUNCTION"
-V L "pos" 0 107 "int8" `785 
-V L "pos" 0 118 "int8" `789 
-V L "dato" 0 120 "float" `790 
-V L "pos" 0 131 "int8" `804 
-F N "serial_interrupt" 0 139 ""
-F G "serial_interrupt" 0 139 "void()" `806 
-C L "serial_interrupt" 0 8 1 "FUNCTION"
-C L "serial_interrupt" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-F N "MAIN" 0 149 ""
-F G "MAIN" 0 150 "void()" `810 
-V L "str" 0 152 "int8[8]" `813 
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 2 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
-C L "MAIN" 0 8 1 "FUNCTION"
+D G "_STDLIBM" 6 14 ""
+D G "_STDDEF" 7 13 ""
+D G "ptrdiff_t" 7 18 "unsigned int16"
+D G "size_t" 7 22 "unsigned int8"
+D G "wchar_t" 7 26 "char"
+D G "NULL" 7 27 "0"
+D G "offsetof" 7 29 "(s,f) (offsetofbit(s,f)/8)"
+T G "node_t" 6 25 "{int8 size,int16 next}" `735 
+D G "debug_stdlibm" 6 41 "(s)"
+D G "_STDLIBM_TRACK_WORST_INC" 6 71 "(_x)"
+D G "_STDLIBM_TRACK_WORST_DEC" 6 72 "(_x)"
+D G "_MEMMGMT_CSIZE" 8 18 "127"
+D G "_MEMMGMT_POS" 8 19 "7"
+F N "create_node" 8 22 ""
+V L "size" 8 22 "int16" `738 
+V L "ptr" 8 22 "nodet *" `739  "create node at given location"
+F G "create_node" 8 23 "nodet *(int16 size,nodet * ptr)" `737 
+V L "result" 8 24 "nodet *" `740 
+F N "update_node" 8 30 ""
+V L "node" 8 30 "nodet *" `742 
+V L "size" 8 30 "int16" `743  "update the size of given node"
+F G "update_node" 8 31 "void(nodet * node,int16 size)" `741 
+C L "insert_node_after" 8 2 2 "FUNCTION"
+F N "insert_node_after" 8 36 ""
+V L "place" 8 36 "nodet *" `745 
+V L "node" 8 36 "nodet *" `746  "place the node after another given node"
+F G "insert_node_after" 8 37 "void(nodet * place,nodet * node)" `744 
+F N "remove_node" 8 47 ""
+V L "node" 8 47 "nodet *" `748 
+F G "remove_node" 8 47 "void(nodet * node)" `747  "remove the given node from the memlist"
+V L "ptr" 8 48 "nodet *" `749 
+F N "traverse" 6 77 ""
+F G "traverse" 6 78 "void()" `750 
+V L "node" 6 79 "nodet *" `751 
+V L "temp" 6 79 "nodet *" `752 
+V L "nsize" 6 80 "int16" `753 
+V L "nextsize" 6 80 "int16" `754 
+C L "traverse" 6 92 1 "FUNCTION"
+C L "traverse" 6 92 1 "FUNCTION"
+F N "malloc" 6 119 ""
+V L "size" 6 119 "int8" `756 
+F G "malloc" 6 120 "*int8(int8 size)" `755 
+V L "node" 6 121 "nodet *" `757 
+V L "new" 6 121 "nodet *" `758 
+V L "nsize" 6 122 "int16" `759 
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+C L "malloc" 6 92 1 "FUNCTION"
+F N "calloc" 6 177 ""
+V L "nmemb" 6 177 "int8" `761 
+V L "size" 6 177 "int8" `762 
+F G "calloc" 6 178 "*int8(int8 nmemb,int8 size)" `760 
+V L "node" 6 179 "nodet *" `763 
+V L "new" 6 179 "nodet *" `764 
+V L "nsize" 6 180 "int16" `765 
+V L "resize" 6 180 "int16" `766 
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+C L "calloc" 6 92 1 "FUNCTION"
+F N "free" 6 226 ""
+V L "ptr" 6 226 "*void" `772 
+F G "free" 6 227 "void(*void ptr)" `771 
+V L "node" 6 228 "nodet *" `773 
+V L "nsize" 6 229 "int16" `774 
+C L "free" 6 92 1 "FUNCTION"
+C L "free" 6 92 1 "FUNCTION"
+C L "free" 6 92 1 "FUNCTION"
+F N "realloc" 6 257 ""
+V L "ptr" 6 257 "*void" `776 
+V L "size" 6 257 "int8" `777 
+F G "realloc" 6 258 "*int8(*void ptr,int8 size)" `775 
+V L "node" 6 259 "nodet *" `778 
+V L "new" 6 259 "nodet *" `779 
+V L "temp" 6 259 "nodet *" `780 
+V L "nsize" 6 260 "int16" `781 
+V L "nextsize" 6 260 "int16" `782 
+V L "newptr" 6 261 "*int8" `783 
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+C L "realloc" 6 92 1 "FUNCTION"
+T G "heap_status_t" 6 369 "{int8 bytesUsed,int8 largestUsedSeg,int8 segmentsUsed,int8 bytesFree,int8 largestFreeSeg,int8 segmentsFree}" `791 
+F N "GetHeapStatus" 6 371 ""
+V L "pHeapStatus" 6 371 " *" `793 
+F G "GetHeapStatus" 6 372 "void( * pHeapStatus)" `792 
+V L "status" 6 373 "heap_status_t" `794 
+V L "node" 6 374 "nodet *" `795 
+V L "nsize" 6 375 "int16" `796 
+C L "GetHeapStatus" 6 92 1 "FUNCTION"
+D G "_STRING" 9 12 ""
+D G "_CTYPE" 10 12 ""
+D G "islower" 10 14 "(x)  isamong(x,"abcdefghijklmnopqrstuvwxyz")"
+D G "isupper" 10 15 "(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZ")"
+D G "isalnum" 10 16 "(x)  isamong(x,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")"
+D G "isalpha" 10 17 "(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")"
+D G "isdigit" 10 18 "(x)  isamong(x,"0123456789")"
+D G "isspace" 10 19 "(x)  ((x)==' ')"
+D G "isxdigit" 10 20 "(x) isamong(x,"0123456789ABCDEFabcdef")"
+D G "iscntrl" 10 21 "(x)  ((x)<' ')"
+D G "isprint" 10 22 "(x)  ((x)>=' ')"
+D G "isgraph" 10 23 "(x)  ((x)>' ')"
+D G "ispunct" 10 24 "(x)  (((x)>' ')&&!isalnum(x))"
+F N "memmove" 9 34 ""
+V L "s1" 9 34 "*void" `798 
+V L "s2" 9 34 "*void" `799 
+V L "n" 9 34 "int8" `800 
+F G "memmove" 9 35 "*int8(*void s1,*void s2,int8 n)" `797 
+V L "sc1" 9 36 "*int8" `801 
+V L "sc2" 9 37 "*int8" `802 
+D G "strcopy" 9 54 "strcpy"
+F N "strncpy" 9 61 ""
+V L "s1" 9 61 "*int8" `804 
+V L "s2" 9 61 "*int8" `805 
+V L "n" 9 61 "int8" `806 
+F G "strncpy" 9 62 "*int8(*int8 s1,*int8 s2,int8 n)" `803 
+V L "s" 9 63 "*int8" `807 
+F N "strcat" 9 78 ""
+V L "s1" 9 78 "*int8" `809 
+V L "s2" 9 78 "*int8" `810 
+F G "strcat" 9 79 "*int8(*int8 s1,*int8 s2)" `808 
+V L "s" 9 80 "*int8" `811 
+F N "strncat" 9 96 ""
+V L "s1" 9 96 "*int8" `813 
+V L "s2" 9 96 "*int8" `814 
+V L "n" 9 96 "int8" `815 
+F G "strncat" 9 97 "*int8(*int8 s1,*int8 s2,int8 n)" `812 
+V L "s" 9 98 "*int8" `816 
+C L "memcmp" 9 19 3 "FUNCTION"
+F N "memcmp" 9 120 ""
+V L "s1" 9 120 "*void" `818 
+V L "s2" 9 120 "*void" `819 
+V L "n" 9 120 "int8" `820 
+F G "memcmp" 9 121 "sint8(*void s1,*void s2,int8 n)" `817 
+V L "su1" 9 122 "*int8" `821 
+V L "su2" 9 122 "*int8" `822 
+C L "strcmp" 9 19 2 "FUNCTION"
+F N "strcmp" 9 134 ""
+V L "s1" 9 134 "*int8" `824 
+V L "s2" 9 134 "*int8" `825 
+F G "strcmp" 9 135 "sint8(*int8 s1,*int8 s2)" `823 
+C L "strcoll" 9 19 2 "FUNCTION"
+F N "strcoll" 9 144 ""
+V L "s1" 9 144 "*int8" `827 
+V L "s2" 9 144 "*int8" `828 
+F G "strcoll" 9 145 "sint8(*int8 s1,*int8 s2)" `826 
+C L "strncmp" 9 19 4 "FUNCTION"
+F N "strncmp" 9 157 ""
+V L "s1" 9 157 "*int8" `830 
+V L "s2" 9 157 "*int8" `831 
+V L "n" 9 157 "int8" `832 
+F G "strncmp" 9 158 "sint8(*int8 s1,*int8 s2,int8 n)" `829 
+C L "strxfrm" 9 19 4 "FUNCTION"
+F N "strxfrm" 9 170 ""
+V L "s1" 9 170 "*int8" `834 
+V L "s2" 9 170 "*int8" `835 
+V L "n" 9 170 "int8" `836 
+F G "strxfrm" 9 171 "int8(*int8 s1,*int8 s2,int8 n)" `833 
+V L "c" 9 172 "int8" `837 
+V L "n1" 9 173 "int8" `838 
+C L "strxfrm" 9 19 1 "FUNCTION"
+F N "memchr" 9 201 ""
+V L "s" 9 201 "*void" `840 
+V L "c" 9 201 "int8" `841 
+V L "n" 9 201 "int8" `842 
+F G "memchr" 9 202 "*int8(*void s,int8 c,int8 n)" `839 
+V L "uc" 9 203 "int8" `843 
+V L "su" 9 204 "*int8" `844 
+F N "strchr" 9 215 ""
+V L "s" 9 215 "*int8" `846 
+V L "c" 9 215 "int8" `847 
+F G "strchr" 9 216 "*int8(*int8 s,int8 c)" `845 
+C L "strcspn" 9 19 4 "FUNCTION"
+F N "strcspn" 9 227 ""
+V L "s1" 9 227 "*int8" `849 
+V L "s2" 9 227 "*int8" `850 
+F G "strcspn" 9 228 "int8(*int8 s1,*int8 s2)" `848 
+V L "sc1" 9 229 "*int8" `851 
+V L "sc2" 9 229 "*int8" `852 
+F N "strpbrk" 9 242 ""
+V L "s1" 9 242 "*int8" `854 
+V L "s2" 9 242 "*int8" `855 
+F G "strpbrk" 9 243 "*int8(*int8 s1,*int8 s2)" `853 
+V L "sc1" 9 244 "*int8" `856 
+V L "sc2" 9 244 "*int8" `857 
+F N "strrchr" 9 257 ""
+V L "s" 9 257 "*int8" `859 
+V L "c" 9 257 "int8" `860 
+F G "strrchr" 9 258 "*int8(*int8 s,int8 c)" `858 
+V L "P" 9 259 "*int8" `861 
+C L "strspn" 9 19 2 "FUNCTION"
+F N "strspn" 9 272 ""
+V L "s1" 9 272 "*int8" `863 
+V L "s2" 9 272 "*int8" `864 
+F G "strspn" 9 273 "int8(*int8 s1,*int8 s2)" `862 
+V L "sc1" 9 274 "*int8" `865 
+V L "sc2" 9 274 "*int8" `866 
+F N "strstr" 9 291 ""
+V L "s1" 9 291 "*int8" `868 
+V L "s2" 9 291 "*int8" `869 
+F G "strstr" 9 292 "*int8(*int8 s1,*int8 s2)" `867 
+V L "s" 9 293 "*int8" `870 
+V L "t" 9 293 "*int8" `871 
+C L "strlen" 9 19 2 "FUNCTION"
+F N "strlen" 9 318 ""
+V L "s" 9 318 "*int8" `873 
+F G "strlen" 9 319 "int8(*int8 s)" `872 
+V L "sc" 9 320 "*int8" `874 
+F N "strtok" 9 341 ""
+V L "s1" 9 341 "*int8" `876 
+V L "s2" 9 341 "*int8" `877 
+F G "strtok" 9 342 "*int8(*int8 s1,*int8 s2)" `875 
+V L "beg" 9 343 "*int8" `878 
+V L "end" 9 343 "*int8" `879 
+V L "save" 9 344 "*int8" `880 
+C L "stricmp" 9 19 6 "FUNCTION"
+F N "stricmp" 9 392 ""
+V L "s1" 9 392 "*int8" `882 
+V L "s2" 9 392 "*int8" `883 
+F G "stricmp" 9 393 "sint8(*int8 s1,*int8 s2)" `881 
+F N "strlwr" 9 406 ""
+V L "s" 9 406 "*int8" `887 
+F G "strlwr" 9 407 "*int8(*int8 s)" `886 
+V L "P" 9 408 "*int8" `888 
+F N "strupr" 9 420 ""
+V L "s" 9 420 "*int8" `890 
+F G "strupr" 9 421 "*int8(*int8 s)" `889 
+V L "P" 9 422 "*int8" `891 
+D G "SEP" 5 3 "'\n'"
+D G "end" 5 4 "'\0'"
+T G "SERIALsr" 5 8 "{*int8 sSerial}" `894 
+V G "serialData" 5 10 "SERIALsr" `895 
+V G "str" 5 11 "int8[9]" `896 
+C L "set_SERIALsr" 5 13 1 "FUNCTION"
+F N "set_SERIALsr" 5 14 ""
+F G "set_SERIALsr" 5 14 "void()" `897 
+F N "sendFT" 5 17 ""
+V L "t" 5 17 "int8" `899 
+V L "v" 5 17 "float" `900 
+V L "a" 5 17 "int8" `901 
+F G "sendFT" 5 17 "void(int8 t,float v,int8 a)" `898 
+V L "i" 5 19 "int8" `917 
+F N "sendINT" 5 23 ""
+V L "t" 5 23 "int8" `921 
+V L "v" 5 23 "int8" `922 
+V L "a" 5 23 "int8" `923 
+F G "sendINT" 5 23 "void(int8 t,int8 v,int8 a)" `920 
+V L "i" 5 25 "int8" `931 
+F N "sendSTR" 5 29 ""
+V L "t" 5 29 "int8" `935 
+V L "v" 5 29 "*int8" `936 
+V L "a" 5 29 "int8" `937 
+F G "sendSTR" 5 29 "void(int8 t,*int8 v,int8 a)" `934 
+V L "i" 5 31 "int8" `941 
+F N "sendDATA" 5 35 ""
+V L "s_" 5 35 "*int8" `945 
+V L "a" 5 35 "int8" `946 
+F G "sendDATA" 5 35 "void(*int8 s_,int8 a)" `944 
+V L "i" 5 36 "int8" `948 
+C L "getArrSize" 5 13 2 "FUNCTION"
+F N "getArrSize" 5 42 ""
+F G "getArrSize" 5 42 "int8()" `951 
+F N "insert" 5 43 ""
+V L "c_" 5 43 "int8" `953 
+F G "insert" 5 43 "int8(int8 c_)" `952 
+V L "i" 5 44 "int8" `954 
+F N "getSTR" 5 52 ""
+F G "getSTR" 5 52 "*int8()" `955 
+D G "escala" 0 11 "-2" "Escala negativa para que crezca hacia arriba."
+D G "limpiarGrafico" 0 12 "limpiarPorcion(0,20,128,44)" "Limpia el area del grafico"
+D G "offset" 0 13 "120" "es el offset para la altura de la grafica"
+D G "TMR1" 0 14 "0x0BDC" "Este es el valor para 500ms en el timer1 (0,5s=(4/4000000)8(65536-TMR1))=>TMR1=3036"
+D G "TMR0" 0 15 "0x40" "Este es el valor para 50ms en el timer0"
+D G "nMediciones" 0 16 "80" "Numero de mediciones"
+V G "x" 0 22 "int8" `957 
+V G "y" 0 23 "float" `958  "Temperatura anterior"
+V G "t" 0 24 "float" `959  "Temperatura actual"
+V G "iAn" 0 25 "int16" `960  "Lectura del sensor de temperatura"
+V G "registro" 0 26 "int8[80]" `961  "registro de las ultimas nMediciones mediciones"
+V G "habilitarLectura" 0 27 "int1" `962 
+V G "ciclos" 0 28 "int8" `963 
+V G "ciclosT1" 0 29 "int8" `964 
+V G "btST" 0 30 "int1" `965 
+V G "r_" 0 31 "int8" `966  "/Fin Variables Globales"
+C L "limpiarPorcion" 0 9 1 "FUNCTION"
+F N "limpiarPorcion" 0 36 ""
+V L "x1" 0 36 "int8" `968 
+V L "y1" 0 36 "int8" `969 
+V L "x2" 0 36 "int8" `970 
+V L "y2" 0 36 "int8" `971 
+F G "limpiarPorcion" 0 36 "void(int8 x1,int8 y1,int8 x2,int8 y2)" `967  "(x1, y1) = posición del primer pixel. (x2, y2) = cantididad de pixeles hacia la derecha y hacia abajo"
+V L "i" 0 37 "int8" `972 
+V L "j" 0 38 "int8" `973 
+C L "limpiarPorcion" 0 9 1 "FUNCTION"
+F N "nuevaLinea" 0 42 ""
+V L "temp" 0 42 "float" `975 
+F G "nuevaLinea" 0 42 "void(float temp)" `974  "Funcion para graficar las nuevas lineas de temperatura"
+V L "x1" 0 43 "int8" `976 
+C L "nuevaLinea" 0 9 1 "FUNCTION"
+C L "nuevaLinea" 0 9 1 "FUNCTION"
+C L "nuevaLinea" 0 9 1 "FUNCTION"
+F N "toggleBT" 0 53 ""
+V L "c_" 0 53 "int8" `983 
+F G "toggleBT" 0 53 "void(int8 c_)" `982 
+C L "toggleBT" 0 9 1 "FUNCTION"
+C L "toggleBT" 0 9 1 "FUNCTION"
+C L "TIMER0_isr" 0 9 2 "FUNCTION"
+F N "TIMER0_isr" 0 68 ""
+F G "TIMER0_isr" 0 68 "void()" `988  "Timer para hacer sonar el buzzer cada 500ms"
+F N "TIMER1_isr" 0 80 ""
+F G "TIMER1_isr" 0 80 "void()" `989  "Timer para almacenar, en un array, la temepratura actual cada 3 segundos"
+C L "TIMER1_isr" 0 9 3 "FUNCTION"
+V L "i" 0 87 "int8" `990 
+F N "RB_isr" 0 95 ""
+F G "RB_isr" 0 95 "void()" `991  "Prueba de interrupciones"
+C L "RB_isr" 0 9 1 "FUNCTION"
+C L "RB_isr" 0 9 1 "FUNCTION"
+V L "pos" 0 116 "int8" `1001 
+V L "pos" 0 127 "int8" `1005 
+V L "dato" 0 129 "float" `1006 
+V L "pos" 0 140 "int8" `1020 
+F N "serial_interrupt" 0 148 ""
+F G "serial_interrupt" 0 148 "void()" `1022 
+C L "MAIN" 0 9 1 "FUNCTION"
+F N "MAIN" 0 155 ""
+F G "MAIN" 0 156 "void()" `1023 
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 2 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

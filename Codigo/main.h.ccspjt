@@ -1,0 +1,32 @@
+[defines]
+buildcount=1
+
+[PROJECT]
+Processor_Text=PIC16F877
+
+[Opened Files]
+1=main.h
+t1=1
+2=main.c
+t2=1
+3=compof.c
+t3=1
+Count=3
+
+[ProjectLog]
+Days=1
+D1=17-11-2020
+D1_L=6
+D1_L1=[61515]Stopped Editing.
+TotalEdit=7
+TotalDebug=0
+D1_E=7
+D1_D=0
+D1_L2=[61515]Project Closed.
+D1_L3=[61541]Project Opened.
+D1_L4=[61576]Started Editing.
+D1_L5=[61666]Stopped Editing.
+D1_L6=[61666]Project Closed.
+
+[fileformats]
+forcecoff=0

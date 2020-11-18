@@ -7,72 +7,53 @@ using System.Collections.Generic;
 
 namespace mainForm {
     public partial class mainForm : Form {
-        List<double> Temp_ = new List<double>();
+        #region VARS
+        ftemp tempchart = new ftemp();
+        List<float> Temp_ = new List<float>();
+        serialLib porti = new serialLib();
+        private bool portST = false;
+        #endregion
+
         public mainForm() {
             InitializeComponent();
-            charttbpm.Series["temp"].Points.Clear();
-            charttbpm.Visible = false;
+            tempchart.chart_clean();
+            porti.init(save2array);
+        }
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            
         }
         private void delayRead_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                string indata = spCOM.ReadExisting();
-                if (indata != "")
-                    tempsIN(indata);                
-            }
-            catch (Exception ex)
-            {
-                //throw ex;
-            }
+
         }
        private void Form1_onFormClosing(object sender, FormClosingEventArgs e)
        {
-            if (spCOM.IsOpen)
+            if (!portST)
             {
                 DialogResult dialogResult = MessageBox.Show("Seguro quiere cerrar? La conexión aun esta abierta", "AVISO", MessageBoxButtons.YesNoCancel);
                 if (dialogResult == DialogResult.Yes)
-                {
-                    spCOM.Write("b");
-                    spCOM.Close();
-                }
+                    porti.portToggle();
                 else if (dialogResult == DialogResult.Cancel) e.Cancel = true;
             }
-       }
-        private void tempsIN(string in_)
+        }
+        private bool save2array(string e)
         {
-            double aux_ = 0;
-            aux_ = Convert.ToDouble(in_);
-            
-            spCOM.Write("a");
-            Temp_.Add(aux_);
-            lblthigh.Text = ("T_MAX: " + Temp_.Max().ToString());
-            lbltavg.Text = ("T_AVG: " + Temp_.Average().ToString());
-            lbltmin.Text = ("T_MIN: " + Temp_.Min().ToString());
-
-            charttbpm.Series["temp"].Points.AddY(aux_);
-
-            
-            
+            Console.WriteLine(e);
+            return true;
         }
         private void btnCOM_Click(object sender, EventArgs e)
         {
-            if (!(spCOM.IsOpen))
-            {
-                spCOM.Open();
+            portST = porti.portToggle();
+            if (!portST)
                 btnCOM.Text = "COM - ON";
-                Thread.Sleep(500);
-                delayreader.Enabled = true;
-                charttbpm.Visible = true;
-            }
             else
-            {
-                spCOM.Write("b");  // Cerrar COM}
-                spCOM.Close();
                 btnCOM.Text = "COM - OFF";
-                delayreader.Enabled = false;
-                charttbpm.Visible = false;
-            }
+        }
+
+        private void btnTChart_Click(object sender, EventArgs e)
+        {
+            tempchart.Show();
         }
     }
 }

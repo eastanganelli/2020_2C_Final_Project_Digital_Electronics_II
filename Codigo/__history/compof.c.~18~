@@ -1,0 +1,52 @@
+#include <stdlibm.h>
+#include <string.h>
+#define SEP '\n'
+#define END '\0'
+
+char str[6];
+//SERIAL LIBRARY
+struct SERIAL_LIB {
+    char* sSerial;
+}; typedef struct SERIAL_LIB SERIALsr;
+
+SERIALsr serialData;
+
+// FUNCTIONS
+// SERIAL LABRARY
+void set_SERIALsr() {
+    serialData.sSerial = malloc(sizeof(char));
+}
+void sendFT(char t , float v, char a) {
+    sprintf(str, "%c%f%c", t, v, a);
+    for(int i = 0; str[i] != a; i++)
+        printf("%c", str[i]);
+}
+void sendINT(char t , int v, char a) {
+    sprintf(str, "%c%d%c", t, v, a);
+    for(int i = 0; str[i] != a; i++)
+        printf("%c", str[i]);
+}
+void sendSTR(char t , int v, char a) {
+    if(str != NULL)
+        for(int i = 0; str[i] != a; i++)
+            printf("%c", str[i]);
+}
+void sendDATA(char s_, char a) {
+        for(int i = 0; s_[i] != a; i++)
+            printf("%c", s_[i]);
+}
+// END SERIAL LABRARY
+// SERIAL ARRAY
+int getArrSize() { return strlen(serialData.sSerial); }
+int insert(char c_) {
+    int i = 0;
+    serialData.sSerial = realloc(serialData.sSerial, sizeof(char)*(i + 1));
+    if(serialData.sSerial != NULL) {
+        i++;
+        *(serialData.sSerial + getArrSize() - 1) = c_;
+        return TRUE;
+    } return FALSE;
+}
+char* getSTR() { return serialData.sSerial; }
+// END SERIAL ARRAY
+// END FUNCTIONS
