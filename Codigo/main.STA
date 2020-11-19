@@ -13,19 +13,19 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  223   138  20  main.c
+  226   138  20  main.c
     5     0   0  main.h
-  652     0   0  C:\Program Files (x86)\PICC\Devices\16F877.h
-  356    76  11  C:\Program Files (x86)\PICC\Drivers\HDM64GS12.c
-  540   163  23  C:\Program Files (x86)\PICC\Drivers\graphics.c
+  652     0   0  D:\Program Files\PICC\Devices\16F877.h
+  356    76  11  D:\Program Files\PICC\Drivers\HDM64GS12.c
+  540   163  23  D:\Program Files\PICC\Drivers\graphics.c
    54    25   4  compof.c
-  419   159  23  C:\Program Files (x86)\PICC\Drivers\stdlibm.h
-   32     0   0  C:\Program Files (x86)\PICC\Drivers\stddef.h
-   76    13   2  C:\Program Files (x86)\PICC\Drivers\memmgmt.c
-  435   129  18  C:\Program Files (x86)\PICC\Drivers\string.h
-   28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
+  419   159  23  D:\Program Files\PICC\Drivers\stdlibm.h
+   32     0   0  D:\Program Files\PICC\Drivers\stddef.h
+   76    13   2  D:\Program Files\PICC\Drivers\memmgmt.c
+  435   129  18  D:\Program Files\PICC\Drivers\string.h
+   28     0   0  D:\Program Files\PICC\Drivers\ctype.h
 ----- -----
- 2820   703 Total
+ 2823   703 Total
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -76,14 +76,14 @@ Page ROM  %  RAM    Vol Diff  Functions:
 Program metrics:
     Functions               21
     Statements              703
-    Comments                763
+    Comments                775
     Volume (V)              22547
     Difficulty (D)          115.6
     Effort to implement (E) 2605696
     Time to implement (T)   40 hours, 13 minutes
     Est Delivered Bugs (B)  6
     Cyclomatic Complexity   54
-    Maintainability (MI)    82
+    Maintainability (MI)    78
 
  Segment     Used  Free
 -----------  ----  ----

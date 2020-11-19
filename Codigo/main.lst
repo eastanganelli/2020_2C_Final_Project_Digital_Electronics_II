@@ -1,6 +1,6 @@
-CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
+CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 
-               Filename:   D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\Codigo\main.lst
+               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\main.lst
 
                ROM used:   6357 words (78%)
                            Largest free fragment is 942
@@ -6018,6 +6018,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 .................... int ciclosT1=6; //Variable que cuenta los ciclos que debe hacer el timer1 antes de ejecutar su codigo 
 .................... short int btST = 1; 
 .................... char r_; 
+....................  
 .................... ///Fin Variables Globales 
 ....................  
 .................... ///Funciones 
@@ -6326,6 +6327,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 0D2B:  MOVWF  3A
 0D2C:  RETURN
 .................... } 
+....................  
 .................... void toggleBT(char c_) { 
 ....................    if(c_ == 'a') { 
 *
@@ -6387,6 +6389,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 0D65:  BSF    0A.3
 ....................    } 
 .................... } 
+....................  
 .................... ///Fin Funciones 
 ....................  
 .................... ///Interrupciones 
@@ -6504,7 +6507,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 ....................       habilitarLectura=~habilitarLectura; 
 1005:  MOVLW  01
 1006:  XORWF  45,F
-....................       disable_interrupts(INT_TIMER0); 
+....................       disable_interrupts(INT_TIMER0); //Desabilitamos el timer0 para que no siga funcionando el buzzer si nos quedamos en temperaturas fuera de los aceptable 
 1007:  BCF    0B.5
 ....................       if(habilitarLectura){ 
 1008:  BTFSS  45.0
@@ -6592,10 +6595,10 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 1057:  BCF    03.6
 1058:  CALL   417
 1059:  BSF    0A.4
-....................          enable_interrupts(INT_TIMER1); 
+....................          enable_interrupts(INT_TIMER1); //Habilitamos el timer1 para el almacenamiento de los valores de temperatura 
 105A:  BSF    03.5
 105B:  BSF    0C.0
-....................          set_timer1(TMR1); 
+....................          set_timer1(TMR1); //Seteamos el timer1 
 105C:  BCF    03.5
 105D:  CLRF   0E
 105E:  MOVLW  0B
@@ -6667,7 +6670,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 109C:  BCF    03.6
 109D:  CALL   417
 109E:  BSF    0A.4
-....................          limpiarGrafico; 
+....................          limpiarGrafico; //Limpiamos el grafico 
 109F:  BSF    03.6
 10A0:  CLRF   6A
 10A1:  MOVLW  14
@@ -6764,7 +6767,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 1118:  BCF    03.6
 1119:  CALL   417
 111A:  BSF    0A.4
-....................          x=0; 
+....................          x=0; //Volvemos a posicionar x al inicio del GLCD 
 111B:  CLRF   3A
 ....................          disable_interrupts(INT_TIMER1); 
 111C:  BSF    03.5
@@ -6811,7 +6814,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 1143:  SUBLW  4F
 1144:  BTFSS  03.0
 1145:  GOTO   167
-....................             write_eeprom(pos, registro[pos]); 
+....................             write_eeprom(pos, registro[pos]); //Escritura de datos en la EEPROM 
 1146:  MOVLW  A0
 1147:  ADDWF  53,W
 1148:  MOVWF  04
@@ -6883,7 +6886,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 1188:  BSF    0A.4
 ....................       } 
 ....................    } 
-....................    if(input(PIN_B7)){ 
+....................    if(input(PIN_B7)){ //Leectura de datos de la EEPROM 
 1189:  BSF    03.5
 118A:  BSF    06.7
 118B:  BCF    03.5
@@ -6928,14 +6931,14 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 ....................       disable_interrupts(INT_TIMER0); 
 11AF:  BCF    03.5
 11B0:  BCF    0B.5
-....................       for(int pos=0; pos<nMediciones; pos++){ 
+....................       for(int pos=0; pos<nMediciones; pos++){ //Leemos los datos de la EEPROM y graficamos los mismos. 
 11B1:  BSF    03.6
 11B2:  CLRF   5F
 11B3:  MOVF   5F,W
 11B4:  SUBLW  4F
 11B5:  BTFSS  03.0
 11B6:  GOTO   2CC
-....................          registro[pos]=read_eeprom(pos); 
+....................          registro[pos]=read_eeprom(pos); //Lectura de la EEPROM 
 11B7:  MOVLW  A0
 11B8:  ADDWF  5F,W
 11B9:  MOVWF  04
@@ -6948,7 +6951,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 11C0:  BCF    03.5
 11C1:  MOVF   0C,W
 11C2:  MOVWF  00
-....................          float dato=(5.0*registro[pos]*100.0)/1024.0; 
+....................          float dato=(5.0*registro[pos]*100.0)/1024.0; //Convertimos los datos almacenados a flotantes 
 11C3:  MOVLW  A0
 11C4:  ADDWF  5F,W
 11C5:  MOVWF  04
@@ -7213,7 +7216,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 12C1:  CALL   436
 12C2:  BSF    0A.4
 12C3:  BCF    0A.3
-....................          registro[pos]=0; 
+....................          registro[pos]=0; //Limpiamos el registro de las temperaturas 
 12C4:  MOVLW  A0
 12C5:  BSF    03.6
 12C6:  ADDWF  5F,W
@@ -7265,7 +7268,7 @@ CCS PCM C Compiler, Version 5.076, 56587               18-Nov-20 02:36
 12F1:  SUBLW  4F
 12F2:  BTFSS  03.0
 12F3:  GOTO   315
-....................          write_eeprom(pos, registro[pos]); 
+....................          write_eeprom(pos, registro[pos]); //Escritura de datos en la EEPROM 
 12F4:  MOVLW  A0
 12F5:  ADDWF  64,W
 12F6:  MOVWF  04

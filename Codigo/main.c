@@ -29,6 +29,7 @@ int ciclos=10; //Variable que cuenta los ciclos que debe hacer el timer0 antes d
 int ciclosT1=6; //Variable que cuenta los ciclos que debe hacer el timer1 antes de ejecutar su codigo
 short int btST = 1;
 char r_;
+
 ///Fin Variables Globales
 
 ///Funciones
@@ -50,6 +51,7 @@ void nuevaLinea(float temp){ //Funcion para graficar las nuevas lineas de temper
    y=temp;
    x=x1;
 }
+
 void toggleBT(char c_) {
    if(c_ == 'a') {
       btST = !ON;
@@ -60,6 +62,7 @@ void toggleBT(char c_) {
       glcd_text57(110,0,(char*)"BT",1, OFF); //Apagamos BT
    }
 }
+
 ///Fin Funciones
 
 ///Interrupciones
@@ -95,38 +98,38 @@ void TIMER1_isr(){ //Timer para almacenar, en un array, la temepratura actual ca
 void RB_isr(){ //Prueba de interrupciones
    if(input(PIN_B6)){ //Habilita o deshabilita la captura de datos
       habilitarLectura=~habilitarLectura;
-      disable_interrupts(INT_TIMER0);
+      disable_interrupts(INT_TIMER0); //Desabilitamos el timer0 para que no siga funcionando el buzzer si nos quedamos en temperaturas fuera de los aceptable
       if(habilitarLectura){
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, ON);
          sprintf(str, "%3.2fC", y);
          glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura.
-         enable_interrupts(INT_TIMER1);
-         set_timer1(TMR1);
+         enable_interrupts(INT_TIMER1); //Habilitamos el timer1 para el almacenamiento de los valores de temperatura
+         set_timer1(TMR1); //Seteamos el timer1
       }
       else {
          glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
          glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, ON);
-         limpiarGrafico;
+         limpiarGrafico; //Limpiamos el grafico
          glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, OFF);
          sprintf(str, "%3.2fC", t);
          glcd_text57(12*6, 10, str, 1, OFF);
-         x=0;
+         x=0; //Volvemos a posicionar x al inicio del GLCD
          disable_interrupts(INT_TIMER1);
          glcd_text57(128/2-30, 0, (char*)"Guardando", 1, ON);
          for(int pos=0; pos<nMediciones; pos++){
-            write_eeprom(pos, registro[pos]);
+            write_eeprom(pos, registro[pos]); //Escritura de datos en la EEPROM
          }
          glcd_text57(128/2-30, 0, (char*)"Guardando", 1, OFF);
       }
    }
-   if(input(PIN_B7)){
+   if(input(PIN_B7)){ //Leectura de datos de la EEPROM
       habilitarLectura=0;
       glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF);
       disable_interrupts(INT_TIMER1);
       disable_interrupts(INT_TIMER0);
-      for(int pos=0; pos<nMediciones; pos++){
-         registro[pos]=read_eeprom(pos);
-         float dato=(5.0*registro[pos]*100.0)/1024.0;
+      for(int pos=0; pos<nMediciones; pos++){ //Leemos los datos de la EEPROM y graficamos los mismos.
+         registro[pos]=read_eeprom(pos); //Lectura de la EEPROM
+         float dato=(5.0*registro[pos]*100.0)/1024.0; //Convertimos los datos almacenados a flotantes
          printf("%4.2f ",dato);
          if(dato>=28 && dato<=50)
             nuevaLinea(dato);
@@ -134,11 +137,11 @@ void RB_isr(){ //Prueba de interrupciones
             nuevaLinea(29);
          if(dato>50)
             nuevaLinea(50);
-         registro[pos]=0;
+         registro[pos]=0; //Limpiamos el registro de las temperaturas
       }
       glcd_text57(128/2-30, 0, (char*)"Guardando", 1, ON);
       for(int pos=0; pos<nMediciones; pos++){
-         write_eeprom(pos, registro[pos]);
+         write_eeprom(pos, registro[pos]); //Escritura de datos en la EEPROM
       }
       glcd_text57(128/2-30, 0, (char*)"Guardando", 1, OFF);
    }
