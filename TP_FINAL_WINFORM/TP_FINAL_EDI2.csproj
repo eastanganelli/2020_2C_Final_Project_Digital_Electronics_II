@@ -67,7 +67,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="serialLib.cs" />
+    <Compile Include="rscomLIB.cs" />
     <EmbeddedResource Include="ftemp.resx">
       <DependentUpon>ftemp.cs</DependentUpon>
     </EmbeddedResource>

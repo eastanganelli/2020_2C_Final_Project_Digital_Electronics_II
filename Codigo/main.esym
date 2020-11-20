@@ -1,9 +1,9 @@
-D G "__PCM__" 0 224 ""5.076""
-D G "__DEVICE__" 0 224 "877"
-D G "__DATE__" 0 224 ""18-Nov-20""
-D G "__TIME__" 0 224 ""02:36:09""
-D G "_UNICODE" 0 224 ""?""
-D G "__EVAL" 0 224 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
+D G "__PCM__" 0 219 ""5.076""
+D G "__DEVICE__" 0 219 "877"
+D G "__DATE__" 0 219 ""20-Nov-20""
+D G "__TIME__" 0 219 ""19:39:21""
+D G "_UNICODE" 0 219 ""?""
+D G "__EVAL" 0 219 ""?"" "Standard Header file for the PIC16F877 device ////////////////"
 c L "set_tris_a" 2 3 6 "FUNCTION"
 f N "set_tris_a" 2 37 ""
 v L "value" 2 37 "int8" `54 
@@ -1612,16 +1612,14 @@ F G "RB_isr" 0 95 "void()" `991  "Prueba de interrupciones"
 C L "RB_isr" 0 9 1 "FUNCTION"
 C L "RB_isr" 0 9 1 "FUNCTION"
 V L "pos" 0 116 "int8" `1001 
-V L "pos" 0 127 "int8" `1005 
-V L "dato" 0 129 "float" `1006 
-V L "pos" 0 140 "int8" `1020 
-F N "serial_interrupt" 0 148 ""
-F G "serial_interrupt" 0 148 "void()" `1022 
+V L "pos" 0 126 "int8" `1005 
+V L "dato" 0 128 "float" `1006 
+V L "pos" 0 138 "int8" `1016 
+F N "serial_interrupt" 0 145 ""
+F G "serial_interrupt" 0 145 "void()" `1018 
 C L "MAIN" 0 9 1 "FUNCTION"
-F N "MAIN" 0 155 ""
-F G "MAIN" 0 156 "void()" `1023 
-C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 1 "FUNCTION"
+F N "MAIN" 0 152 ""
+F G "MAIN" 0 153 "void()" `1019 
 C L "MAIN" 0 9 1 "FUNCTION"
 C L "MAIN" 0 9 1 "FUNCTION"
 C L "MAIN" 0 9 1 "FUNCTION"
@@ -1641,7 +1639,9 @@ C L "MAIN" 0 9 1 "FUNCTION"
 C L "MAIN" 0 9 1 "FUNCTION"
 C L "MAIN" 0 9 1 "FUNCTION"
 C L "MAIN" 0 9 1 "FUNCTION"
-C L "MAIN" 0 9 2 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
+C L "MAIN" 0 9 1 "FUNCTION"
 C L "MAIN" 0 9 1 "FUNCTION"
 C L "MAIN" 0 9 1 "FUNCTION"
 C L "MAIN" 0 9 1 "FUNCTION"

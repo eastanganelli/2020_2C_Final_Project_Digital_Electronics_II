@@ -2,7 +2,7 @@
 #fuses XT, NOWDT,NOPROTECT,NOLVP
 #include <HDM64GS12.c> //Manejo del display gráfico
 #include <graphics.c> //Funciones para dibujar y escribir en el display
-#include <compof.c>
+#include <srcomLIB.c>
 
 #byte trisb=0x86
 
@@ -27,7 +27,7 @@ int registro[nMediciones]; //registro de las ultimas nMediciones mediciones
 int1 habilitarLectura=0; //Variable para habilitar o deshabilitar la captura de datos del sensor
 int ciclos=10; //Variable que cuenta los ciclos que debe hacer el timer0 antes de ejecutar su codigo
 int ciclosT1=6; //Variable que cuenta los ciclos que debe hacer el timer1 antes de ejecutar su codigo
-short int btST = 1;
+short int btST = 0;
 char r_;
 ///Fin Variables Globales
 
@@ -55,7 +55,7 @@ void toggleBT(char c_) {
       btST = !ON;
       glcd_text57(110,0,(char*)"BT",1,ON); //Mostramos BT
    }
-   else {
+   else if(c_ == 'i') {
       btST = !OFF;
       glcd_text57(110,0,(char*)"BT",1, OFF); //Apagamos BT
    }
@@ -113,9 +113,8 @@ void RB_isr(){ //Prueba de interrupciones
          x=0;
          disable_interrupts(INT_TIMER1);
          glcd_text57(128/2-30, 0, (char*)"Guardando", 1, ON);
-         for(int pos=0; pos<nMediciones; pos++){
+         for(int pos=0; pos<nMediciones; pos++)
             write_eeprom(pos, registro[pos]);
-         }
          glcd_text57(128/2-30, 0, (char*)"Guardando", 1, OFF);
       }
    }
@@ -127,7 +126,6 @@ void RB_isr(){ //Prueba de interrupciones
       for(int pos=0; pos<nMediciones; pos++){
          registro[pos]=read_eeprom(pos);
          float dato=(5.0*registro[pos]*100.0)/1024.0;
-         printf("%4.2f ",dato);
          if(dato>=28 && dato<=50)
             nuevaLinea(dato);
          if(dato<28)
@@ -137,9 +135,8 @@ void RB_isr(){ //Prueba de interrupciones
          registro[pos]=0;
       }
       glcd_text57(128/2-30, 0, (char*)"Guardando", 1, ON);
-      for(int pos=0; pos<nMediciones; pos++){
+      for(int pos=0; pos<nMediciones; pos++)
          write_eeprom(pos, registro[pos]);
-      }
       glcd_text57(128/2-30, 0, (char*)"Guardando", 1, OFF);
    }
 }
@@ -188,11 +185,10 @@ void main()
          iAn=read_adc(); //Levantamos el dato
          t=(5.0*iAn*100.0)/1024.0; //Lo convertemos a temperatura
          
-         if(btST)
+         if(!btST)
             sendINT('t', iAn, SEP);
          
          if(t!=y){ //Si t es != al dato anterior refrescamos la temperatura y la enviamos al bluetooth
-            //str[0] = '\0';
             sprintf(str, "%3.2fC", y); //Convertimos la temperatura float en un char*
             glcd_text57(12*6, 10, str, 1, OFF); //borramos del lcd la temperatura anterior
             sprintf(str, "%3.2fC", t); //Convertimos la temperatura float en un char*
@@ -219,4 +215,3 @@ void main()
       }
    }
 }
-

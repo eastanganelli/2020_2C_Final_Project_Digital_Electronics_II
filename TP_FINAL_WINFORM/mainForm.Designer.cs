@@ -39,6 +39,7 @@
             this.lblhmin = new System.Windows.Forms.Label();
             this.lblhmax = new System.Windows.Forms.Label();
             this.lblhavg = new System.Windows.Forms.Label();
+            this.btnCLEAR = new System.Windows.Forms.Button();
             this.gbTemp.SuspendLayout();
             this.gbBPM.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +120,7 @@
             this.gbBPM.Controls.Add(this.lblhmin);
             this.gbBPM.Controls.Add(this.lblhmax);
             this.gbBPM.Controls.Add(this.lblhavg);
+            this.gbBPM.Enabled = false;
             this.gbBPM.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBPM.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gbBPM.Location = new System.Drawing.Point(147, 213);
@@ -127,6 +129,7 @@
             this.gbBPM.TabIndex = 7;
             this.gbBPM.TabStop = false;
             this.gbBPM.Text = "Latidos [BPM]";
+            this.gbBPM.Visible = false;
             // 
             // button1
             // 
@@ -169,12 +172,26 @@
             this.lblhavg.TabIndex = 4;
             this.lblhavg.Text = "T_AVG: ...";
             // 
+            // btnCLEAR
+            // 
+            this.btnCLEAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCLEAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCLEAR.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCLEAR.Location = new System.Drawing.Point(12, 105);
+            this.btnCLEAR.Name = "btnCLEAR";
+            this.btnCLEAR.Size = new System.Drawing.Size(107, 70);
+            this.btnCLEAR.TabIndex = 8;
+            this.btnCLEAR.Text = "LIMPIAR DATOS";
+            this.btnCLEAR.UseVisualStyleBackColor = true;
+            this.btnCLEAR.Click += new System.EventHandler(this.btnCLEAR_Click);
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(694, 397);
+            this.Controls.Add(this.btnCLEAR);
             this.Controls.Add(this.gbBPM);
             this.Controls.Add(this.gbTemp);
             this.Controls.Add(this.btnCOM);
@@ -203,6 +220,7 @@
         private System.Windows.Forms.Label lblhavg;
         private System.Windows.Forms.Button btnTChart;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCLEAR;
     }
 }
 
