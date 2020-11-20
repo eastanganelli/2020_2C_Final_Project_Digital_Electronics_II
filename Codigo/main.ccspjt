@@ -280,6 +280,7 @@ D13_L10=[8586]Project Opened.
 D13_L11=[8895]Started Editing.
 D13_L12=[9669]Stopped Editing.
 D13_L13=[10538]Project Closed.
+<<<<<<< HEAD
 D13_L14=[38451]Project Opened.
 D13_L15=[41698]Started Editing.
 D13_L16=[42291]Stopped Editing.
@@ -308,6 +309,22 @@ D14_L8=[70848]Project Closed.
 t1=71
 Count=2
 2=srcomLIB.c
+=======
+D14=19-11-2020
+D14_L=4
+D14_L1=[67773]Project Opened.
+D14_L2=[67913]Started Editing.
+D14_L3=[68400]Stopped Editing.
+D14_E=9
+D14_D=0
+D14_L4=[68400]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=1
+Count=2
+2=compof.c
+>>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 t2=1
 3=D:\Program Files\PICC\Drivers\HDM64GS12.c
 t3=305
@@ -317,7 +334,11 @@ t4=197
 Type=4
 
 [defines]
+<<<<<<< HEAD
 buildcount=428
+=======
+buildcount=420
+>>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 [Units]
 Count=1
 1=main (main)

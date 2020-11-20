@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Compiling D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\Codigo\main on 20-Nov-20 at 19:39
 >>> Warning 216 "main.c" Line 217(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_writeByte)
 >>> Warning 216 "main.c" Line 217(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MUL88)
@@ -12,5 +13,21 @@ Compiling D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\Codigo
 >>> Warning 216 "main.c" Line 217(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PRINTF_L32D_904FPFPF)
 >>> Warning 216 "main.c" Line 217(1,2): Interrupts disabled during call to prevent re-entrancy:  (nuevaLinea)
       Memory usage:   ROM=73%      RAM=39% - 66%
+=======
+Compiling C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\main on 19-nov.-20 at 18:58
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_writeByte)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MUL88)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (@SPRINTF)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_text57)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (glcd_line)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (@ITOF)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (@DIVFF)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (@FLT)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (@PRINTF_L32D_904FPFPF)
+>>> Warning 216 "main.c" Line 224(1,2): Interrupts disabled during call to prevent re-entrancy:  (nuevaLinea)
+      Memory usage:   ROM=78%      RAM=39% - 66%
+>>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
       0 Errors,  12 Warnings.
 Build Successful.
