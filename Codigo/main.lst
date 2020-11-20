@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 CCS PCM C Compiler, Version 5.076, 56587               20-Nov-20 19:39
-=======
-CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 
-               Filename:   C:\Users\Francisco\Documents\!Facultad - UF\Electrónica Digital II\Proyecto Final\tp_final_edi2\Codigo\main.lst
+               Filename:   D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\Codigo\main.lst
 
                ROM used:   5968 words (73%)
                            Largest free fragment is 2048
@@ -5723,7 +5719,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 .................... int ciclosT1=6; //Variable que cuenta los ciclos que debe hacer el timer1 antes de ejecutar su codigo 
 .................... short int btST = 0; 
 .................... char r_; 
-....................  
 .................... ///Fin Variables Globales 
 ....................  
 .................... ///Funciones 
@@ -6032,7 +6027,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0C01:  MOVWF  3A
 0C02:  RETURN
 .................... } 
-....................  
 .................... void toggleBT(char c_) { 
 ....................    if(c_ == 'a') { 
 *
@@ -6099,7 +6093,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0F54:  BSF    03.6
 ....................    } 
 .................... } 
-....................  
 .................... ///Fin Funciones 
 ....................  
 .................... ///Interrupciones 
@@ -6215,17 +6208,10 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0C06:  BTFSS  06.6
 0C07:  GOTO   58C
 ....................       habilitarLectura=~habilitarLectura; 
-<<<<<<< HEAD
 0C08:  MOVLW  01
 0C09:  XORWF  45,F
 ....................       disable_interrupts(INT_TIMER0); 
 0C0A:  BCF    0B.5
-=======
-1005:  MOVLW  01
-1006:  XORWF  45,F
-....................       disable_interrupts(INT_TIMER0); //Desabilitamos el timer0 para que no siga funcionando el buzzer si nos quedamos en temperaturas fuera de los aceptable 
-1007:  BCF    0B.5
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 ....................       if(habilitarLectura){ 
 0C0B:  BTFSS  45.0
 0C0C:  GOTO   466
@@ -6297,7 +6283,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0C4C:  CALL   628
 0C4D:  BSF    0A.3
 ....................          glcd_text57(12*6, 10, str, 1, ON); //Escribimos la temperatura. 
-<<<<<<< HEAD
 0C4E:  MOVLW  48
 0C4F:  BSF    03.6
 0C50:  MOVWF  67
@@ -6323,33 +6308,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0C62:  MOVWF  0F
 0C63:  MOVLW  DC
 0C64:  MOVWF  0E
-=======
-104B:  MOVLW  48
-104C:  BSF    03.6
-104D:  MOVWF  67
-104E:  MOVLW  0A
-104F:  MOVWF  68
-1050:  CLRF   6A
-1051:  MOVLW  2F
-1052:  MOVWF  69
-1053:  MOVLW  01
-1054:  MOVWF  6B
-1055:  MOVWF  6C
-1056:  BCF    0A.4
-1057:  BCF    03.6
-1058:  CALL   417
-1059:  BSF    0A.4
-....................          enable_interrupts(INT_TIMER1); //Habilitamos el timer1 para el almacenamiento de los valores de temperatura 
-105A:  BSF    03.5
-105B:  BSF    0C.0
-....................          set_timer1(TMR1); //Seteamos el timer1 
-105C:  BCF    03.5
-105D:  CLRF   0E
-105E:  MOVLW  0B
-105F:  MOVWF  0F
-1060:  MOVLW  DC
-1061:  MOVWF  0E
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 ....................       } 
 0C65:  GOTO   58C
 ....................       else { 
@@ -6385,7 +6343,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0C82:  CALL   417
 0C83:  BSF    0A.3
 ....................          glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, ON); 
-<<<<<<< HEAD
 0C84:  CLRF   78
 0C85:  MOVLW  0A
 0C86:  MOVWF  77
@@ -6425,47 +6382,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0CA7:  MOVWF  6C
 0CA8:  MOVLW  2C
 0CA9:  MOVWF  6D
-=======
-1081:  CLRF   78
-1082:  MOVLW  0A
-1083:  MOVWF  77
-1084:  MOVLW  48
-1085:  MOVWF  04
-1086:  BSF    03.7
-1087:  MOVF   78,W
-1088:  BCF    0A.4
-1089:  CALL   240
-108A:  BSF    0A.4
-108B:  MOVWF  00
-108C:  INCF   78,F
-108D:  INCF   04,F
-108E:  DECFSZ 77,F
-108F:  GOTO   087
-1090:  MOVLW  22
-1091:  BSF    03.6
-1092:  MOVWF  67
-1093:  CLRF   68
-1094:  MOVLW  01
-1095:  MOVWF  6A
-1096:  MOVLW  48
-1097:  MOVWF  69
-1098:  MOVLW  01
-1099:  MOVWF  6B
-109A:  MOVWF  6C
-109B:  BCF    0A.4
-109C:  BCF    03.6
-109D:  CALL   417
-109E:  BSF    0A.4
-....................          limpiarGrafico; //Limpiamos el grafico 
-109F:  BSF    03.6
-10A0:  CLRF   6A
-10A1:  MOVLW  14
-10A2:  MOVWF  6B
-10A3:  MOVLW  80
-10A4:  MOVWF  6C
-10A5:  MOVLW  2C
-10A6:  MOVWF  6D
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 ....................          glcd_text57(128/2-30, 0, (char*)"Limpiando", 1, OFF); 
 *
 0CCA:  CLRF   78
@@ -6539,7 +6455,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0D0D:  CALL   628
 0D0E:  BSF    0A.3
 ....................          glcd_text57(12*6, 10, str, 1, OFF); 
-<<<<<<< HEAD
 0D0F:  MOVLW  48
 0D10:  BSF    03.6
 0D11:  MOVWF  67
@@ -6557,30 +6472,10 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0D1D:  BSF    0A.3
 ....................          x=0; 
 0D1E:  CLRF   3A
-=======
-110C:  MOVLW  48
-110D:  BSF    03.6
-110E:  MOVWF  67
-110F:  MOVLW  0A
-1110:  MOVWF  68
-1111:  CLRF   6A
-1112:  MOVLW  2F
-1113:  MOVWF  69
-1114:  MOVLW  01
-1115:  MOVWF  6B
-1116:  CLRF   6C
-1117:  BCF    0A.4
-1118:  BCF    03.6
-1119:  CALL   417
-111A:  BSF    0A.4
-....................          x=0; //Volvemos a posicionar x al inicio del GLCD 
-111B:  CLRF   3A
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 ....................          disable_interrupts(INT_TIMER1); 
 0D1F:  BSF    03.5
 0D20:  BCF    0C.0
 ....................          glcd_text57(128/2-30, 0, (char*)"Guardando", 1, ON); 
-<<<<<<< HEAD
 0D21:  CLRF   78
 0D22:  MOVLW  0A
 0D23:  MOVWF  77
@@ -6656,84 +6551,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0D67:  BSF    03.6
 0D68:  INCF   53,F
 0D69:  GOTO   545
-=======
-111E:  CLRF   78
-111F:  MOVLW  0A
-1120:  MOVWF  77
-1121:  MOVLW  48
-1122:  MOVWF  04
-1123:  BSF    03.7
-1124:  MOVF   78,W
-1125:  BCF    0A.4
-1126:  BCF    03.5
-1127:  CALL   24E
-1128:  BSF    0A.4
-1129:  MOVWF  00
-112A:  INCF   78,F
-112B:  INCF   04,F
-112C:  DECFSZ 77,F
-112D:  GOTO   12F
-112E:  GOTO   131
-112F:  BSF    03.5
-1130:  GOTO   124
-1131:  MOVLW  22
-1132:  BSF    03.6
-1133:  MOVWF  67
-1134:  CLRF   68
-1135:  MOVLW  01
-1136:  MOVWF  6A
-1137:  MOVLW  48
-1138:  MOVWF  69
-1139:  MOVLW  01
-113A:  MOVWF  6B
-113B:  MOVWF  6C
-113C:  BCF    0A.4
-113D:  BCF    03.6
-113E:  CALL   417
-113F:  BSF    0A.4
-....................          for(int pos=0; pos<nMediciones; pos++){ 
-1140:  BSF    03.6
-1141:  CLRF   53
-1142:  MOVF   53,W
-1143:  SUBLW  4F
-1144:  BTFSS  03.0
-1145:  GOTO   167
-....................             write_eeprom(pos, registro[pos]); //Escritura de datos en la EEPROM 
-1146:  MOVLW  A0
-1147:  ADDWF  53,W
-1148:  MOVWF  04
-1149:  BCF    03.7
-114A:  MOVF   00,W
-114B:  MOVWF  65
-114C:  BCF    03.6
-114D:  MOVF   0B,W
-114E:  MOVWF  77
-114F:  BCF    0B.7
-1150:  BSF    03.6
-1151:  MOVF   53,W
-1152:  MOVWF  0D
-1153:  MOVF   65,W
-1154:  MOVWF  0C
-1155:  BSF    03.5
-1156:  BCF    0C.7
-1157:  BSF    0C.2
-1158:  MOVLW  55
-1159:  MOVWF  0D
-115A:  MOVLW  AA
-115B:  MOVWF  0D
-115C:  BSF    0C.1
-115D:  BTFSC  0C.1
-115E:  GOTO   15D
-115F:  BCF    0C.2
-1160:  MOVF   77,W
-1161:  BCF    03.5
-1162:  BCF    03.6
-1163:  IORWF  0B,F
-1164:  BSF    03.6
-1165:  INCF   53,F
-1166:  GOTO   142
-....................          } 
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 ....................          glcd_text57(128/2-30, 0, (char*)"Guardando", 1, OFF); 
 0D6A:  CLRF   78
 0D6B:  MOVLW  0A
@@ -6771,21 +6588,12 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0D8B:  BSF    0A.3
 ....................       } 
 ....................    } 
-<<<<<<< HEAD
 ....................    if(input(PIN_B7)){ 
 0D8C:  BSF    03.5
 0D8D:  BSF    06.7
 0D8E:  BCF    03.5
 0D8F:  BTFSS  06.7
 0D90:  GOTO   713
-=======
-....................    if(input(PIN_B7)){ //Leectura de datos de la EEPROM 
-1189:  BSF    03.5
-118A:  BSF    06.7
-118B:  BCF    03.5
-118C:  BTFSS  06.7
-118D:  GOTO   337
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 ....................       habilitarLectura=0; 
 0D91:  BCF    45.0
 ....................       glcd_text57(128/2-30, 0, (char*)"Capturando", 1, OFF); 
@@ -6823,7 +6631,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0DB0:  BSF    03.5
 0DB1:  BCF    0C.0
 ....................       disable_interrupts(INT_TIMER0); 
-<<<<<<< HEAD
 0DB2:  BCF    03.5
 0DB3:  BCF    0B.5
 ....................       for(int pos=0; pos<nMediciones; pos++){ 
@@ -6949,160 +6756,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0E29:  MOVWF  61
 0E2A:  MOVF   77,W
 0E2B:  MOVWF  60
-=======
-11AF:  BCF    03.5
-11B0:  BCF    0B.5
-....................       for(int pos=0; pos<nMediciones; pos++){ //Leemos los datos de la EEPROM y graficamos los mismos. 
-11B1:  BSF    03.6
-11B2:  CLRF   5F
-11B3:  MOVF   5F,W
-11B4:  SUBLW  4F
-11B5:  BTFSS  03.0
-11B6:  GOTO   2CC
-....................          registro[pos]=read_eeprom(pos); //Lectura de la EEPROM 
-11B7:  MOVLW  A0
-11B8:  ADDWF  5F,W
-11B9:  MOVWF  04
-11BA:  BCF    03.7
-11BB:  MOVF   5F,W
-11BC:  MOVWF  0D
-11BD:  BSF    03.5
-11BE:  BCF    0C.7
-11BF:  BSF    0C.0
-11C0:  BCF    03.5
-11C1:  MOVF   0C,W
-11C2:  MOVWF  00
-....................          float dato=(5.0*registro[pos]*100.0)/1024.0; //Convertimos los datos almacenados a flotantes 
-11C3:  MOVLW  A0
-11C4:  ADDWF  5F,W
-11C5:  MOVWF  04
-11C6:  BCF    03.7
-11C7:  MOVF   00,W
-11C8:  CLRF   66
-11C9:  MOVWF  65
-11CA:  BCF    0A.4
-11CB:  BCF    03.6
-11CC:  CALL   755
-11CD:  BSF    0A.4
-11CE:  BSF    03.5
-11CF:  BSF    03.6
-11D0:  CLRF   1C
-11D1:  CLRF   1B
-11D2:  MOVLW  20
-11D3:  MOVWF  1A
-11D4:  MOVLW  81
-11D5:  MOVWF  19
-11D6:  MOVF   7A,W
-11D7:  MOVWF  20
-11D8:  MOVF   79,W
-11D9:  MOVWF  1F
-11DA:  MOVF   78,W
-11DB:  MOVWF  1E
-11DC:  MOVF   77,W
-11DD:  MOVWF  1D
-11DE:  BCF    0A.4
-11DF:  BCF    03.5
-11E0:  BCF    03.6
-11E1:  CALL   539
-11E2:  BSF    0A.4
-11E3:  MOVF   7A,W
-11E4:  BSF    03.6
-11E5:  MOVWF  68
-11E6:  MOVF   79,W
-11E7:  MOVWF  67
-11E8:  MOVF   78,W
-11E9:  MOVWF  66
-11EA:  MOVF   77,W
-11EB:  MOVWF  65
-11EC:  MOVF   68,W
-11ED:  BSF    03.5
-11EE:  MOVWF  1C
-11EF:  BCF    03.5
-11F0:  MOVF   67,W
-11F1:  BSF    03.5
-11F2:  MOVWF  1B
-11F3:  BCF    03.5
-11F4:  MOVF   66,W
-11F5:  BSF    03.5
-11F6:  MOVWF  1A
-11F7:  BCF    03.5
-11F8:  MOVF   65,W
-11F9:  BSF    03.5
-11FA:  MOVWF  19
-11FB:  CLRF   20
-11FC:  CLRF   1F
-11FD:  MOVLW  48
-11FE:  MOVWF  1E
-11FF:  MOVLW  85
-1200:  MOVWF  1D
-1201:  BCF    0A.4
-1202:  BCF    03.5
-1203:  BCF    03.6
-1204:  CALL   539
-1205:  BSF    0A.4
-1206:  MOVF   7A,W
-1207:  BSF    03.6
-1208:  MOVWF  68
-1209:  MOVF   79,W
-120A:  MOVWF  67
-120B:  MOVF   78,W
-120C:  MOVWF  66
-120D:  MOVF   77,W
-120E:  MOVWF  65
-120F:  MOVF   68,W
-1210:  MOVWF  6C
-1211:  MOVF   67,W
-1212:  MOVWF  6B
-1213:  MOVF   66,W
-1214:  MOVWF  6A
-1215:  MOVF   65,W
-1216:  MOVWF  69
-1217:  BSF    03.5
-1218:  CLRF   13
-1219:  CLRF   12
-121A:  CLRF   11
-121B:  MOVLW  89
-121C:  MOVWF  10
-121D:  BCF    0A.4
-121E:  BSF    0A.3
-121F:  BCF    03.5
-1220:  BCF    03.6
-1221:  CALL   000
-1222:  BSF    0A.4
-1223:  BCF    0A.3
-1224:  MOVF   7A,W
-1225:  BSF    03.6
-1226:  MOVWF  63
-1227:  MOVF   79,W
-1228:  MOVWF  62
-1229:  MOVF   78,W
-122A:  MOVWF  61
-122B:  MOVF   77,W
-122C:  MOVWF  60
-....................          printf("%4.2f ",dato); 
-122D:  MOVLW  03
-122E:  MOVWF  04
-122F:  MOVF   63,W
-1230:  MOVWF  68
-1231:  MOVF   62,W
-1232:  MOVWF  67
-1233:  MOVF   61,W
-1234:  MOVWF  66
-1235:  MOVF   60,W
-1236:  MOVWF  65
-1237:  MOVLW  02
-1238:  MOVWF  69
-1239:  BCF    0A.4
-123A:  BSF    0A.3
-123B:  BCF    03.6
-123C:  GOTO   0E4
-123D:  BSF    0A.4
-123E:  BCF    0A.3
-123F:  MOVLW  20
-1240:  BTFSS  0C.4
-1241:  GOTO   240
-1242:  MOVWF  19
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 ....................          if(dato>=28 && dato<=50) 
 0E2C:  CLRF   68
 0E2D:  CLRF   67
@@ -7216,7 +6869,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0E95:  BTFSS  03.0
 0E96:  GOTO   6A0
 ....................             nuevaLinea(50); 
-<<<<<<< HEAD
 0E97:  BSF    03.6
 0E98:  CLRF   68
 0E99:  CLRF   67
@@ -7312,108 +6964,6 @@ CCS PCM C Compiler, Version 5.076, 56587               19-nov.-20 18:58
 0EEE:  BSF    03.6
 0EEF:  INCF   64,F
 0EF0:  GOTO   6CC
-=======
-12B7:  BSF    03.6
-12B8:  CLRF   68
-12B9:  CLRF   67
-12BA:  MOVLW  48
-12BB:  MOVWF  66
-12BC:  MOVLW  84
-12BD:  MOVWF  65
-12BE:  BCF    0A.4
-12BF:  BSF    0A.3
-12C0:  BCF    03.6
-12C1:  CALL   436
-12C2:  BSF    0A.4
-12C3:  BCF    0A.3
-....................          registro[pos]=0; //Limpiamos el registro de las temperaturas 
-12C4:  MOVLW  A0
-12C5:  BSF    03.6
-12C6:  ADDWF  5F,W
-12C7:  MOVWF  04
-12C8:  BCF    03.7
-12C9:  CLRF   00
-12CA:  INCF   5F,F
-12CB:  GOTO   1B3
-....................       } 
-....................       glcd_text57(128/2-30, 0, (char*)"Guardando", 1, ON); 
-12CC:  CLRF   78
-12CD:  MOVLW  0A
-12CE:  MOVWF  77
-12CF:  MOVLW  54
-12D0:  MOVWF  04
-12D1:  BSF    03.7
-12D2:  MOVF   78,W
-12D3:  BCF    0A.4
-12D4:  BCF    03.6
-12D5:  CALL   24E
-12D6:  BSF    0A.4
-12D7:  MOVWF  00
-12D8:  INCF   78,F
-12D9:  INCF   04,F
-12DA:  DECFSZ 77,F
-12DB:  GOTO   2DD
-12DC:  GOTO   2DF
-12DD:  BSF    03.6
-12DE:  GOTO   2D2
-12DF:  MOVLW  22
-12E0:  BSF    03.6
-12E1:  MOVWF  67
-12E2:  CLRF   68
-12E3:  MOVLW  01
-12E4:  MOVWF  6A
-12E5:  MOVLW  54
-12E6:  MOVWF  69
-12E7:  MOVLW  01
-12E8:  MOVWF  6B
-12E9:  MOVWF  6C
-12EA:  BCF    0A.4
-12EB:  BCF    03.6
-12EC:  CALL   417
-12ED:  BSF    0A.4
-....................       for(int pos=0; pos<nMediciones; pos++){ 
-12EE:  BSF    03.6
-12EF:  CLRF   64
-12F0:  MOVF   64,W
-12F1:  SUBLW  4F
-12F2:  BTFSS  03.0
-12F3:  GOTO   315
-....................          write_eeprom(pos, registro[pos]); //Escritura de datos en la EEPROM 
-12F4:  MOVLW  A0
-12F5:  ADDWF  64,W
-12F6:  MOVWF  04
-12F7:  BCF    03.7
-12F8:  MOVF   00,W
-12F9:  MOVWF  65
-12FA:  BCF    03.6
-12FB:  MOVF   0B,W
-12FC:  MOVWF  77
-12FD:  BCF    0B.7
-12FE:  BSF    03.6
-12FF:  MOVF   64,W
-1300:  MOVWF  0D
-1301:  MOVF   65,W
-1302:  MOVWF  0C
-1303:  BSF    03.5
-1304:  BCF    0C.7
-1305:  BSF    0C.2
-1306:  MOVLW  55
-1307:  MOVWF  0D
-1308:  MOVLW  AA
-1309:  MOVWF  0D
-130A:  BSF    0C.1
-130B:  BTFSC  0C.1
-130C:  GOTO   30B
-130D:  BCF    0C.2
-130E:  MOVF   77,W
-130F:  BCF    03.5
-1310:  BCF    03.6
-1311:  IORWF  0B,F
-1312:  BSF    03.6
-1313:  INCF   64,F
-1314:  GOTO   2F0
-....................       } 
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 ....................       glcd_text57(128/2-30, 0, (char*)"Guardando", 1, OFF); 
 0EF1:  CLRF   78
 0EF2:  MOVLW  0A

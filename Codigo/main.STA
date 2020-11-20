@@ -13,7 +13,6 @@ Stack size: 8
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-<<<<<<< HEAD
   218   136  19  main.c
     5     0   0  main.h
   652     0   0  C:\Program Files (x86)\PICC\Devices\16F877.h
@@ -27,21 +26,6 @@ Lines Stmts  %   Files
    28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
 ----- -----
  2815   701 Total
-=======
-  226   138  20  main.c
-    5     0   0  main.h
-  652     0   0  D:\Program Files\PICC\Devices\16F877.h
-  356    76  11  D:\Program Files\PICC\Drivers\HDM64GS12.c
-  540   163  23  D:\Program Files\PICC\Drivers\graphics.c
-   54    25   4  compof.c
-  419   159  23  D:\Program Files\PICC\Drivers\stdlibm.h
-   32     0   0  D:\Program Files\PICC\Drivers\stddef.h
-   76    13   2  D:\Program Files\PICC\Drivers\memmgmt.c
-  435   129  18  D:\Program Files\PICC\Drivers\string.h
-   28     0   0  D:\Program Files\PICC\Drivers\ctype.h
------ -----
- 2823   703 Total
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 
 Page ROM  %  RAM    Vol Diff  Functions:
 ---- --- --- ---    --- ----  ----------
@@ -89,7 +73,6 @@ Page ROM  %  RAM    Vol Diff  Functions:
  Inline         0             @cinit1
 
 Program metrics:
-<<<<<<< HEAD
     Functions               22
     Statements              701
     Comments                762
@@ -100,18 +83,6 @@ Program metrics:
     Est Delivered Bugs (B)  6
     Cyclomatic Complexity   55
     Maintainability (MI)    93
-=======
-    Functions               21
-    Statements              703
-    Comments                775
-    Volume (V)              22547
-    Difficulty (D)          115.6
-    Effort to implement (E) 2605696
-    Time to implement (T)   40 hours, 13 minutes
-    Est Delivered Bugs (B)  6
-    Cyclomatic Complexity   54
-    Maintainability (MI)    78
->>>>>>> f883a52cb366786ce40fcc099d295a643b16fdc7
 
  Segment     Used  Free
 -----------  ----  ----
