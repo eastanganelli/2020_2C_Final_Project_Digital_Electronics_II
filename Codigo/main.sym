@@ -328,13 +328,12 @@ ROM Allocation:
 001376  MAIN
 001376  @cinit1
 001391  @cinit2
-001800  @const1024.call
 
 Project Directory:
     D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\Codigo\
 
 Project Files:
-    main.c                                                  [20-Nov-20 19:39  CRC=555C26DB]
+    main.c                                                  [20-Nov-20 20:19  CRC=555C26DB]
     main.h                                                  [17-Nov-20 17:06  CRC=D872A938]
     C:\Program Files (x86)\PICC\Devices\16F877.h            [15-Jan-18 15:53  CRC=EE78BE53]
     C:\Program Files (x86)\PICC\Drivers\HDM64GS12.c         [08-Jul-10 09:47  CRC=C1C373EF]

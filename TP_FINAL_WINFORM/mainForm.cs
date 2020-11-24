@@ -89,6 +89,9 @@ namespace mainForm {
         //CLEAR ALL DATA IN SOFTWARE
         private void btnCLEAR_Click(object sender, EventArgs e)
         {
+            lbltavg.Text  = "T_AVG: ...";
+            lblthigh.Text = "T_MAX: ...";
+            lbltmin.Text  = "T_MIN: ...";
             Temp_.Clear();
             tempchart.chart_clean();
         }

@@ -186,7 +186,7 @@ void main()
          t=(5.0*iAn*100.0)/1024.0; //Lo convertemos a temperatura
          
          if(!btST)
-            sendINT('t', iAn, SEP);
+            sendINT('t', iAn, SEP); //Funcion para enviar datos via el Modulo Bt
          
          if(t!=y){ //Si t es != al dato anterior refrescamos la temperatura y la enviamos al bluetooth
             sprintf(str, "%3.2fC", y); //Convertimos la temperatura float en un char*

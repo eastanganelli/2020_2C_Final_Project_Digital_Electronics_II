@@ -17,7 +17,7 @@ Type=4
 forcecoff=0
 
 [ProjectLog]
-Days=14
+Days=16
 D1=28-10-2020
 D1_L=38
 D1_L1=[38435]Project Opened.
@@ -37,7 +37,7 @@ D1_L14=[51811]Started Editing.
 D1_L15=[54708]Stopped Editing.
 D1_L16=[55590]Started Editing.
 D1_L17=[55940]Stopped Editing.
-TotalEdit=737
+TotalEdit=738
 TotalDebug=0
 D1_E=221
 D1_D=0
@@ -302,10 +302,24 @@ D14_L7=[70778]Stopped Editing.
 D14_E=1
 D14_D=0
 D14_L8=[70848]Project Closed.
+D15=21-11-2020
+D15_L=2
+D15_L1=[4167]Project Opened.
+D15_L2=[4186]Project Closed.
+D16=23-11-2020
+D16_L=6
+D16_L1=[38779]Project Opened.
+D16_L2=[38797]Started Editing.
+D16_L3=[39130]Stopped Editing.
+D16_L4=[39786]Started Editing.
+D16_L5=[40107]Stopped Editing.
+D16_E=1
+D16_D=0
+D16_L6=[54711]Project Closed.
 
 [Opened Files]
 1=main.c
-t1=71
+t1=20
 Count=2
 2=srcomLIB.c
 t2=1
@@ -317,7 +331,7 @@ t4=197
 Type=4
 
 [defines]
-buildcount=428
+buildcount=429
 [Units]
 Count=1
 1=main (main)

@@ -18,3 +18,4 @@ D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM
 D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\TP_FINAL_EDI2.csproj.CoreCompileInputs.cache
 D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\TP_FINAL_EDI2.exe
 D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\TP_FINAL_EDI2.pdb
+D:\Ezequiel\My eBooks\Favaloro\ED\II\GIT_TP_FINAL\tp_final_edi2\TP_FINAL_WINFORM\obj\Debug\TP_FINAL_EDI2.csprojAssemblyReference.cache
