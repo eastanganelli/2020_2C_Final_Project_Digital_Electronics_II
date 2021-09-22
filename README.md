@@ -39,7 +39,7 @@ En este informe mostraremos los códigos y esquemáticos para la reproducción d
 
 
 
-### Introduction:
+### Introducción:
 El PIC16F877 es un microcontrolador que tiene uncircuito integrado que puede ser programado de muchas formas diferentes.
 
 El sensor de temperatura es un dispositivo que transforma una señal analogica a una señal eléctrica que puede ser procesada en el microcontrolador y luego ser transformada en una señal digital.
