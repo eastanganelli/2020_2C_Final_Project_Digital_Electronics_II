@@ -9,7 +9,7 @@
 ## Temperature monitoring system for COVID-19 patients
 
 ### Participants
-Campo Francisco, Galmarini Felipe Ignacio, Stanganelli Ezequiel, Vazquez Constanza.
+[Campo Francisco](https://gitlab.com/FCampo), Galmarini Felipe Ignacio, [Stanganelli Ezequiel](https://gitlab.com/eastanganelli), Vazquez Constanza.
 Digital Electronics II, FICEN, Favaloro University.
 
 ### Abstract
